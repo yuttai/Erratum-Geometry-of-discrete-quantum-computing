@@ -1,0 +1,197 @@
+%% LyX 2.1.4 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass{iopart}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{amstext}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\usepackage{iopams}
+\usepackage{setstack}
+\usepackage{enumitem}		% customizable list environments
+\newlength{\lyxlabelwidth}      % auxiliary length 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{braket}%Added
+\usepackage{dsfont}%Added
+
+%%%  Definitions for theorem-like environments. Don't change them, and don't make new ones.
+\newtheorem{theorem}{}[section]
+\newtheorem{corollary}[theorem]{}\newtheorem{lemma}[theorem]{}\newtheorem{proposition}[theorem]{}\newtheorem{definition}[theorem]{}\let\olddefinition\definition
+\renewcommand{\definition}{\olddefinition\normalfont}
+%
+\newenvironment{remark}{\addtocounter{theorem}{1}\par\noindent\textit{Remark \thetheorem}\normalfont}{\par}
+% \newenvironment{example}{\addtocounter{theorem}{1}\par\noindent\textit{Example \thetheorem}\normalfont}{\par}
+\newenvironment{notation}{\par\noindent\textit{Notation }\normalfont}{\\[1ex]}
+%
+% \newenvironment{proof}{\par\noindent\textit{Proof }}{\hfill\ensuremath{\Box}\par}
+%
+%%%  A few standard macros that we can all use
+%
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\ComplexI}{\text{i}}
+%
+%
+\newcommand{\JGF}{\mathbb{F}}    %Added
+%
+%
+%
+\newcommand{\ff}[1]{\mathbb{F}_{#1}}
+\newcommand{\ip}[2]{\langle #1 ~|~ #2 \rangle}
+\def\fh{\mathfrak{h}}
+\newcommand{\yutsung}[1]{\fbox{\begin{minipage}{0.9\textwidth}\color{purple}{Yu-Tsung says: #1}\end{minipage}}}
+\addtocounter{equation}{39}
+\addtocounter{section}{5}
+\addtocounter{subsection}{3}
+
+\makeatother
+
+\begin{document}
+
+\title{Erratum: Geometry of discrete quantum computing}
+
+
+\author{Andrew J. Hanson}
+
+
+\address{School of Informatics and Computing, Indiana University, Bloomington,
+IN 47405, U.S.A}
+
+
+\author{Gerardo Ortiz}
+
+
+\address{Department of Physics, Indiana University, Bloomington, IN 47405,
+U.S.A}
+
+
+\author{Amr Sabry}
+
+
+\address{School of Informatics and Computing, Indiana University, Bloomington,
+IN 47405, U.S.A}
+
+
+\author{Yu-Tsung Tai}
+
+
+\address{Department of Mathematics, Indiana University, Bloomington, IN 47405,
+U.S.A}
+
+
+\address{School of Informatics and Computing, Indiana University, Bloomington,
+IN 47405, U.S.A}
+
+
+\noindent{\it Keywords\/}: {\today}
+
+\maketitle
+
+\noindent We correct Sec.~5.4 of our paper~\cite{geometry}. There are several related mistakes that all stem from an incorrect use of Eq.~(27) in a discrete setting with modular arithmetic. Eq.~(27) defines purity from which the definitions of unentangled, partially entangled, and maximally entangled states were derived in the field of complex numbers. In finite fields, the definitions are more subtle.
+\paragraph*{Purity, Product States, and Unentangled States.} The paper correctly identifies unentangled states with product states. In the continuous case, a state has maximal purity iff it is a product state. In the discrete case, product states have maximal purity but the converse does not necessarily hold. 
+\paragraph*{Purity and Maximally Entangled States.} The paper defines maximally entangled states as those whose purity is 0. This definition needs to be modified in the discrete case to avoid identifying as maximally entangled states whose purity is a multiple of the field characteristic.
+
+\bigskip The results in other sections do not depend on Eq.~(27): the corrected version of Sec.5.4 below has no influence on the rest of the article. 
+
+\subsection{Maximal entanglement}
+
+
+In the case of finite fields, we need to modify this definition because modular arithmetic confuses some of the identifications. 
+
+
+
+For instance, although product states and maximal purity can be identified when using complex arithmetic, there exist, in the discrete case, non-product states that also have maximal purity. 
+
+The first step in adapting Eq.~(27) to the discrete case is to eliminate the $1/n$ factor to avoid dividing by zero: 
+\begin{equation}
+\overline{P_{\fh}}=\sum\limits _{j=1}^{n}\overline{P_{\fh}^{j}}, \qquad\mbox{with~}
+\overline{P_{\fh}^j} = \sum\limits _{\mu=x,y,z}\langle\sigma_{\mu}^{j}\rangle^{2}
+\end{equation}
+where $\overline{P_{\fh}}\in\ff{p}$. 
+
+For example, consider the normalized product state $\ket{\Psi_{0}}$ and the normalized entangled 
+state $\ket{\Psi_{1}}$ over $\ff{3^{2}}$: 
+\begin{eqnarray}
+\ket{\Psi_{0}} & = & \ket{0}\otimes\frac{\ket{0}-\ket{1}}{1-\ComplexI}\otimes\frac{\ket{0}-\ket{1}}{1-\ComplexI}\\
+\ket{\Psi_{1}} & = & \ket{011}+\ket{100}+\ket{101}+\ket{110}
+\end{eqnarray}
+In both cases $\overline{P_{\fh}^j} = 1$ for all $j$: the states are not distinguished by purity. 
+
+
+We also notice that the product state $\ket{\Psi_{0}}$ has $\overline{P_{\fh}}=3=0$
+over $\ff{3^{2}}$ so $\overline{P_{\fh}}=0$ is not a good defintion
+for maximally entangled states. Because of the experience on product
+states, $\forall j,\overline{P_{\fh}^{j}}=0$ may also be too weak
+to definition of maximally entangled states. Indeed, a discrete maximally
+entangled state should be defined as 
+\begin{equation}
+\forall j,\forall\mu,\braket{\sigma_{\mu}^{j}}=0
+\end{equation}
+
+
+Computing some examples for various $n$ and small values of $p$,
+one can verify explicitly that unit-norm product states for $n=2$,
+$p=\{3,7,11,19,\ldots\}$ occur with frequency 
+\begin{equation}
+(p+1)p^{2}(p-1)^{2}=\{144,14112,145200,2339280,\ldots\}\ ,
+\end{equation}
+and for general $n$, $(p+1)p^{n}(p-1)^{n}$.
+
+The irreducible state counts are reduced by $(p+1)$, giving 
+\begin{equation}
+p^{2}(p-1)^{2}=\{36,1764,12100,116964,\ldots\}\ ,
+\end{equation}
+and in general for $n$-qubits, $p^{n}\left(p-1\right)^{n}$ instances
+of product pure states.
+
+Repeating the computation we find maximally entanglement states with
+frequencies for two qubits of 
+\begin{equation}
+p\left(p^{2}-1\right)\left(p+1\right)=\left\{ 96,2688,15840,136800,\ldots\right\} 
+\end{equation}
+The irreducible state counts for maximal entanglement are reduced
+by $\left(p+1\right)$, giving for $n=2$
+\begin{equation}
+p\left(p^{2}-1\right)=\left\{ 24,336,1320,6840,\ldots\right\} 
+\end{equation}
+For three-qubits, there are $p^{3}\left(p^{4}-1\right)\left(p+1\right)$
+instances of pure maximally entangled states. For four-qubits and
+$p=3$, there are $2195538048$ instances of pure maximally entangled
+states, while the general formula for four-qubit states remains unclear.
+
+\yutsung{
+\begin{eqnarray*}
+2195538048 & = & 4\cdot548884512\\
+548884512 & = & 2^{5}\cdot3^{7}\cdot11\cdot23\cdot31
+\end{eqnarray*}
+The irreducible state counts for maximal entanglement for $n=4$ and
+$p=7$ is about $8.22\times10^{14}$.}
+
+
+\ack{}{We would like to thank John Cardiner for pointing out the need for
+this correction. For counting maximally entangled states for $p=3$
+and $n=4$, we also need to thank to Lilly Endowment, Inc., through
+its support for the Indiana University Pervasive Technology Institute,
+and in part by the Indiana METACyt Initiative. The Indiana METACyt
+Initiative at IU is also supported in part by Lilly Endowment, Inc.}
+
+
+\section*{References}{}
+
+\bibliographystyle{plain}
+\bibliography{gardinerbib}
+
+\end{document}
