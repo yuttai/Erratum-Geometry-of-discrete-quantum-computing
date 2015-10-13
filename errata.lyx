@@ -353,37 +353,29 @@ In both cases
 \end_layout
 
 \begin_layout Standard
-We also notice that the product state 
 \begin_inset Formula $\ket{\Psi_{0}}$
 \end_inset
 
- has 
-\begin_inset Formula $\overline{P_{\fh}}=3=0$
-\end_inset
-
- over 
-\begin_inset Formula $\ff{3^{2}}$
-\end_inset
-
- so 
+ also serves another example that a product state may have 
 \begin_inset Formula $\overline{P_{\fh}}=0$
 \end_inset
 
- is not a good defintion for maximally entangled states.
- Because of the experience on product states, 
-\begin_inset Formula $\forall j,\overline{P_{\fh}^{j}}=0$
-\end_inset
-
- may also be too weak to definition of maximally entangled states.
- Indeed, a discrete maximally entangled state should be defined as 
+ with modular arithmetic.
+ In order to minimum the modular arithmetic, we define the maximally entangled
+ states by
 \begin_inset Formula 
 \begin{equation}
-\forall j,\forall\mu,\braket{\sigma_{\mu}^{j}}=0
+\forall j,\forall\mu,\braket{\sigma_{\mu}^{j}}=0\label{eq:john}
 \end{equation}
 
 \end_inset
 
+which is equivalent to 
+\begin_inset Formula $\overline{P_{\fh}}=0$
+\end_inset
 
+ in continuous case.
+ 
 \end_layout
 
 \begin_layout Standard
