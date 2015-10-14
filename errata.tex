@@ -130,17 +130,20 @@ state $\ket{\Psi_{1}}$ over $\ff{3^{2}}$:
 \end{eqnarray}
 In both cases $\overline{P_{\fh}^j} = 1$ for all $j$: the states are not distinguished by purity. 
 
-
-We also notice that the product state $\ket{\Psi_{0}}$ has $\overline{P_{\fh}}=3=0$
-over $\ff{3^{2}}$ so $\overline{P_{\fh}}=0$ is not a good defintion
-for maximally entangled states. Because of the experience on product
-states, $\forall j,\overline{P_{\fh}^{j}}=0$ may also be too weak
-to definition of maximally entangled states. Indeed, a discrete maximally
-entangled state should be defined as 
+$\ket{\Psi_{0}}$ also serves an example that a product state may
+have $\overline{P_{\fh}}=0$ because of modular arithmetic. To minimized
+the modular arithmetic effect, we define the maximally entangled states
+by
 \begin{equation}
-\forall j,\forall\mu,\braket{\sigma_{\mu}^{j}}=0
+\forall j,\forall\mu,\braket{\sigma_{\mu}^{j}}=0\label{eq:john}
 \end{equation}
-
+For example, consider a normalized state $\ket{\Psi_{2}}$ over $\ff{3^{2}}$:
+\begin{eqnarray}
+\ket{\Psi_{2}} & = & \ket{01}+\ket{10}+\left(-1-\ComplexI\right)\ket{11}
+\end{eqnarray}
+Although $\overline{P_{\fh}^{j}}=0$ for all $j$, $\ket{\Psi_{2}}$
+does not satisfy Eq. (\ref{eq:john}). Therefore, $\ket{\Psi_{2}}$
+is not maximally entangled.
 
 Computing some examples for various $n$ and small values of $p$,
 one can verify explicitly that unit-norm product states for $n=2$,

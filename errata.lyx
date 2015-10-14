@@ -356,12 +356,12 @@ In both cases
 \begin_inset Formula $\ket{\Psi_{0}}$
 \end_inset
 
- also serves another example that a product state may have 
+ also serves an example that a product state may have 
 \begin_inset Formula $\overline{P_{\fh}}=0$
 \end_inset
 
- with modular arithmetic.
- In order to minimum the modular arithmetic, we define the maximally entangled
+ because of modular arithmetic.
+ To minimized the modular arithmetic effect, we define the maximally entangled
  states by
 \begin_inset Formula 
 \begin{equation}
@@ -370,12 +370,48 @@ In both cases
 
 \end_inset
 
-which is equivalent to 
-\begin_inset Formula $\overline{P_{\fh}}=0$
+For example, consider a normalized state 
+\begin_inset Formula $\ket{\Psi_{2}}$
 \end_inset
 
- in continuous case.
- 
+ over 
+\begin_inset Formula $\ff{3^{2}}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{eqnarray}
+\ket{\Psi_{2}} & = & \ket{01}+\ket{10}+\left(-1-\ComplexI\right)\ket{11}
+\end{eqnarray}
+
+\end_inset
+
+Although 
+\begin_inset Formula $\overline{P_{\fh}^{j}}=0$
+\end_inset
+
+ for all 
+\begin_inset Formula $j$
+\end_inset
+
+, 
+\begin_inset Formula $\ket{\Psi_{2}}$
+\end_inset
+
+ does not satisfy Eq.
+ (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:john"
+
+\end_inset
+
+).
+ Therefore, 
+\begin_inset Formula $\ket{\Psi_{2}}$
+\end_inset
+
+ is not maximally entangled.
 \end_layout
 
 \begin_layout Standard
