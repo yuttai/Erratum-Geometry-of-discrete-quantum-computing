@@ -361,8 +361,16 @@ In both cases
 \end_inset
 
  because of modular arithmetic.
+<<<<<<< HEAD
+ In the continuous case, 
+\begin_inset Formula $\overline{P_{\fh}}=0$
+\end_inset
+
+ is equivalent to 
+=======
  To minimized the modular arithmetic effect, we define the maximally entangled
  states by
+>>>>>>> branch 'master' of https://github.com/yuttai/Erratum-Geometry-of-discrete-quantum-computing.git
 \begin_inset Formula 
 \begin{equation}
 \forall j,\forall\mu,\braket{\sigma_{\mu}^{j}}=0\label{eq:john}
@@ -370,10 +378,52 @@ In both cases
 
 \end_inset
 
+<<<<<<< HEAD
+Eq.
+ (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:john"
+
+=======
 For example, consider a normalized state 
+\begin_inset Formula $\ket{\Psi_{2}}$
+>>>>>>> branch 'master' of https://github.com/yuttai/Erratum-Geometry-of-discrete-quantum-computing.git
+\end_inset
+
+<<<<<<< HEAD
+) defines maximally entangled states over 
+\begin_inset Formula $\ff{p^{2}}$
+\end_inset
+
+ as well.
+ In this definition, the Bell states are maximally entangled while a normalized
+ state 
 \begin_inset Formula $\ket{\Psi_{2}}$
 \end_inset
 
+ over 
+\begin_inset Formula $\ff{3^{2}}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{eqnarray}
+\ket{\Psi_{2}} & = & \ket{01}+\ket{10}+\left(-1-\ComplexI\right)\ket{11}
+\end{eqnarray}
+
+\end_inset
+
+is not maximally entangled although 
+\begin_inset Formula $\overline{P_{\fh}^{j}}=0$
+\end_inset
+
+ for all 
+\begin_inset Formula $j$
+\end_inset
+
+.
+=======
  over 
 \begin_inset Formula $\ff{3^{2}}$
 \end_inset
@@ -412,6 +462,7 @@ reference "eq:john"
 \end_inset
 
  is not maximally entangled.
+>>>>>>> branch 'master' of https://github.com/yuttai/Erratum-Geometry-of-discrete-quantum-computing.git
 \end_layout
 
 \begin_layout Standard
