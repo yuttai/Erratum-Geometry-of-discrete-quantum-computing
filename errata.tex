@@ -101,7 +101,7 @@ IN 47405, U.S.A}
 \maketitle
 
 \noindent We correct Sec.~5.4 of our paper~\cite{geometry}. There are several related mistakes that all stem from an incorrect use of Eq.~(27) in a discrete setting with modular arithmetic. Eq.~(27) defines purity from which the definitions of unentangled, partially entangled, and maximally entangled states were derived in the field of complex numbers. In finite fields, the definitions are more subtle.
-\paragraph*{Purity, Product States, and Unentangled States.} The paper correctly identifies unentangled states with product states. In the continuous case, a state has maximal purity iff it is a product state. In the discrete case, product states have maximal purity but the converse does not necessarily hold. 
+\paragraph*{Purity, Product States, and Unentangled States.} The paper correctly identifies unentangled states with product states. In the continuous case, a state has maximal purity iff it is a product state. In the discrete case, product states have maximal purity, but the converse does not necessarily hold. 
 \paragraph*{Purity and Maximally Entangled States.} The paper defines maximally entangled states as those whose purity is 0. This definition needs to be modified in the discrete case to avoid identifying as maximally entangled states whose purity is a multiple of the field characteristic.
 
 \bigskip The results in other sections do not depend on Eq.~(27): the corrected version of Sec.~5.4 below has no influence on the rest of the article. 
@@ -118,15 +118,15 @@ For instance, although product states and maximal purity can be identified when 
 The first step in adapting Eq.~(27) to the discrete case is to eliminate the $1/n$ factor to avoid dividing by zero: 
 \begin{equation}
 \overline{P_{\fh}}=\sum\limits _{j=1}^{n}\overline{P_{\fh}^{j}}, \qquad\mbox{with~}
-\overline{P_{\fh}^j} = \sum\limits _{\mu=x,y,z}\langle\sigma_{\mu}^{j}\rangle^{2}
+\overline{P_{\fh}^j} = \sum\limits _{\mu=x,y,z}\langle\sigma_{\mu}^{j}\rangle^{2}\ ,
 \end{equation}
 where $\overline{P_{\fh}}\in\ff{p}$. 
 
 For example, consider the normalized product state $\ket{\Psi_{0}}$ and the normalized entangled 
 state $\ket{\Psi_{1}}$ over $\ff{3^{2}}$: 
 \begin{eqnarray}
-\ket{\Psi_{0}} & = & \ket{0}\otimes\frac{\ket{0}-\ket{1}}{1-\ComplexI}\otimes\frac{\ket{0}-\ket{1}}{1-\ComplexI}\\
-\ket{\Psi_{1}} & = & \ket{011}+\ket{100}+\ket{101}+\ket{110}
+\ket{\Psi_{0}} & = & \ket{0}\otimes\frac{\ket{0}-\ket{1}}{1-\ComplexI}\otimes\frac{\ket{0}-\ket{1}}{1-\ComplexI}\ ,\\
+\ket{\Psi_{1}} & = & \ket{011}+\ket{100}+\ket{101}+\ket{110}\ .
 \end{eqnarray}
 In both cases $\overline{P_{\fh}^j} = 1$ for all $j$: the states are not distinguished by purity. 
 
@@ -134,51 +134,49 @@ $\ket{\Psi_{0}}$ also serves an example that a product state has
 $\overline{P_{\fh}}=0$ because of modular arithmetic. In the continuous
 case, $\overline{P_{\fh}}=0$ is equivalent to 
 \begin{equation}
-\forall j,\forall\mu,\braket{\sigma_{\mu}^{j}}=0\label{eq:john}
+\forall j,\forall\mu,\braket{\sigma_{\mu}^{j}}=0\label{eq:john}\ .
 \end{equation}
 Eq. (\ref{eq:john}) defines maximally entangled states over $\ff{p^{2}}$
 as well. From this definition, the Bell states are maximally entangled,
-while a normalized state $\ket{\Psi_{2}}$ over $\ff{3^{2}}$: 
+while a normalized state $\ket{\Psi_{2}}$ over $\ff{3^{2}}$ is not maximally entangled although $\overline{P_{\fh}^{j}}=0$ for all $j$, where
 \begin{eqnarray}
-\ket{\Psi_{2}} & = & \ket{01}+\ket{10}+\left(-1-\ComplexI\right)\ket{11}
+\ket{\Psi_{2}} & = & \ket{01}+\ket{10}+\left(-1-\ComplexI\right)\ket{11}\ .
 \end{eqnarray}
-is not maximally entangled although $\overline{P_{\fh}^{j}}=0$ for
-all $j$.
 
 Computing some examples for various $n$ and small values of $p$,
 one can verify explicitly that unit-norm product states for $n=2$,
 $p=\{3,7,11,19,\ldots\}$ occur with frequency 
 \begin{equation}
-(p+1)p^{2}(p-1)^{2}=\{144,14112,145200,2339280,\ldots\}\ ,
+(p+1)p^{2}(p-1)^{2}=\{144,14\,112,145\,200,2339\,280,\ldots\}\ ,
 \end{equation}
 and for general $n$, $(p+1)p^{n}(p-1)^{n}$.
 
 The irreducible state counts are reduced by $(p+1)$, giving 
 \begin{equation}
-p^{2}(p-1)^{2}=\{36,1764,12100,116964,\ldots\}\ ,
+p^{2}(p-1)^{2}=\{36,1764,12\,100,116\,964,\ldots\}\ ,
 \end{equation}
-and in general for $n$-qubits, $p^{n}\left(p-1\right)^{n}$ instances
+and in general for $n$-qubits, there are $p^{n}\left(p-1\right)^{n}$ instances
 of product pure states.
 
-Repeating the computation we find maximally entanglement states with
+Repeating the computation, we find maximally entanglement states with 
 frequencies for two qubits of 
 \begin{equation}
-p\left(p^{2}-1\right)\left(p+1\right)=\left\{ 96,2688,15840,136800,\ldots\right\} 
+p\left(p^{2}-1\right)\left(p+1\right)=\left\{ 96,2688,15\,840,136\,800,\ldots\right\} \ .
 \end{equation}
 The irreducible state counts for maximal entanglement are reduced
 by $\left(p+1\right)$, giving for $n=2$
 \begin{equation}
-p\left(p^{2}-1\right)=\left\{ 24,336,1320,6840,\ldots\right\} 
+p\left(p^{2}-1\right)=\left\{ 24,336,1320,6840,\ldots\right\} \ .
 \end{equation}
 For three-qubits, there are $p^{3}\left(p^{4}-1\right)\left(p+1\right)$
 instances of pure maximally entangled states. For four-qubits and
-$p=3$, there are $2195538048$ instances of pure maximally entangled
+$p=3$, there are $2195\,538\,048$ instances of pure maximally entangled
 states, while the general formula for four-qubit states remains unclear.
 
 \yutsung{
 \begin{eqnarray*}
-2195538048 & = & 4\cdot548884512\\
-548884512 & = & 2^{5}\cdot3^{7}\cdot11\cdot23\cdot31
+2195\,538\,048 & = & 4\cdot548\,884\,512\ ,\\
+548\,884\,512 & = & 2^{5}\cdot3^{7}\cdot11\cdot23\cdot31\ .
 \end{eqnarray*}
 The irreducible state counts for maximal entanglement for $n=4$ and
 $p=7$ is about $8.22\times10^{14}$.}
