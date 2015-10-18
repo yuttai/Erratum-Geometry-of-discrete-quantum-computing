@@ -225,7 +225,7 @@ status collapsed
 
 \begin_layout Standard
 \noindent
-We correct Sec.
+We correct section
 \begin_inset space ~
 
 \end_inset
@@ -243,12 +243,12 @@ key "geometry"
 
 \end_inset
 
-. There are several related mistakes that all stem from an incorrect use of Eq.
+. There are several related mistakes that all stem from an incorrect use of equation
 \begin_inset space ~
 
 \end_inset
 
-(27) in a discrete setting with modular arithmetic. Eq.
+(27) in a discrete setting with modular arithmetic. Equation
 \begin_inset space ~
 
 \end_inset
@@ -277,12 +277,12 @@ The paper defines maximally entangled states as those whose purity is 0. This de
 \begin_inset VSpace bigskip
 \end_inset
 
-The results in other sections do not depend on Eq.
+The results in other sections do not depend on equation
 \begin_inset space ~
 
 \end_inset
 
-(27): the corrected version of Sec.
+(27): the corrected version of section
 \begin_inset space ~
 
 \end_inset
@@ -303,7 +303,7 @@ For instance, although product states and maximal purity can be identified when 
 \end_layout
 
 \begin_layout Standard
-The first step in adapting Eq.
+The first step in adapting equation
 \begin_inset space ~
 
 \end_inset
@@ -376,7 +376,7 @@ In both cases
 \end{equation}
 \end_inset
 
-Eq. (
+Equation (
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:john"
@@ -387,8 +387,8 @@ reference "eq:john"
 \begin_inset Formula $\ff{p^{2}}$
 \end_inset
 
- as well. From this definition, the Bell states are maximally entangled, while a normalized state 
-\begin_inset Formula $\ket{\Psi_{2}}$
+ as well. From this definition, the Bell states are maximally entangled, while the normalized state 
+\begin_inset Formula $\ket{\Psi_{2}} = \ket{01}+\ket{10}+\left(-1-\ComplexI\right)$
 \end_inset
 
  over 
@@ -403,13 +403,7 @@ reference "eq:john"
 \begin_inset Formula $j$
 \end_inset
 
-, where 
-\begin_inset Formula \begin{eqnarray}
-\ket{\Psi_{2}} & = & \ket{01}+\ket{10}+\left(-1-\ComplexI\right)\ket{11}\ .
-\end{eqnarray}
-\end_inset
-
-
+.
 \end_layout
 
 \begin_layout Standard

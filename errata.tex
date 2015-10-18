@@ -98,11 +98,11 @@ IN 47405, U.S.A}
 
 \maketitle
 
-\noindent We correct Sec.~5.4 of our paper~\cite{geometry}. There are several related mistakes that all stem from an incorrect use of Eq.~(27) in a discrete setting with modular arithmetic. Eq.~(27) defines purity from which the definitions of unentangled, partially entangled, and maximally entangled states were derived in the field of complex numbers. In finite fields, the definitions are more subtle.
+\noindent We correct section~5.4 of our paper~\cite{geometry}. There are several related mistakes that all stem from an incorrect use of equation~(27) in a discrete setting with modular arithmetic. Equation~(27) defines purity from which the definitions of unentangled, partially entangled, and maximally entangled states were derived in the field of complex numbers. In finite fields, the definitions are more subtle.
 \paragraph*{Purity, Product States, and Unentangled States.} The paper correctly identifies unentangled states with product states. In the continuous case, a state has maximal purity iff it is a product state. In the discrete case, product states have maximal purity, but the converse does not necessarily hold. 
 \paragraph*{Purity and Maximally Entangled States.} The paper defines maximally entangled states as those whose purity is 0. This definition needs to be modified in the discrete case to avoid identifying as maximally entangled states whose purity is a multiple of the field characteristic.
 
-\bigskip The results in other sections do not depend on Eq.~(27): the corrected version of Sec.~5.4 below has no influence on the rest of the article. 
+\bigskip The results in other sections do not depend on equation~(27): the corrected version of section~5.4 below has no influence on the rest of the article. 
 
 \subsection{Maximal entanglement}
 
@@ -113,7 +113,7 @@ In the case of finite fields, we need to modify this definition because modular 
 
 For instance, although product states and maximal purity can be identified when using complex arithmetic, there exist, in the discrete case, non-product states that also have maximal purity. 
 
-The first step in adapting Eq.~(27) to the discrete case is to eliminate the $1/n$ factor to avoid dividing by zero: 
+The first step in adapting equation~(27) to the discrete case is to eliminate the $1/n$ factor to avoid dividing by zero: 
 \begin{equation}
 \overline{P_{\fh}}=\sum\limits _{j=1}^{n}\overline{P_{\fh}^{j}}, \qquad\mbox{with~}
 \overline{P_{\fh}^j} = \sum\limits _{\mu=x,y,z}\langle\sigma_{\mu}^{j}\rangle^{2}\ ,
@@ -134,12 +134,9 @@ case, $\overline{P_{\fh}}=0$ is equivalent to
 \begin{equation}
 \forall j,\forall\mu,\braket{\sigma_{\mu}^{j}}=0\label{eq:john}\ .
 \end{equation}
-Eq. (\ref{eq:john}) defines maximally entangled states over $\ff{p^{2}}$
+Equation (\ref{eq:john}) defines maximally entangled states over $\ff{p^{2}}$
 as well. From this definition, the Bell states are maximally entangled,
-while a normalized state $\ket{\Psi_{2}}$ over $\ff{3^{2}}$ is not maximally entangled although $\overline{P_{\fh}^{j}}=0$ for all $j$, where
-\begin{eqnarray}
-\ket{\Psi_{2}} & = & \ket{01}+\ket{10}+\left(-1-\ComplexI\right)\ket{11}\ .
-\end{eqnarray}
+while the normalized state $\ket{\Psi_{2}} = \ket{01}+\ket{10}+\left(-1-\ComplexI\right)$ over $\ff{3^{2}}$ is not maximally entangled although $\overline{P_{\fh}^{j}}=0$ for all $j$.
 
 Computing some examples for various $n$ and small values of $p$,
 one can verify explicitly that unit-norm product states for $n=2$,
