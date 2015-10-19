@@ -60,9 +60,9 @@
 \end_preamble
 \use_default_options false
 \maintain_unincluded_children false
-\language english
-\language_package none
-\inputencoding iso8859-15
+\language american
+\language_package default
+\inputencoding auto
 \fontencoding T1
 \font_roman default
 \font_sans default
@@ -392,21 +392,17 @@ In both cases
 
 \end_inset
 
-Equation (
+In discrete case, it turns out that equation (
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:john"
 
 \end_inset
 
-) defines maximally entangled states over 
-\begin_inset Formula $\ff{p^{2}}$
-\end_inset
-
- as well.
+) is the one defines maximally entangled states.
  From this definition, the Bell states are maximally entangled, while the
  normalized state 
-\begin_inset Formula $\ket{\Psi_{2}}=\ket{01}+\ket{10}+\left(-1-\ComplexI\right)$
+\begin_inset Formula $\ket{\Psi_{2}}=\ket{01}+\ket{10}+\left(-1-\ComplexI\right)\ket{11}$
 \end_inset
 
  with 

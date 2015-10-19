@@ -1,0 +1,1042 @@
+(***********************************************************************
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used on any computer system with Mathematica 4.0,
+MathReader 4.0, or any compatible application. The data for the notebook 
+starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do one of 
+the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing the 
+word CacheID, otherwise Mathematica-compatible applications may try to 
+use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+***********************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     46955,        960]*)
+(*NotebookOutlinePosition[     47679,        986]*)
+(*  CellTagsIndexPosition[     47635,        982]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell[GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40005N000061000`40O003h00OogooGgoo003oOomO
+Ool00?mooemoo`00ogooGgoo000026jjL[aZ_7:kJ[ab_6ZkL[`3K[/01g:lK[a^^fjkK[a^^g:l00=^
+^`09K[ab_6jlK[aZ_7;LK[a^^fjl009^^`03L[aZ_7:k009^^`05K[ab_6kKK[a^^`03K[`026jkK[a^
+^fjlK]]^^fjlK[/2K[`01VjkL[a^^fjlK[]b_09^^`04K]ab^fZlL[`2K[/2K[`01fjjL]aZ_6jlK[]b
+_6jk009^_009K[]b_6jlK[]^g6jkJ[]^_6jk009^_0A^^`08L[a^_6ZkK[a^^fkLK[ab_09^^`0;K]a^
+_6kKL[]Z_6kKK[]^_7;LK[a^^`02K[`02FjkK]a^_6jkK[aZ_7:kK]a^_002K[/00fjlL[a^_002K[/0
+1FkLL[a^^fjlL_d00W;l00YboGLML_ac7G<LLaeg77<lMaec?0=g?@08Mcig?GLmMeig?GMMNeigG@9g
+GP0ENgmkGG]NMgikGG]oMgekOW]NNgikWW]nNeikWW]nNiikOg^NOgigWWnN009kWP0;Ogik_WnNNkik
+WWnONiio_gnnNimoW`02Okl02G^nOkmo_gnoOmmo_g^nOkmog`02Okl2Oml2Okl2Oml2Okl6Oml01Woo
+OmmoggooOmmoo`9og`03Oomoggoo009oo`03Ommoogoo06eoo`0000=44dPCB1<00TPC00I44dPCA1=8
+4dPDA1<2B1<00d@CB1=84`02A1<2B1<014@CB1=44dPB0TPC01Q44dPBB1A84d@CB1=44dPCA1A84d@C
+B1=44dPCA1=84dPBA1=84dPDB1=44dPCB1@2B1<01d@CB1=44dPCA1=44TPC00944`984`09A1=84dPC
+A1=854PCA1=84d@C00=84`07A1984d@CB1=44dPCA1<00TPC00E44dPCB1=84d@C00984`04A1=84d@C
+A1<2B1<01D@CB1<l4C`A@1000S`A00A043`A?150408l4@04@14l4C`@@142?1403D0@?14l4D0A?10l
+4D0A?10l4D0A?10l4D0B00904@07@1944T@CA19@54`ED9@00U1e00=@]EBeD;H00UCf0UDG01II5eEG
+FCMM>5UgFEMMUefHGGQM^5fgGKUQ^5gHHMQUf67IHOQQnF8IIQUR6@9V6@0OISYVFVHjISYZFVIjJUYZ
+NVIjJWYZNfZJKY]ZNVjKJY]Z^fjKJY]^^fjlK]]^_6jkK[a^nfkLL[]^g7;lL]`00Vkl02YboG;lLaeb
+o7<MMaac7G<LLaec?7<nMcag?G<lMeegGWMLMeig?G]NNeegGWMmMeikGG]nNgmgWG]nNeigWWmnNimk
+OW^oNgio_W^nOimkggnONmh2Okl01GoOOkmoogoOOkl00WoO00=oogoOOml0G7oo00003U3fE?ED]UCg
+E=EDmUBeE?I@mUCeE?I@]ECfD?H2E?H01UBfE?ED]UCgE?I@]@=DmP0@E;EDee3fE;IDmECfD?IDmUBe
+E?IDmE3fE?ED]UCGE;D2E?H03eBgE?E@]UCeE?MDmE3FE?E@mUBfE?EDme3eE;IDm`02E?H04eCeE=MD
+mECFD?ID]UCfE?EDmUBeE?IHmeCEE?ED]UCgD?IDmUCe009DmP08D?ID]ECfE=IDmeCeD;IDm@=DmP0B
+E;MDmECfE?EDmUCFE?ID]UCFD?MLdEBfE?ID]U2eE;I@mUBf0UBe01m@mUBfD;ED]UCfE;ED]U2eE?ID
+]U3eE;I@mUBeD;ID]eCfE?EDmeTGEAEE5eTgFEMEEUUHGGMMF5fGGIQQ^002GKP0667HIMQMn6GIHOUR
+66GiHQYV6F8IJUYV>FHJJUYVFVYJJW]VFVZJJU]VVfYjKW]^V`9ZV`0?K[]ZVfjkKY]^ffjkK[a^fg:l
+K]]bo6kLL]]boFkl00Abo00<Laec77;lLaac7GLLLaec77LmLceg7G<m1GLm0WMM00agGWLmNeigGG]N
+NeegGgMMNgigOW]mNel2Ngh04W^NNgmkWW^ONgik_WnONiioWW^NNkmoWg_NOimoggnNOmmk_`=o_`9o
+g`03OkmoogoO00=ogf9oo`0000AD]E2fD9A<509<5@08E;ID]E1fD7ED]EBfC1A@5@9<500aC1E@5D`D
+D7ED]E2fD1A<5E0DD7E@54`EC1A@5EAeE;I@MD`ED1A<5E0DD;I@U4`DC1E<551eD7A<5E0DC1E@54`E
+D1A@5E1eC1A@5E1eE;I@]50EE;EDMU0EC3A<5E0DC1D00T`D00=D]U2eD1D00T`D011@5E1fC1A@54`E
+D1A@]UBfD7E@54`EC1A@UEBeE;I<5@=<500XD9A@MD`ED1A@MUBeD9E<550EC1A@MU3GE?E@]E2fE;I@
+mE2fE;E@]UCfE;E@]UCFD?E@]UBfE;E@mUBeE;I@eUBeE;I@mUBeE?I@]ESfE=D2EAL07UUFFAMI=Udh
+FGIIN5egFIQIUefGHKUM]f6iGKQQfF7HHOUUnF8HIOUR6FGjHQUVFVHiIUYZ>VHjIUYZNP9ZFP0GJW]Z
+VfZJKWYZVfjkJY]^VVjkJY]b_6ZKK]]^_6kKK]a^^g;LK]abfg;MK_abg004L_`00g<ML_ac7002Lad0
+37LMLaag?G<LMcec?GLmLceg?W<lMaigGP=gG@06NeicOG]nNeegOgMN0W]n00=gOG]nNgh00g]n00ik
+WW^ONgikWW^nNimo_g^NOkmkWgnoNiiogg^n0Wno00=oggnoOml00WoO00=o_gooOml00WoO00AoogoO
+Oomogeioo`0006YD]U1eHOUboFYjL_aE5E0FGIQQn50EE?E^g6jKISY^VfkKJW]^g67HD1EQ^6kLISU^
+_5fhJW]^VfXjK]aMf50DGKQbo6IJJW]^Vd`EJUY^g6HiL[aQf6HIK[aV6VjkJY]^Vg;lHOYMMfkLK[]V
+6E0DEAMUnD`EFIMbo6YKJWYZVfjKK[]^Nd`EE;I^g6IKKW]VNUfGL_aV>VjKKW]@MU1dIQUbo6HjJ[]Z
+>TaeB1=bo7^oMaegGUTGGMQb_6klHKQ@5F6hK]aV>G;LHMQ@U52fE;IDm@9D]P0?E;E@mUBfE;ED]U3f
+E;ED]UBeD?ID]UBeE;I@mUBe009D]P0KD;ED]U2eE?IDeUSgEAII5UTGFCIIF5UGGGQMEeUhGIMQN66I
+GKMQV5gHHMQMf6GIHQQQfF7i009V6@09HQUVFFHIISYZ>VHjIUYZNFXj009ZN`9ZNP9ZV`08JYY^NfjK
+KY]ZVfkLKY]^f`=^^`03K]]b_6kk009^g007Laa^fg;mL_ac77;lL_d00W<L00QboG<LLaec77<MLaag
+?G<M1GLm00mgGGLlMcigGGMNMeekGWMMNeikGGMMNgigOG]oMgd00W]n00=gWG]oNgh00g^N00UoOg^o
+Ogik_g^NOkikWgnnNkl00Wno00=oggnoOml00Wno0goO00IoogoOOomoggooOmmOOol0000RD;EDMUDf
+L_aoof8IE;I<4fXjOom44e1eHOUkOWooNgmI5WooKY]DmE1fE?EZNgooOkm@M5DFNkioofYjE?M@METG
+HQT2Ool06ETGD1EEEWLNOom^o5BfEAIg?GooKW]MMefGHMQooeUhMcaooeBfD1EMMgooB1=DmUUG009o
+o`07E=Ig?GooE?ID]E2EFGL00Woo00=I5eBfGOP00Woo00UIEeAdD7IE5VYKOomoWeCeB1<00Woo01UH
+mdadKY]oof6HOom^Ve3fD7IDmFYKOomoge2fE;ID]E3fE;ID]EBfE?ID]EBfD;IDm@02E;H01U2eE?ID
+]EBfD;IDm@9D]P0TD;EDmUBfE;IDmUBeDAIDmETGE=MIEUDgFCII=eUfGGQIUeUhGIMM]f6iGKQQ^5fh
+IOUMf6GIHQQUnF7iHQUUnFHJIUUV6VII0VYJ00QVFVYJIUYZNVYkJWYZNfik0VZK00A^VfZKKYY^V`9^
+^`0<K[a^ffjlK_a^fW:lK_]bg6kLK_abnfkM0g;l00ac7G;lLaec7GKlLaeg7G<mLaeg?7<mMah2Mcd0
+17MNMcegGWLm0WMM00akGWMMMeigOGMONgegGG]nNgekOgMmNgl3Nih03G]nNimkWW^nOgik_W^OOimk
+_gnnNkmoWg^o009o_`05Nkmo_goOOkmkg`06Oml4Ool00goOOomoo`1JOol0001WE;I@mE2EA1=ogdPD
+D;E<56jKOomQfD`DD1E@UGooHMQ44efGK[a<55BfB1AQV7ooE?E@5D`EGCQooeCFD1A@]U2eA19oogMN
+B1=DmE0EC1Aoof6hC1E@550EOomIUd`DD7I855fgNgi857MNC1=<5F7hOom^^dPDB1=kOWooA1=84g^N
+B1A@]UBeA19oog;lB1A@]D@COomoOT@CD;IDmU1e@19oofijA1=V>GooB1A@553EB1AVFWLMD;A^g4`D
+E?E<55fHOomD]U0ED;D00UBf00MD]E3fE;E@]EBfD?ID]@02E;H01U3eE;ID]EBfD?ID]@9D]P0BD?ED
+]UBeE;IDmE2eE;IHmeDFEAMI5UDGFAMMMeUGFGQIMeeH0UfG00MMN5fHHKQM^67HGMQQf@02HOT026Gi
+HQUV6FHiHQYV6FIIJSX2ISX016IjJUYZNVYk0VYj00MZNfZjKW]Z^fZKKY]Z^`02K[/03FjLK]]^_7:k
+K[]bg6kLL]a^o6kKL_aboG;k009bo00JL_ebo7;lL_ec77<MMcac7G<LMcac7GLmLcag?G<mMcegGWML
+MeigGGMNMcekGWMmNcigO@9kOP0LNeikOgMmNgikWW]NNiikOW^NNgik_W]nNkmoWW^NNkioWg^oOkmo
+WWoONkioggnoOmmo_gooOkl2Oml017ooOmmoogoO0Woo00=oggooOol0G7oo00002E2eE;IDmD`ELaeQ
+f51fC1Ag?P02Ool03T`DD7A@5GooL]a<4dPDOom<5D`CA1=boGooB1@2D;D0K52DOomV>D`EE;ED]TPD
+OimoodPDE;ID]DPDOom^g4`DE;I84gooL]a<4e2fFAI<5E2EC1=kOU1fC1A^W7ooOkm@5DPCL_eoodPD
+C1EbffXjB1=855BfOomQnE0DE;I<57]nOom84eCfE;EDmTPCOomo_d0BNgiood@CE?ID]EBfC1=MfD`D
+Omm@5D`D@1=foGooB1AD]E3hE?ID]UCgE;EDmeBfE?ID]UCgD;EDmeBfE?I@]UCfE;IDme2eE?MD]UCf
+D;IDmUBfF=M@mECeF=MI5UTHFCIIE`9I=`0XGGQMMeVHGIMMV5fGHKQM^67HHKUQn67HHMUQn67iIOQR
+6VGjIQUVFFHJHSYZNVHjJUUVNfIJJWYZNfZJKW]ZNfZjKW]^VfZkKY]ZVfjlK]/2K[/03FklK[]^g7;K
+K]abg6kLL]]bo7;mLaa^o7<L009c7@05Maabo7<MLaeg7002Lad05WLlMcig?G<mMcecGGLmMcigG7MN
+NeegGWMMNeicOG]NMeigOWMmNgikOg]M0W^N015kOW^ONgikWWmoNkikOW^oOimk_WnNNkmk_W^oOiio
+ggnn009o_`04Oomo_gooOkl4Oml01GooOmmoogooOml0GGoo000025CfE;I@]U1eHOQc?50DB1@2Ool0
+36HIL_a<54PDOomkGT`DD1EQf7ooMeikG@9oo`1:B1=@mUBeB1AoofjLC1ADmU2eC1Ag7Goo@19<550E
+A19oognNB1ADeDPDOomg?T0BC1AoOd`CE;I@5G:lHMQ44goOOomI5WLmA1=^VgooB1=DMD`EOomgGW]M
+Ommooe2eD9ED]D`DK]aoodPDE;ED]U2eB1Ao_goo@15o_gooB1A@]EBfD;E@mUBEC1EQf7ooMeekG@9o
+o`09B1=@]U3HE?I@]U2eE;I@mUBe009@]P06E?ED]U2eE;IDmU2e0UBf00a@mEBfE;E@]UBfE;E@mU2f
+E?ED]UCfE?D2EAL03EUGFAII=eeHFGIIF5egGIQIUf6hGIQQ^5fi009Qf003HMUQn68I009Qn@0<ISUR
+6FIIIQYV>FYJISUZFVIJJU]ZFVYj0VYk00IZNVZKKW]ZVfZkKYX2KY/02VkKJ[]b^f[LK[]b_6kKK[]^
+o7;L0Vkl01eboG;LL_abo7<LM_ac77;mLaac7GLLLaec?GLlLaeg?G<mMcegGGLMMcegGGMNMcegGWMM
+MeigOW]N009gG@=kOP0@NeegWg]NMiikWW]mNimkWW^nOgik_WnNNkmoWW^oOih2Okl01G_ONimoggno
+Oml00gno00AoggooOmmoo`=ogf1oo`0000i@]EBeE;I@]E0EOim854PCOomoWT0BOom<5DPC0Woo00U8
+55BfB1Aoge0EB1Aoog<MC1@00UBf00e44gooOim84eBfE?I<56HkOomZ>VZKKY]V>P02Ool0?DPDE;I8
+57^NOomb_7oOOom855BeD9EIUg<M@15oog]n@15o_dPDHKQooe1eD;E<57<MIQU857MNOom855BfD?I<
+56HIOom@UE1fE?ED]T`DK]aooc`AMcioodPCE;IDmUBfE;E@]EBfB1Aooe0EB1AoogLMC1=@mU2g009D
+]@0BE?ID]E2fE;IDmEBfD;ID]E3fE;E@]UBfD?ED]U2fE;E@mUBe0UBf00A@]EBfE;IDm@9De`0GEAEI
+5eTFECMIEeTfGGQIMeUHFIMQN5VHGKQM]f6hGKUQf67iHMUUnF7iISUQn@02IQT03FHiIU]V>FHjIUYZ
+NVHiJWYZFVIkJWYZVfij009ZV`0LKY]ZVfZkK[]^Vg:LJ[]b^fjlK]]^g7;LK]]^g7;kL_a^ng;mL_a^
+o7;lLaec77;lLaec77<MMa`2Lad09GLlLceg?GLmLcag?WMMMcegGG/nMeekGWMMNeigGG]oMgigGG]m
+MemkOW]mNimoGWNNNiikOW]oNiik_gmoNiioWW^oOimkggnO009o_P04Ommk_goOOkl4Oml01gnoOmmo
+ggooOmmoogoO05moo`0000iD]U2fE?ED]T`DMeeDMUCfOom^fd@CKYabo40B0Woo03E84eBeD1EZVegH
+B1=oofHIC1ADmU2eC1Ao_gooB1=DeU2eD1EMUgooIQUMN5ghFAMg?GooB1=D]D`DL_eooeCfJWYood`D
+D;I@]E0EMce84gooJY]<55gHKY]@MWooFEM@5U3DE;Ig?C`A009oo`0[B1=D]UBeC1EMN7ooGEQ@U52f
+E;E<5FYJOom44f6hOomD]E1eD;EDmE2fE;IDmU0DKW]MfDPCOomV6D`EE;ID]E2fE?ID]E2fE;IDmE2f
+E;ID]ECfE;D00UBf00IDmEBfE;ID]ECfE;D2E;H0<53eE;ID]U3eE;IE5UCeFAMHmUDgFEII=eUHFEIM
+N5fGGGMMV5fGHKQM^F6hGOQQf67IHQQUf68IHOUV6F8JIQUV>VHIISYZ>VIIJU]ZNVIJJW]^NVYjJY]Z
+NfZJKY]ZV`9^V`0@J[]b_6ZkL]]^_6kKK]ab^fklK]afg6klK]abgFlKL_d3L_`01FkmMaac7G;mMc`0
+0W<M01Ig?7<mMaig?7<mMcigGGLmMeegGW=LNeig?G]NMeekOWMMNeekOW]oNgekW@9kOP0AMiikOW]o
+OiikWW^nNgik_WnNMkmoWW^oOiik_gnOOmmkW`02Okl01goONkmoggoOOkmoggoo009og`=oo`03Ommo
+ogoo05aoo`0001m@]ECfD;I@]E0EJWYR6EehOomUnT`DB1=ood@BMeioodPDE;I@]EBeMciM>7ooFAM@
+UE1eE;I<4g;mOom85002E;H0;U1dD7IooegiC1=@MD`CISYood`EE;I<4fYjOom44dPCNgiE5e1dE;I<
+56jLISUoof6iD1A857]mE?Ioof7IC7ED]T`DLceDMWooL_e<552EE;ID]D`EOomVFU0E0UBf00Q<5EVG
+OomIEd@COomg7DPD0UBf011D]E2fC1A@eE0EMceM>7ooFAM@55BfE?ID]E2fE;IDm@9D]P0>E;E@mUBf
+E;E@]UCeE;I@]UBeE?I@]UBeE;I@m@9D]P08E;EDmUBfD;EHme4FFAIE5`9I5`05GGMI=eUhFGMIF002
+GIL01F6IGKMQ^5gHHKP00V7H00MQfV7hHOUUnFHiIOUV>@02ISX056IIISYZ>VIjJUYZNfYJIW]^VVYk
+K[]ZNfjKK[]ZVfjKKYYZVg;KJ[`2K[/066kKL]a^fW;LK]]bgG;kLaebg6klMaabo7<LL_aboG<LMaec
+7G<LMcec7GLlLceg7P=g?@0@Mcig?GMMMeigGGMNMeegOW]MMgigOGMNNgekOg]nMgh2Ngh057^NMiek
+Og^NOgmk_W]oNkioWW^oOimk_g^NOmmkWgoOOkmoggnoOml2Okl017ooOmmoggoo0WoO00=oogoOOol0
+GWoo0002E;H04eBeE;ID]ECfL[a^VgooEAI@UE0DJY]VFVXjOom<552eE;I<56Hi009oo`0PB1=E5V5h
+C1A<5FYjOom<4e2fD1AMN4PDOom^Vd`DE;I@MEfGOomIEe1dC7EQ^7ooFEM@5E2ED1EHmeCeD7IDmP9o
+o`0XD9A@MU1eHOQ^_7ooISU@552eD7ED]WnnOomQnD`DHMU<4e2fB1=oog;LC1A@]E2fFAI@5GooIQU8
+4fYJOom<550ED;E@eEBfLae@54`EIST2Ool0FD@CC1E@ME2eE?MD]UCfE;IDme2eE?MD]ECgE;IDmUBf
+E?MD]ECgE;EDmeBfE?ID]UCgE;EDme2eF?MDeUCeF?ME5eTGFCMIEUTgFEMMMeeHGIMMV5fGFIMM^66H
+GKQQf67iHMUQn67IIOUV>67iIQUR6FHjISUV>VYjISYVFVYjJUYVNVYjJW]VNVikJW]Z^VZKK[Y^VfZK
+L]aZ_6jKK[]^ng:lK]abg6kLK_abo6kLL]`00g;l00U^oGKmLaabo7<MLaac7GLMLa`00W<M01=g?GLl
+Mcec?GMMMcegGGMNNceg?WMmMeikGGMNMeekGg]mNgigG@02Ngh017^NOgigOWnO0g^N00aoWW^nOgik
+_WnONkikWgoONiioggnNOml2Okl00goOOkmoo`05Oml00gooOmmoo`1OOol00007D;E@mUBfE?E@]TPD
+L_/00Woo00a<552eE;I<57mnIUYooeSgD7EDeE2fB1<2Ool06DPCC1EooeSgA1=D]WooE;I855CfOolh
+47ooOim04eBeC1E857ooIQY8550EB1Aoof6i00984`05C1Aooe2fE7Dl4002Ool0GT`DD;ED]TPDNeeo
+og;LA1=D]U2eB1AkGWooE?I<57<lNem44T0AOomogd@CA19ogf7H>11oog;LA1=04WoOOom<54`EC1AQ
+^7ooB1AD]DPCOomogeVGOomQ^52EE;EDmU2fE;ED]U3fE;ED]U2eE?ID]U2eE;IDmU2eE;ID]E3fE;ID
+mE2fE?ID]E2fE;I@mUCfF=II5eDeEAMI=eUFFCMIN5UgHGQIMefHHIQM]efhHKQQ^EgHHOQQnF8H0V7i
+00=V6F8iIQX00VHi0VHj00eZFVIJJUYZNVYJJW]VNVikJYY^VfYkKY]ZV`02K[/04FjKK[]^_6kKK[a^
+nfjkK]abnfkLK]]c76kML_]c77;mL_/00W<M0W<L00Ic7G<LLaeg?G<LMcd2Lcd3Mcd03gMMLcegGGMN
+NeegGW]MMeigOG]nLeekOg]NNgigOP02Ngh05WMnNiikOWNNOiikOW^OOiik_gnONkioWWoONimoggno
+Nkmo_WoONkmo_goO0Wno00=oggooOml00WoO00=oogoOOol0GWoo0002E;H01E2eD;ID]U0DFGP00Woo
+00E84eBfE?I<568I009oo`0CEEM<55BfE;I857KlOmm854`DK[]oog;LMceoogoOK[]oogoOJWX00Woo
+00Ag?ECfFEMoW`9oo`03J_]I=gnN009oo`07L_aboGooOom84eTFMch00Woo00E855BfD=I@M5UG009o
+o`09LaeDmEBfD9A@]WooC1=@]T`D009oo`08L[aoogooKYYkWgooE;Ig7@9oo`07LaeDeD@BMeioofYj
+ISX00Woo04I<55BfC1Abg7^NHKUoof8ID1A@mU2fE;E@]U3fE;E@]U2eE?I@]U2eE;I@mU2eE;I@]E3f
+E;I@]E2fE;I@]E3fE;E@mUBfE=EDmUDFEAMI=eTFFEMM>5UfGGQIEefHFIMMV5fhHKQMf5fhHMQQfFGI
+HOQR6FHJHQUV6FHiIQYV>VIIJSYV>FYJIW]VFP9ZN`05KW]ZVfjKIWYZV`02KY/0<fjkKY]Z^g;KK[aZ
+^g:lK[]^ng:lL]a^g7;lK]]bo7;mL_a^ngKmLaebng;mMaebo7<mMaec77LmLaag?WLmLcec?7LnMeeg
+?GMNMeagGWMMMeigGG]NMgikGW]mMgekOg]mOeigWP02Ngh2Nih03G]nNimkWg^nOgik_gnOOkmkWW^o
+OkioWgoO009o_`=og`03OkmoogoO009og`05OomoggooOomog`1NOol0000>D;EDmUBfE;I@]51fJWYo
+ogoOB1AD]E2fE;I44`9oo`0[Nei@MEBeE;I@]DcEGCM@MEBfD7EM^5DFE=I855CfEAII=eehHKQ@]U2D
+IQU@]UTFHOQ<55CFIMUDmV7HC1AD]F7iHKUIUeAeD7E@mV7iE?ED]U2eE;D00UBf00A@55CfEAIR6@9D
+]P0XE?I<55TGD;ED]DbEGIMI=eDGC1A<5ETgE;EM^5BfHOU@5EBeIOUD]U2eC1A@]FYJJWYD]TPCE;ID
+mE2fD7EE5T`DFAM@55BfE;ED]UCfE;D2E;H01UCeE;ID]EBfE?ID]@9D]P06E?ED]UBeE;IDmUBe0UBf
+021D]EBfE;EDmUCgF=IE5UTGFAIIEeDgFEMMEeUhGGQIUf6HGGMQ^EfhHKQQ^EghHMUQnF7HIQUQn6Gi
+HQ]V6FHi0VHj0VIJ0VYJ01QZNVYJIW]ZVVYjKW]^^fjKIY]^^fjJJY]bVfZkK]]b^fjkL[a^g6kkL]a^
+g6klL]`2L_`03VklL_abo7;lLaec77;mLaec77<MMcec77LmLc`2Mcd04GLnMceg?WMMMaegGW]MMeig
+GG]NMeekGWMmMgmkGG]nMgh00W]n0W^N00=kOW^NOil00g^N00Yk_gnNNkikWgnoOiio_g^nNkmog`9o
+_`05Ommo_gooOkmoo`05Oml2Ool00goOOomoo`1KOol0000DE;ID]ECfD;E@5G^NNeibo6HjD1EDmUBe
+E;I@567IMcebo7oOEAM@]@9D]P0ND7ED]U2fE;E@5E1eE=ED]U1eE7I@UE1dD7IDM51fD9EDME2fD7ED
+]E1fD9A@]U2EE7E@MU2ED7A@5E2e0UBf015@U5AeD;I@]EBfE;E@mUBfD9A@MU1eE;E@]UBeE;I@eUBe
+009D]P03D7A@MU2D009D]P1<D9ADMU1eD;E@5E2dD7I@UEBeD;ID]U2eD1E@552fD=ID]EBfD;ID]EAf
+E;E@]UBfD;ED]UCfD;ED]UBeD?ID]UBeD;IDmUBeD;ID]ECfD;ID]EBfD?ID]EBfD;EDmUBfD;EDmUCF
+EAE@mUTGF=IEEeDfGEMI=eUgGGMIUeeHGIMIV5fgHIUQf5gHIMQQfF7HHQQUnV7iHST2IQT03FHiISYZ
+>FHjJS]VFVYjIUYZNfYjJUYZNfjk009ZN`0AK[Y^NfZkKYa^ffjKK[a^^fkkK[a^^fkLK_abg6kKL_eb
+g002L_`036lLLaaboG<kM_ec7GLLLaeg77<LLaec?@9g?@04Lceg?GLmMcd2Med02GLnMeeg?W]MMgik
+GW=MNemkG@02Ngh01g^NMeikWW]nNgmkWW]n00=kWP08OimkWW^oNiiogg^NOkmk_`Ao_`04Ommo_goO
+Okl3Oml00gooOmmog`1QOol0002CE;E@]UBfE=I@]D`DC1E<550EE;I@]ECFE?I@]U0DC1A<5D`DE;I@
+eUBeE;I@mUBfE;E@eUCfE;I@]EBfE?I@]UBeE=I@mUBfE;E@]UCfE;I@]ECFE?I@]UBeE;I@mUBfE;E@
+eUCfE;I@]EBfE?I@]UBeE=I@mUBfE;E@]UCfE;I@]ECFE?I@]UBeE;I@mUBfE;E@eUCfE;I@]EBfE?I@
+]UBeE=I@mUBfE;E@]UCfE;I@]ECFE?I@]UBeE;I@mUBfE;E@eUCfE;I@]EBfE?I@]UBeE=I@mUBfE;E@
+]UCfE;I@]ECFE?I@]UBeE;I@mUBfE;E@eUCfE;I@]EBfE?ID]U2eF=ME5EDGFAMI5UTGFGQMEeEGGGQM
+MeVGHIQMUefhGKMM^F6h009Mf00ZIQUQfF7hIOUV6V8iIQUV6VIIISYZ>VIIIUYZFVYkIUYZNfZJIWY^
+NfZjJ[]ZVfjkKY]^^VZlK]a^^fkLK[]bg6kKL]a^ffkLL_a^ng;ML_ac7G;k0g;m00mc6g<MLaeg77<M
+Mcec77LlMcig7GLmLcig?GMMMch00WMM019gGW]MMeigGGMnNgegOGMnNgigGW]mNiigOW]nNgek_W^N
+Ogl3Nih01WnnNiio_g^OOkmk_P9o_`06OkioggnoNkmoggno1WoO00=oogoOOol0Ggoo0000Oe2fE=ID
+]UCFE;IDeUBfE=ID]UCFE;IDeUBfE=ID]UCFE;IDeUBfE=ID]UCFE;IDeUBfE=ID]UCFE;IDeUBfE=ID
+]UCFE;IDeUBfE=ID]UCFE;IDeUBfE=ID]UCFE;IDeUBfE=ID]UCFE;IDeUBfE=ID]UCFE;IDeUBfE=ID
+]UCFE;IDeUBfE=ID]UCFE;IDeUBfE=ID]UCFE;IDeUBfE=ID]UCFE;IDeUBfE=ID]UCFE;IDeUBfE=ID
+]UCFE;IDeUBfE=ID]UCFE;IDeUBfE=ID]UCFE;IDeUBfE=ID]UCFE;IDeUBfE=ID]UCFE;IDeUBfE=ID
+]UCFE;IDeUBf009DeP06E?EHeeTGEAMI=eTf0UTg00EMMeeHFIMMV5Ug009Q^00:GKUQ^5gHHOUUfF7h
+IOUQnFHiHQT2IQT02fIIJSUV>fYJIUYZFfYjJUY^NfZJJW/00VjK00=ZNfjKKY/00VjK00IZ^g:LK[]b
+^f[KL[`2K]/02VkLL]abnfklL]a_6g;mL_]boG;l0W<L01IboG<MLaac7GLmLaag?W<MLceg?G=MMcag
+?WMLMeikGGMNNeegGW]mMeikG@9gGP0BNgikGW]nNeikOW]NMimkWW]nNgmkWW^oNgio_g]oOkmkWg^n
+0Wno00Ek_gnoNmmo_gnn00Eog`05OomoggooOomog`03Ool00goOOomoo`1KOol00025?10l4C`@?14l
+43`A?10l4C`@?14l43`A?10l4C`@?14l43`A?10l4C`@?14l43`A?10l4C`@?14l43`A?10l4C`@?14l
+43`A?10l4C`@?14l43`A?10l4C`@?14l43`A?10l4C`@?14l43`A?10l4C`@?14l43`A?10l4C`@?14l
+43`A?10l4C`@?14l43`A?10l4C`@?14l43`A?10l4C`@?14l43`A?10l4C`@?14l43`A?10l4C`@?14l
+43`A?10l4C`@?14l43`A?10l4C`@?14l43`A?10l4C`@?14l43`A?10l4C`@?14l43`A?10l4C`@?14l
+43`A?10l4D0A?1504D0BA1400T@C02U44T@CB1=84dPDB1=<54PCC1E@54adD7E@M52eD;I@eECeD=II
+5UDFECMI=UDfFGIIEeUgFIIIMefGFKMMN5fgGMQM^67HGMQQn67iHOQQnF8H009R6@0?IQUR>FHiISYV
+>FHjIUYZFVIJJUYVFVYjIWYZNVYk009ZVP9ZV`04JYY^VfZkJ[X2K[/036kKK[]^ffkKK]a^ffklK_]^
+o7;lK_abo0Ec7009Lcac?G<lMcag7G=MMcecG7Lm00=gG@04Mgeg?GMmNeh2Mgd027]mMgikOGNNNiik
+OW^NMih2Nih02W^ONkikWW^oOkmk_WoONkmogg_O0WoO00=oogoOOol0Egoo0000\
+\>"], "HeaderCell",
+  ShowCellBracket->False,
+  CellMargins->{{0, 0}, {Inherited, 0}},
+  Evaluatable->False,
+  ImageSize->{350, 24},
+  ImageMargins->{{0, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  FontWeight->"Bold"],
+
+Cell[TextData[{
+  StyleBox["Partial Trace of a Multi-qubit System",
+    FontSize->40],
+  "\n",
+  StyleBox["by", "Author"],
+  "\n",
+  StyleBox["Mark S. Tame", "Section",
+    FontFamily->"Arial",
+    FontSize->18],
+  StyleBox["\nSchool of Mathematics and Physics, Queen's University, Belfast. \
+ UK.\n", "Author",
+    FontFamily->"Arial",
+    FontSize->12],
+  StyleBox["m.tame@qub.ac.uk", "Text",
+    FontFamily->"Arial",
+    FontSize->9,
+    FontSlant->"Italic"],
+  StyleBox["\n", "Author",
+    FontFamily->"Arial",
+    FontSize->12]
+}], "Title",
+  FontWeight->"Bold"],
+
+Cell[CellGroupData[{
+
+Cell["Introduction", "Section"],
+
+Cell[TextData[{
+  StyleBox["For many situations in Quantum Information Theory it is necessary \
+to trace out a subgroup of qubits from a larger group. For example, suppose \
+Alice, Bob and Charlie each have a qubit with the total system described by \
+the density matrix ", "Commentary"],
+  Cell[BoxData[
+      \(TraditionalForm\`\[Rho]\_ABC\)]],
+  StyleBox[". If we would like  to examine more closely the subsystem of \
+qubits shared by just Alice and Bob we need to take the trace:\n ", 
+    "Commentary"],
+  Cell[BoxData[
+      \(TraditionalForm\`\[Rho]\_AB\)]],
+  StyleBox["=", "Commentary"],
+  Cell[BoxData[
+      \(TraditionalForm\`\(Tr\_C\) {\[Rho]\_ABC\ }\)]],
+  "\n",
+  StyleBox["However for large multi-qubit systems, calculating this by hand \
+becomes quite unmanageable. What the ", "Commentary"],
+  StyleBox["TraceSystem", "InlineInput"],
+  StyleBox["  function does, is allow you to trace out an arbitrary number of \
+qubits from a large system of N-qubits by getting ", "Commentary"],
+  StyleBox["Mathematica", "Commentary",
+    FontSlant->"Italic"],
+  StyleBox[" do the work for you:\n", "Commentary"],
+  StyleBox["TraceSystem[", "InlineInput"],
+  Cell[BoxData[
+      \(TraditionalForm\`\[Rho]\_sys\)]],
+  ", {1,3,6,...}",
+  StyleBox["] = ", "InlineInput"],
+  Cell[BoxData[
+      \(TraditionalForm\`Tr\_\([1, 3, 6,  ... ]\)\)]],
+  StyleBox["{", "InlineInput"],
+  Cell[BoxData[
+      \(TraditionalForm\`\[Rho]\_sys\)]],
+  "}\n",
+  StyleBox["Where ", "Commentary"],
+  Cell[BoxData[
+      \(TraditionalForm\`\[Rho]\_sys\)]],
+  StyleBox[" is in the computational basis eg. for 2 qubits we have:\n", 
+    "Commentary"],
+  Cell[BoxData[
+      TagBox[GridBox[{
+            {
+              "Basis", \(\(\(<\)\(00\)\)\(|\)\), \(\(\(<\)\(01\)\)\(|\)\), \(\
+\(\(<\)\(10\)\)\(|\)\), \(\(\(<\)\(11\)\)\(|\)\)},
+            {\(\(|\)\(\(00\)\(>\)\)\), "a", "b", "c", "d"},
+            {\(\(|\)\(\(01\)\(>\)\)\), "e", "f", "g", "h"},
+            {\(\(|\)\(\(10\)\(>\)\)\), "i", "j", "k", "l"},
+            {\(\(|\)\(\(11\)\(>\)\)\), "m", "n", "o", "p"}
+            }],
+        (MatrixForm[ #]&)]]],
+  "                            ",
+  Cell[BoxData[
+      \(TraditionalForm\`\[Rho]\_sys\)]],
+  "= ",
+  Cell[BoxData[
+      RowBox[{
+        TagBox[
+          RowBox[{"(", GridBox[{
+                {"a", "b", "c", "d"},
+                {"e", "f", "g", "h"},
+                {"i", "j", "k", "l"},
+                {"m", "n", "o", "p"}
+                }]}],
+          (MatrixForm[ #]&)], ")"}]]],
+  "\n",
+  StyleBox["To use the function, you must evaluate it first in ", 
+    "Commentary"],
+  StyleBox["The Code", "Subtitle",
+    FontSize->12,
+    FontSlant->"Plain",
+    FontColor->RGBColor[0.500008, 0, 0.500008]],
+  StyleBox[" section. Then it is straightforward to use, see the ", 
+    "Commentary"],
+  StyleBox["Examples", "Subtitle",
+    FontSize->12,
+    FontSlant->"Plain",
+    FontColor->RGBColor[0.500008, 0, 0.500008]],
+  StyleBox[" section for its possible uses. ", "Commentary"]
+}], "Text",
+  TextJustification->1,
+  FontWeight->"Bold"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["The Code", "Section"],
+
+Cell[TextData[{
+  StyleBox["Here is the code for the ", "Commentary"],
+  StyleBox["TraceSystem", "InlineInput"],
+  StyleBox["  function to trace out an arbitrary number of qubits from an \
+N-qubit quantum system. Evaluate the cell below and you can use it. For more \
+help, please see the ", "Commentary"],
+  StyleBox["Examples", "Subtitle",
+    FontSize->12,
+    FontSlant->"Plain",
+    FontColor->RGBColor[0.500008, 0, 0.500008]],
+  StyleBox[" section:", "Commentary"]
+}], "Text",
+  FontWeight->"Bold"],
+
+Cell[BoxData[{
+    \(SwapParts[expr_, \ pos1_, \ 
+        pos2_]\  := \ \(ReplacePart[#, #, \ {pos1, pos2}, \ {pos2, pos1}] &\)[
+        expr]\), "\n", 
+    \(TraceSystem[D_, \ 
+        s_] := \ \((\[IndentingNewLine]\[IndentingNewLine]Qubits = 
+          Reverse[Sort[s]]; \[IndentingNewLine]TrkM = 
+          D; \[IndentingNewLine]\[IndentingNewLine]z = \((\(Dimensions[
+                  Qubits]\)[\([1]\)] + 
+              1)\); \[IndentingNewLine]\[IndentingNewLine]For[q = 1, 
+          q < z, \(q++\), \[IndentingNewLine]n = 
+            Log[2, \((\(Dimensions[
+                    TrkM]\)[\([1]\)])\)]; \[IndentingNewLine]M = 
+            TrkM; \[IndentingNewLine]k = 
+            Qubits[\([q]\)]; \[IndentingNewLine]If[
+            k \[Equal] 
+              n, \[IndentingNewLine]TrkM = {}; \[IndentingNewLine]For[p = 1, 
+              p < 2\^n + 1, 
+              p = p + 2, \[IndentingNewLine]\(TrkM = 
+                  Append[TrkM, 
+                    Take[M[\([p, All]\)], {1, 2\^n, 2}] + 
+                      Take[M[\([p + 1, All]\)], {2, 2\^n, 
+                          2}]];\)\[IndentingNewLine]\ ], \
+\[IndentingNewLine]\(For[j = 0, 
+                j < \((n - 
+                      k)\), \(j++\), \[IndentingNewLine]b = {0}; \
+\[IndentingNewLine]For[i = 1, 
+                  i < 2\^n + 
+                      1, \(i++\), \
+\[IndentingNewLine]If[\((Mod[\((\(IntegerDigits[i - 1, 2, 
+                                    n]\)[\([n]\)] + \(IntegerDigits[i - 1, 2, 
+                                    n]\)[\([n - j - 1]\)])\), 2])\) == 
+                        1\  && \ Count[b, \ i]\ \  \[Equal] 0, \ 
+                    Permut = {i, \((FromDigits[
+                              SwapParts[\((IntegerDigits[i - 1, 2, \ 
+                                    n])\), {n}, {n - j - 1}], 2] + 
+                            1)\)}; \[IndentingNewLine]b = 
+                      Append[b, \((FromDigits[
+                              SwapParts[\((IntegerDigits[i - 1, 2, \ 
+                                    n])\), {n}, {n - j - 1}], 2] + 
+                            1)\)]; \[IndentingNewLine]c = 
+                      Range[2\^n]; \[IndentingNewLine]perm = 
+                      SwapParts[
+                        c, {i}, {\((FromDigits[
+                                SwapParts[\((IntegerDigits[i - 1, 2, \ 
+                                      n])\), {n}, {n - j - 1}], 2] + 
+                              1)\)}]; \[IndentingNewLine]\[IndentingNewLine]M \
+= M[\([perm, 
+                          perm]\)];\[IndentingNewLine]\[IndentingNewLine]\ ]\ \
+\ \ \ \[IndentingNewLine]]\ \ \ \ \ \ \ \ \ ; \[IndentingNewLine]TrkM = {}; \
+\[IndentingNewLine]For[p = 1, p < 2\^n + 1, 
+                  p = p + 2, \[IndentingNewLine]\(TrkM = 
+                      Append[TrkM, 
+                        Take[M[\([p, All]\)], {1, 2\^n, 2}] + 
+                          Take[M[\([p + 1, All]\)], {2, 2\^n, 
+                              
+                              2}]];\)\[IndentingNewLine]]\[IndentingNewLine]\ \
+\ \ ];\)\[IndentingNewLine]]\[IndentingNewLine]\[IndentingNewLine]]\
+\[IndentingNewLine]\[IndentingNewLine]; Return[TrkM])\)\)}], "Input"],
+
+Cell["\<\
+
+
+\
+\>", "Text",
+  FontWeight->"Bold"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Examples", "Section"],
+
+Cell[TextData[{
+  StyleBox["Here are some examples of how it works. Just to remind you again, \
+the density matrix must be in the computational basis eg. \
+|0000...0><0000...0| corresponds to element ", "Commentary"],
+  StyleBox[Cell[BoxData[
+      \(TraditionalForm\`\[Rho]\_00\)], "Commentary"], "Commentary"],
+  StyleBox[", with qubits numbered from 1 to N. ", "Commentary"],
+  StyleBox["TraceSystem", "InlineInput"],
+  StyleBox[" has 2 arguments, the density matrix ", "Commentary"],
+  StyleBox["\[Rho]", "InlineInput"],
+  StyleBox[" and the list of qubits to trace out eg.", "Commentary"],
+  StyleBox[" {2, 3}", "InlineInput"],
+  StyleBox[". This list can be as long as you want and entered in any order, \
+as it is reordered within the function anyway.\n", "Commentary"],
+  StyleBox["- Example 1.", "Commentary",
+    FontSize->12],
+  StyleBox["\nIn this example we have a three qubit system and we are tracing \
+out the last qubit (qubit 3):", "Commentary"]
+}], "Text",
+  TextJustification->1,
+  FontWeight->"Bold"],
+
+Cell[BoxData[
+    RowBox[{
+      RowBox[{"TraceSystem", "[", 
+        RowBox[{
+          TagBox[
+            RowBox[{"(", "\[NoBreak]", GridBox[{
+                  {"a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8"},
+                  {"b1", "b2", "b3", "b4", "b5", "b6", "b7", "b8"},
+                  {"c1", "c2", "c3", "c4", "c5", "c6", "c7", "c8"},
+                  {"d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8"},
+                  {"e1", "e2", "e3", "e4", "e5", "e6", "e7", "e8"},
+                  {"f1", "f2", "f3", "f4", "f5", "f6", "f7", "f8"},
+                  {"g1", "g2", "g3", "g4", "g5", "g6", "g7", "g8"},
+                  {"h1", "h2", "h3", "h4", "h5", "h6", "h7", "h8"}
+                  }], "\[NoBreak]", ")"}],
+            (MatrixForm[ #]&)], ",", \({3}\)}], "]"}], " ", "//", 
+      "MatrixForm"}]], "Input",
+  CellGroupingRules->"OutputGrouping"],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {\(a1 + b2\), \(a3 + b4\), \(a5 + b6\), \(a7 + b8\)},
+            {\(c1 + d2\), \(c3 + d4\), \(c5 + d6\), \(c7 + d8\)},
+            {\(e1 + f2\), \(e3 + f4\), \(e5 + f6\), \(e7 + f8\)},
+            {\(g1 + h2\), \(g3 + h4\), \(g5 + h6\), \(g7 + h8\)}
+            }], "\[NoBreak]", ")"}],
+      (MatrixForm[ #]&)]], "Output"],
+
+Cell[TextData[{
+  StyleBox["This leaves us with the density matrix for qubits 1 and 2.\n\n", 
+    "Commentary"],
+  StyleBox["- Example 2.\n", "Commentary",
+    FontSize->12],
+  StyleBox["In this example we have a three qubit system and we are tracing \
+out qubits 2 and 3:", "Commentary"]
+}], "Text",
+  TextJustification->1,
+  FontWeight->"Bold"],
+
+Cell[BoxData[
+    RowBox[{
+      RowBox[{"TraceSystem", "[", 
+        RowBox[{
+          TagBox[
+            RowBox[{"(", "\[NoBreak]", GridBox[{
+                  {"a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8"},
+                  {"b1", "b2", "b3", "b4", "b5", "b6", "b7", "b8"},
+                  {"c1", "c2", "c3", "c4", "c5", "c6", "c7", "c8"},
+                  {"d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8"},
+                  {"e1", "e2", "e3", "e4", "e5", "e6", "e7", "e8"},
+                  {"f1", "f2", "f3", "f4", "f5", "f6", "f7", "f8"},
+                  {"g1", "g2", "g3", "g4", "g5", "g6", "g7", "g8"},
+                  {"h1", "h2", "h3", "h4", "h5", "h6", "h7", "h8"}
+                  }], "\[NoBreak]", ")"}],
+            (MatrixForm[ #]&)], ",", \({2, 3}\)}], "]"}], " ", "//", 
+      "MatrixForm"}]], "Input",
+  CellGroupingRules->"OutputGrouping"],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {\(a1 + b2 + c3 + d4\), \(a5 + b6 + c7 + d8\)},
+            {\(e1 + f2 + g3 + h4\), \(e5 + f6 + g7 + h8\)}
+            }], "\[NoBreak]", ")"}],
+      (MatrixForm[ #]&)]], "Output"],
+
+Cell[TextData[{
+  StyleBox["Leaving us with the density matrix for qubit 1.\n\n", 
+    "Commentary"],
+  StyleBox["- Example 3.\n", "Commentary",
+    FontSize->12],
+  StyleBox["In this example we have a four qubit system and we are tracing \
+out qubits 1 and 4:", "Commentary"]
+}], "Text",
+  TextJustification->1,
+  FontWeight->"Bold"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(\(Psi = {{a1}, {b1}, {c1}, {d1}, {e1}, {f1}, {g1}, {h1}, {i1}, {j1}, \
+{k1}, {l1}, {m1}, {n1}, {o1}, {p1}};\)\), "\[IndentingNewLine]", 
+    \(\(rho = Psi . Transpose[Psi];\)\), "\[IndentingNewLine]", 
+    \(rho\  // MatrixForm\)}], "Input"],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {\(a1\^2\), \(a1\ b1\), \(a1\ c1\), \(a1\ d1\), \(a1\ e1\), \(a1\ \
+f1\), \(a1\ g1\), \(a1\ h1\), \(a1\ i1\), \(a1\ j1\), \(a1\ k1\), \(a1\ l1\), \
+\(a1\ m1\), \(a1\ n1\), \(a1\ o1\), \(a1\ p1\)},
+            {\(a1\ b1\), \(b1\^2\), \(b1\ c1\), \(b1\ d1\), \(b1\ e1\), \(b1\ \
+f1\), \(b1\ g1\), \(b1\ h1\), \(b1\ i1\), \(b1\ j1\), \(b1\ k1\), \(b1\ l1\), \
+\(b1\ m1\), \(b1\ n1\), \(b1\ o1\), \(b1\ p1\)},
+            {\(a1\ c1\), \(b1\ c1\), \(c1\^2\), \(c1\ d1\), \(c1\ e1\), \(c1\ \
+f1\), \(c1\ g1\), \(c1\ h1\), \(c1\ i1\), \(c1\ j1\), \(c1\ k1\), \(c1\ l1\), \
+\(c1\ m1\), \(c1\ n1\), \(c1\ o1\), \(c1\ p1\)},
+            {\(a1\ d1\), \(b1\ d1\), \(c1\ d1\), \(d1\^2\), \(d1\ e1\), \(d1\ \
+f1\), \(d1\ g1\), \(d1\ h1\), \(d1\ i1\), \(d1\ j1\), \(d1\ k1\), \(d1\ l1\), \
+\(d1\ m1\), \(d1\ n1\), \(d1\ o1\), \(d1\ p1\)},
+            {\(a1\ e1\), \(b1\ e1\), \(c1\ e1\), \(d1\ e1\), \(e1\^2\), \(e1\ \
+f1\), \(e1\ g1\), \(e1\ h1\), \(e1\ i1\), \(e1\ j1\), \(e1\ k1\), \(e1\ l1\), \
+\(e1\ m1\), \(e1\ n1\), \(e1\ o1\), \(e1\ p1\)},
+            {\(a1\ f1\), \(b1\ f1\), \(c1\ f1\), \(d1\ f1\), \(e1\ f1\), \(f1\
+\^2\), \(f1\ g1\), \(f1\ h1\), \(f1\ i1\), \(f1\ j1\), \(f1\ k1\), \(f1\ \
+l1\), \(f1\ m1\), \(f1\ n1\), \(f1\ o1\), \(f1\ p1\)},
+            {\(a1\ g1\), \(b1\ g1\), \(c1\ g1\), \(d1\ g1\), \(e1\ g1\), \(f1\
+\ g1\), \(g1\^2\), \(g1\ h1\), \(g1\ i1\), \(g1\ j1\), \(g1\ k1\), \(g1\ \
+l1\), \(g1\ m1\), \(g1\ n1\), \(g1\ o1\), \(g1\ p1\)},
+            {\(a1\ h1\), \(b1\ h1\), \(c1\ h1\), \(d1\ h1\), \(e1\ h1\), \(f1\
+\ h1\), \(g1\ h1\), \(h1\^2\), \(h1\ i1\), \(h1\ j1\), \(h1\ k1\), \(h1\ \
+l1\), \(h1\ m1\), \(h1\ n1\), \(h1\ o1\), \(h1\ p1\)},
+            {\(a1\ i1\), \(b1\ i1\), \(c1\ i1\), \(d1\ i1\), \(e1\ i1\), \(f1\
+\ i1\), \(g1\ i1\), \(h1\ i1\), \(i1\^2\), \(i1\ j1\), \(i1\ k1\), \(i1\ \
+l1\), \(i1\ m1\), \(i1\ n1\), \(i1\ o1\), \(i1\ p1\)},
+            {\(a1\ j1\), \(b1\ j1\), \(c1\ j1\), \(d1\ j1\), \(e1\ j1\), \(f1\
+\ j1\), \(g1\ j1\), \(h1\ j1\), \(i1\ j1\), \(j1\^2\), \(j1\ k1\), \(j1\ \
+l1\), \(j1\ m1\), \(j1\ n1\), \(j1\ o1\), \(j1\ p1\)},
+            {\(a1\ k1\), \(b1\ k1\), \(c1\ k1\), \(d1\ k1\), \(e1\ k1\), \(f1\
+\ k1\), \(g1\ k1\), \(h1\ k1\), \(i1\ k1\), \(j1\ k1\), \(k1\^2\), \(k1\ \
+l1\), \(k1\ m1\), \(k1\ n1\), \(k1\ o1\), \(k1\ p1\)},
+            {\(a1\ l1\), \(b1\ l1\), \(c1\ l1\), \(d1\ l1\), \(e1\ l1\), \(f1\
+\ l1\), \(g1\ l1\), \(h1\ l1\), \(i1\ l1\), \(j1\ l1\), \(k1\ l1\), \
+\(l1\^2\), \(l1\ m1\), \(l1\ n1\), \(l1\ o1\), \(l1\ p1\)},
+            {\(a1\ m1\), \(b1\ m1\), \(c1\ m1\), \(d1\ m1\), \(e1\ m1\), \(f1\
+\ m1\), \(g1\ m1\), \(h1\ m1\), \(i1\ m1\), \(j1\ m1\), \(k1\ m1\), \(l1\ \
+m1\), \(m1\^2\), \(m1\ n1\), \(m1\ o1\), \(m1\ p1\)},
+            {\(a1\ n1\), \(b1\ n1\), \(c1\ n1\), \(d1\ n1\), \(e1\ n1\), \(f1\
+\ n1\), \(g1\ n1\), \(h1\ n1\), \(i1\ n1\), \(j1\ n1\), \(k1\ n1\), \(l1\ \
+n1\), \(m1\ n1\), \(n1\^2\), \(n1\ o1\), \(n1\ p1\)},
+            {\(a1\ o1\), \(b1\ o1\), \(c1\ o1\), \(d1\ o1\), \(e1\ o1\), \(f1\
+\ o1\), \(g1\ o1\), \(h1\ o1\), \(i1\ o1\), \(j1\ o1\), \(k1\ o1\), \(l1\ \
+o1\), \(m1\ o1\), \(n1\ o1\), \(o1\^2\), \(o1\ p1\)},
+            {\(a1\ p1\), \(b1\ p1\), \(c1\ p1\), \(d1\ p1\), \(e1\ p1\), \(f1\
+\ p1\), \(g1\ p1\), \(h1\ p1\), \(i1\ p1\), \(j1\ p1\), \(k1\ p1\), \(l1\ \
+p1\), \(m1\ p1\), \(n1\ p1\), \(o1\ p1\), \(p1\^2\)}
+            }], "\[NoBreak]", ")"}],
+      (MatrixForm[ #]&)]], "Output"],
+
+Cell[BoxData[
+    \(TraceSystem[rho, {1, 4}]\  // MatrixForm\)], "Input",
+  CellGroupingRules->"OutputGrouping"],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {\(a1\^2 + b1\^2 + i1\^2 + j1\^2\), \(a1\ c1 + b1\ d1 + i1\ k1 + 
+                j1\ l1\), \(a1\ e1 + b1\ f1 + i1\ m1 + j1\ n1\), \(a1\ g1 + 
+                b1\ h1 + i1\ o1 + j1\ p1\)},
+            {\(a1\ c1 + b1\ d1 + i1\ k1 + j1\ l1\), \(c1\^2 + d1\^2 + k1\^2 + 
+                l1\^2\), \(c1\ e1 + d1\ f1 + k1\ m1 + l1\ n1\), \(c1\ g1 + 
+                d1\ h1 + k1\ o1 + l1\ p1\)},
+            {\(a1\ e1 + b1\ f1 + i1\ m1 + j1\ n1\), \(c1\ e1 + d1\ f1 + 
+                k1\ m1 + l1\ n1\), \(e1\^2 + f1\^2 + m1\^2 + 
+                n1\^2\), \(e1\ g1 + f1\ h1 + m1\ o1 + n1\ p1\)},
+            {\(a1\ g1 + b1\ h1 + i1\ o1 + j1\ p1\), \(c1\ g1 + d1\ h1 + 
+                k1\ o1 + l1\ p1\), \(e1\ g1 + f1\ h1 + m1\ o1 + 
+                n1\ p1\), \(g1\^2 + h1\^2 + o1\^2 + p1\^2\)}
+            }], "\[NoBreak]", ")"}],
+      (MatrixForm[ #]&)]], "Output"]
+}, Open  ]],
+
+Cell[TextData[StyleBox["Leaving us with the density matrix for qubits 2 and \
+3.\n", "Commentary"]], "Text",
+  TextJustification->1,
+  FontWeight->"Bold"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["How does it Work?", "Section"],
+
+Cell[TextData[{
+  StyleBox["At the bottom of this section, the code for ", "Commentary"],
+  "TraceSystem",
+  StyleBox[" has parts highlighted in different colours. These parts are \
+explained below:\n", "Commentary"],
+  StyleBox["Blue",
+    FontColor->RGBColor[0, 0, 1]],
+  " - ",
+  StyleBox["This part applies a \"pick out\" method if the last qubit (", 
+    "Commentary"],
+  "k\[Equal]n)",
+  StyleBox["  is chosen for tracing out. Basically what ", "Commentary"],
+  Cell[BoxData[
+      \(Take[M[\([\)\(p, All\)\(]\)], {1, 2\^n, 2}]\)]],
+  " ",
+  StyleBox["does is take all the elements in row ", "Commentary"],
+  "p ",
+  StyleBox["of the density matrix ", "Commentary"],
+  "M",
+  StyleBox[" , starting from ", "Commentary"],
+  Cell[BoxData[
+      \(1\)]],
+  " ",
+  StyleBox["and going to ", "Commentary"],
+  Cell[BoxData[
+      \(2\^n\)]],
+  " ",
+  StyleBox["in steps of ", "Commentary"],
+  "2 ",
+  StyleBox["and producing a row vector with ", "Commentary"],
+  Cell[BoxData[
+      \(2\^n/2\)]],
+  StyleBox[" entries as a result. This row vector is then added to a similar \
+\"pick out\" row vector from row ", "Commentary"],
+  "p+1",
+  StyleBox[" and we produce a row of the reduced density matrix ", 
+    "Commentary"],
+  "TrkM",
+  StyleBox[". For example if ", "Commentary"],
+  "p=1",
+  StyleBox[" we are producing the first row of ", "Commentary"],
+  "TrkM ",
+  StyleBox[".\n\n", "Commentary"],
+  StyleBox["Grey",
+    FontColor->GrayLevel[0.500008]],
+  " - ",
+  StyleBox["This part changes the basis of the density matrix so that the \
+qubit ", "Commentary"],
+  "k",
+  StyleBox[" to be traced out (in the case where it is not the last qubit) \
+has a basis corresponding to the last qubit and the same \"pick out\" method \
+as before is applied (see the ", "Commentary"],
+  StyleBox[" White ", "Commentary",
+    FontColor->GrayLevel[1],
+    Background->RGBColor[0.996109, 0.660166, 0.324224]],
+  StyleBox[" part). Basically all the qubits from ", "Commentary"],
+  "k ",
+  StyleBox[" to ", "Commentary"],
+  "n ",
+  StyleBox["have their basis changed in a way such that the basis for qubit  \
+", "Commentary"],
+  "k+i\[Rule] (k + i - 1)",
+  StyleBox["  for ", "Commentary"],
+  "i = 1\[Rule] (n - k - 1) ",
+  StyleBox["and ", "Commentary"],
+  "k\[Rule] n ",
+  StyleBox[". An example of this basis change is given below for ", 
+    "Commentary"],
+  "n=5 ",
+  StyleBox["and ", "Commentary"],
+  "k=2",
+  StyleBox[" .\n\n", "Commentary"],
+  Cell[BoxData[
+      TagBox[
+        RowBox[{"(", "\[NoBreak]", GridBox[{
+              {"0", "0", "0", "0", "0"},
+              {"0", "0", "0", "1", "0"},
+              {"0", "0", "0", "0", "1"},
+              {"0", "0", "0", "1", "1"},
+              {"0", "0", "1", "0", "0"},
+              {"0", "0", "1", "1", "0"},
+              {"0", "0", "1", "0", "1"},
+              {"0", "0", "1", "1", "1"},
+              {"0", "1", "0", "0", "0"},
+              {"0", "1", "0", "1", "0"},
+              {"0", "1", "0", "0", "1"},
+              {"0", "1", "0", "1", "1"},
+              {"0", "1", "1", "0", "0"},
+              {"0", "1", "1", "1", "0"},
+              {"0", "1", "1", "0", "1"},
+              {"0", "1", "1", "1", "1"},
+              {"1", "0", "0", "0", "0"},
+              {"1", "0", "0", "1", "0"},
+              {"1", "0", "0", "0", "1"},
+              {"1", "0", "0", "1", "1"},
+              {"1", "0", "1", "0", "0"},
+              {"1", "0", "1", "1", "0"},
+              {"1", "0", "1", "0", "1"},
+              {"1", "0", "1", "1", "1"},
+              {"1", "1", "0", "0", "0"},
+              {"1", "1", "0", "1", "0"},
+              {"1", "1", "0", "0", "1"},
+              {"1", "1", "0", "1", "1"},
+              {"1", "1", "1", "0", "0"},
+              {"1", "1", "1", "1", "0"},
+              {"1", "1", "1", "0", "1"},
+              {"1", "1", "1", "1", "1"}
+              }], "\[NoBreak]", ")"}],
+        (MatrixForm[ #]&)]]],
+  "   ",
+  StyleBox["\[Rule]   ", "Commentary"],
+  Cell[BoxData[
+      TagBox[
+        RowBox[{"(", "\[NoBreak]", GridBox[{
+              {"0", "0", "0", "0", "0"},
+              {"0", "0", "1", "0", "0"},
+              {"0", "0", "0", "0", "1"},
+              {"0", "0", "1", "0", "1"},
+              {"0", "0", "0", "1", "0"},
+              {"0", "0", "1", "1", "0"},
+              {"0", "0", "0", "1", "1"},
+              {"0", "0", "1", "1", "1"},
+              {"0", "1", "0", "0", "0"},
+              {"0", "1", "1", "0", "0"},
+              {"0", "1", "0", "0", "1"},
+              {"0", "1", "1", "0", "1"},
+              {"0", "1", "0", "1", "0"},
+              {"0", "1", "1", "1", "0"},
+              {"0", "1", "0", "1", "1"},
+              {"0", "1", "1", "1", "1"},
+              {"1", "0", "0", "0", "0"},
+              {"1", "0", "1", "0", "0"},
+              {"1", "0", "0", "0", "1"},
+              {"1", "0", "1", "0", "1"},
+              {"1", "0", "0", "1", "0"},
+              {"1", "0", "1", "1", "0"},
+              {"1", "0", "0", "1", "1"},
+              {"1", "0", "1", "1", "1"},
+              {"1", "1", "0", "0", "0"},
+              {"1", "1", "1", "0", "0"},
+              {"1", "1", "0", "0", "1"},
+              {"1", "1", "1", "0", "1"},
+              {"1", "1", "0", "1", "0"},
+              {"1", "1", "1", "1", "0"},
+              {"1", "1", "0", "1", "1"},
+              {"1", "1", "1", "1", "1"}
+              }], "\[NoBreak]", ")"}],
+        (MatrixForm[ #]&)]]],
+  "   \[Rule]   ",
+  Cell[BoxData[
+      TagBox[
+        RowBox[{"(", "\[NoBreak]", GridBox[{
+              {"0", "0", "0", "0", "0"},
+              {"0", "1", "0", "0", "0"},
+              {"0", "0", "0", "0", "1"},
+              {"0", "1", "0", "0", "1"},
+              {"0", "0", "0", "1", "0"},
+              {"0", "1", "0", "1", "0"},
+              {"0", "0", "0", "1", "1"},
+              {"0", "1", "0", "1", "1"},
+              {"0", "0", "1", "0", "0"},
+              {"0", "1", "1", "0", "0"},
+              {"0", "0", "1", "0", "1"},
+              {"0", "1", "1", "0", "1"},
+              {"0", "0", "1", "1", "0"},
+              {"0", "1", "1", "1", "0"},
+              {"0", "0", "1", "1", "1"},
+              {"0", "1", "1", "1", "1"},
+              {"1", "0", "0", "0", "0"},
+              {"1", "1", "0", "0", "0"},
+              {"1", "0", "0", "0", "1"},
+              {"1", "1", "0", "0", "1"},
+              {"1", "0", "0", "1", "0"},
+              {"1", "1", "0", "1", "0"},
+              {"1", "0", "0", "1", "1"},
+              {"1", "1", "0", "1", "1"},
+              {"1", "0", "1", "0", "0"},
+              {"1", "1", "1", "0", "0"},
+              {"1", "0", "1", "0", "1"},
+              {"1", "1", "1", "0", "1"},
+              {"1", "0", "1", "1", "0"},
+              {"1", "1", "1", "1", "0"},
+              {"1", "0", "1", "1", "1"},
+              {"1", "1", "1", "1", "1"}
+              }], "\[NoBreak]", ")"}],
+        (MatrixForm[ #]&)]]],
+  StyleBox["\n", "Commentary"],
+  Cell[BoxData[
+      FormBox[
+        OverscriptBox["stays", 
+          StyleBox["\[UpArrow]",
+            "Commentary"]], TraditionalForm]]],
+  StyleBox["        ", "Commentary"],
+  Cell[BoxData[
+      FormBox[
+        OverscriptBox["swapped", 
+          StyleBox["\[Union]",
+            "Commentary"]], TraditionalForm]]],
+  StyleBox["                     ", "Commentary"],
+  Cell[BoxData[
+      FormBox[
+        OverscriptBox["swapped", 
+          StyleBox["\[Union]",
+            "Commentary"]], TraditionalForm]]],
+  "                   ",
+  StyleBox["  ", "Commentary"],
+  Cell[BoxData[
+      FormBox[
+        OverscriptBox["swapped", 
+          StyleBox["\[Union]",
+            "Commentary"]], TraditionalForm]]],
+  StyleBox["          \n\nThe coefficents in the density matrix are therefore \
+exchanged according to the basis change (row and column swaps), this is what \
+", "Commentary"],
+  "M=M [[ perm, perm ]]",
+  StyleBox[" on line 28 does. The use of ", "Commentary"],
+  "Qubits=Reverse[Sort[s]]  ",
+  StyleBox["on line 4 is to ensure that the trace procedure for a group of \
+qubits to be traced out, is carried out sequentially, starting with the \
+closest one to qubit ", "Commentary"],
+  "n ",
+  StyleBox[".\n", "Commentary"]
+}], "Text",
+  FontWeight->"Bold"],
+
+Cell[BoxData[{\(SwapParts[expr_, \ pos1_, \ 
+        pos2_]\  := \ \(ReplacePart[#, #, \ {pos1, pos2}, \ {pos2, pos1}] &\)[
+        expr]\), "\n", 
+    RowBox[{\(TraceSystem[D_, \ s_]\), ":=", " ", 
+      RowBox[{"(", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        RowBox[{\(Qubits = Reverse[Sort[s]]\), ";", 
+          "\[IndentingNewLine]", \(TrkM = D\), ";", "\[IndentingNewLine]", 
+          "\[IndentingNewLine]", \(z = \((\(Dimensions[Qubits]\)[\([1]\)] + 
+                1)\)\), ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+          RowBox[{"For", "[", 
+            
+            RowBox[{\(q = 1\), ",", \(q < z\), ",", \(q++\), ",", 
+              "\[IndentingNewLine]", 
+              
+              RowBox[{\(n = Log[2, \((\(Dimensions[TrkM]\)[\([1]\)])\)]\), 
+                ";", "\[IndentingNewLine]", \(M = TrkM\), ";", 
+                "\[IndentingNewLine]", \(k = Qubits[\([q]\)]\), ";", 
+                "\[IndentingNewLine]", 
+                RowBox[{
+                  StyleBox["If",
+                    FontColor->RGBColor[0, 0, 1]], 
+                  StyleBox["[",
+                    FontColor->RGBColor[0, 0, 1]], 
+                  RowBox[{
+                    StyleBox[\(k \[Equal] n\),
+                      FontColor->RGBColor[0, 0, 1]], 
+                    StyleBox[",",
+                      FontColor->RGBColor[0, 0, 1]], 
+                    StyleBox["\[IndentingNewLine]",
+                      FontColor->RGBColor[0, 0, 1]], 
+                    StyleBox[\(\(TrkM = {};\)\[IndentingNewLine]
+                      
+                      For[p = 1, p < 2\^n + 1, 
+                        p = p + 2, \[IndentingNewLine]\(TrkM = 
+                            Append[TrkM, 
+                              Take[M[\([p, All]\)], {1, 2\^n, 2}] + 
+                                Take[M[\([p + 1, All]\)], {2, 2\^n, 
+                                    2}]];\)\[IndentingNewLine]\ ]\),
+                      FontColor->RGBColor[0, 0, 1]], ",", 
+                    "\[IndentingNewLine]", 
+                    RowBox[{
+                      RowBox[{"For", "[", 
+                        
+                        RowBox[{\(j = 0\), ",", \(j < \((n - k)\)\), 
+                          ",", \(j++\), ",", "\[IndentingNewLine]", 
+                          RowBox[{\(b = {0}\), ";", "\[IndentingNewLine]", 
+                            
+                            StyleBox[\(For[i = 1, 
+                                i < 2\^n + 
+                                    1, \(i++\), \[IndentingNewLine]If[\((Mod[\
+\((\(IntegerDigits[i - 1, 2, n]\)[\([n]\)] + \(IntegerDigits[i - 1, 2, 
+                                        n]\)[\([n - j - 1]\)])\), 2])\) == 
+                                      1\  && \ Count[b, \ i]\ \  \[Equal] 
+                                      0, \ Permut = {i, \((FromDigits[
+                                        SwapParts[\((IntegerDigits[i - 1, 
+                                        2, \ n])\), {n}, {n - j - 1}], 2] + 
+                                        1)\)}; \[IndentingNewLine]b = 
+                                    Append[
+                                      b, \((FromDigits[
+                                        SwapParts[\((IntegerDigits[i - 1, 
+                                        2, \ n])\), {n}, {n - j - 1}], 2] + 
+                                        1)\)]; \[IndentingNewLine]c = 
+                                    Range[2\^n]; \[IndentingNewLine]perm = 
+                                    SwapParts[
+                                      c, {i}, {\((FromDigits[
+                                        SwapParts[\((IntegerDigits[i - 1, 
+                                        2, \ n])\), {n}, {n - j - 1}], 2] + 
+                                        1)\)}]; \[IndentingNewLine]\
+\[IndentingNewLine]M = M[\([perm, 
+                                        perm]\)];\[IndentingNewLine]\
+\[IndentingNewLine]\ ]\ \ \ \ \[IndentingNewLine]]\),
+                              FontColor->RGBColor[0.500008, 0.500008, 
+                              0.750011]], 
+                            StyleBox[
+                              RowBox[{
+                                StyleBox["     ",
+                                  FontColor->RGBColor[0.500008, 0.500008, 
+                                  0.750011]], 
+                                StyleBox["  ",
+                                  FontColor->RGBColor[0, 1, 0]], "  "}]], ";",
+                             "\[IndentingNewLine]", 
+                            StyleBox[\(TrkM = {}\),
+                              FontColor->GrayLevel[1]], 
+                            StyleBox[";",
+                              FontColor->GrayLevel[1]], 
+                            StyleBox["\[IndentingNewLine]",
+                              FontColor->GrayLevel[1]], 
+                            
+                            StyleBox[\(For[p = 1, p < 2\^n + 1, 
+                                p = p + 2, \[IndentingNewLine]\(TrkM = 
+                                    Append[TrkM, 
+                                      Take[M[\([p, All]\)], {1, 2\^n, 2}] + 
+                                        Take[
+                                        M[\([p + 1, All]\)], {2, 2\^n, 
+                                        2}]];\)\[IndentingNewLine]]\),
+                              FontColor->GrayLevel[1]]}]}], 
+                        "\[IndentingNewLine]", "   ", "]"}], ";"}]}], 
+                  "\[IndentingNewLine]", "]"}]}]}], "\[IndentingNewLine]", 
+            "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]", 
+          "\[IndentingNewLine]", ";", \(Return[TrkM]\)}], ")"}]}]}], "Input"]
+}, Closed]]
+},
+FrontEndVersion->"4.0 for Microsoft Windows",
+ScreenRectangle->{{0, 1280}, {0, 887}},
+WindowToolbars->{},
+WindowSize->{838, 835},
+WindowMargins->{{213, Automatic}, {Automatic, 7}},
+Magnification->1,
+StyleDefinitions -> "Demo.nb"
+]
+
+
+(***********************************************************************
+Cached data follows.  If you edit this Notebook file directly, not using
+Mathematica, you must remove the line containing CacheID at the top of 
+the file.  The cache data will then be recreated when you save this file 
+from within Mathematica.
+***********************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1717, 49, 14657, 186, 24, 14455, 179, "GraphicsData", "Bitmap", \
+"HeaderCell",
+  Evaluatable->False],
+Cell[16377, 237, 567, 21, 181, "Title"],
+
+Cell[CellGroupData[{
+Cell[16969, 262, 31, 0, 82, "Section"],
+Cell[17003, 264, 3044, 81, 309, "Text"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[20084, 350, 27, 0, 82, "Section"],
+Cell[20114, 352, 504, 12, 46, "Text"],
+Cell[20621, 366, 3164, 58, 894, "Input"],
+Cell[23788, 426, 48, 5, 84, "Text"]
+}, Closed]],
+
+Cell[CellGroupData[{
+Cell[23873, 436, 27, 0, 51, "Section"],
+Cell[23903, 438, 1021, 20, 116, "Text"],
+Cell[24927, 460, 869, 17, 141, "Input",
+  CellGroupingRules->"OutputGrouping"],
+Cell[25799, 479, 405, 8, 92, "Output"],
+Cell[26207, 489, 346, 9, 110, "Text"],
+Cell[26556, 500, 872, 17, 141, "Input",
+  CellGroupingRules->"OutputGrouping"],
+Cell[27431, 519, 261, 6, 60, "Output"],
+Cell[27695, 527, 334, 9, 110, "Text"],
+
+Cell[CellGroupData[{
+Cell[28054, 540, 262, 4, 74, "Input"],
+Cell[28319, 546, 3485, 52, 332, "Output"],
+Cell[31807, 600, 112, 2, 34, "Input",
+  CellGroupingRules->"OutputGrouping"],
+Cell[31922, 604, 941, 16, 104, "Output"]
+}, Open  ]],
+Cell[32878, 623, 154, 3, 55, "Text"]
+}, Closed]],
+
+Cell[CellGroupData[{
+Cell[33069, 631, 36, 0, 51, "Section"],
+Cell[33108, 633, 8179, 223, 890, "Text"],
+Cell[41290, 858, 5649, 99, 854, "Input"]
+}, Closed]]
+}
+]
+*)
+
+
+
+
+(***********************************************************************
+End of Mathematica Notebook file.
+***********************************************************************)
+
