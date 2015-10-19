@@ -1,4 +1,4 @@
-#LyX file created by tex2lyx 2.1
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
 \lyxformat 474
 \begin_document
 \begin_header
@@ -57,10 +57,6 @@
 \addtocounter{equation}{39}
 \addtocounter{section}{5}
 \addtocounter{subsection}{3}
-
-
-
-
 \end_preamble
 \use_default_options false
 \maintain_unincluded_children false
@@ -133,11 +129,13 @@ Erratum: Geometry of discrete quantum computing
 \end_layout
 
 \begin_layout Author
-Andrew J. Hanson
+Andrew J.
+ Hanson
 \end_layout
 
 \begin_layout Address
-School of Informatics and Computing, Indiana University, Bloomington, IN 47405, U.S.A
+School of Informatics and Computing, Indiana University, Bloomington, IN
+ 47405, U.S.A
 \end_layout
 
 \begin_layout Author
@@ -153,7 +151,8 @@ Amr Sabry
 \end_layout
 
 \begin_layout Address
-School of Informatics and Computing, Indiana University, Bloomington, IN 47405, U.S.A
+School of Informatics and Computing, Indiana University, Bloomington, IN
+ 47405, U.S.A
 \end_layout
 
 \begin_layout Author
@@ -165,7 +164,8 @@ Department of Mathematics, Indiana University, Bloomington, IN 47405, U.S.A
 \end_layout
 
 \begin_layout Address
-School of Informatics and Computing, Indiana University, Bloomington, IN 47405, U.S.A
+School of Informatics and Computing, Indiana University, Bloomington, IN
+ 47405, U.S.A
 \end_layout
 
 \begin_layout Standard
@@ -178,6 +178,7 @@ status collapsed
 
 \begin_layout Plain Layout
 
+
 \backslash
 /
 \end_layout
@@ -185,14 +186,13 @@ status collapsed
 \end_inset
 
 
-\family default
-\series default
 \shape default
 : 
 \begin_inset ERT
 status collapsed
 
 \begin_layout Plain Layout
+
 {
 \end_layout
 
@@ -203,6 +203,7 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
+
 
 \backslash
 today
@@ -215,6 +216,7 @@ today
 status collapsed
 
 \begin_layout Plain Layout
+
 }
 \end_layout
 
@@ -227,33 +229,35 @@ status collapsed
 \noindent
 We correct section
 \begin_inset space ~
-
 \end_inset
 
 5.4 of our paper
 \begin_inset space ~
-
 \end_inset
 
 
 \begin_inset CommandInset citation
 LatexCommand cite
-after ""
 key "geometry"
 
 \end_inset
 
-. There are several related mistakes that all stem from an incorrect use of equation
+.
+ There are several related mistakes that all stem from an incorrect use
+ of equation
 \begin_inset space ~
-
 \end_inset
 
-(27) in a discrete setting with modular arithmetic. Equation
+(27) in a discrete setting with modular arithmetic.
+ Equation
 \begin_inset space ~
-
 \end_inset
 
-(27) defines purity from which the definitions of unentangled, partially entangled, and maximally entangled states were derived in the field of complex numbers. In finite fields, the definitions are more subtle. 
+(27) defines purity from which the definitions of unentangled, partially
+ entangled, and maximally entangled states were derived in the field of
+ complex numbers.
+ In finite fields, the definitions are more subtle.
+ 
 \end_layout
 
 \begin_layout Paragraph*
@@ -261,7 +265,12 @@ Purity, Product States, and Unentangled States.
 \end_layout
 
 \begin_layout Standard
-The paper correctly identifies unentangled states with product states. In the continuous case, a state has maximal purity iff it is a product state. In the discrete case, product states have maximal purity, but the converse does not necessarily hold. 
+The paper correctly identifies unentangled states with product states.
+ In the continuous case, a state has maximal purity iff it is a product
+ state.
+ In the discrete case, product states have maximal purity, but the converse
+ does not necessarily hold.
+ 
 \end_layout
 
 \begin_layout Paragraph*
@@ -269,22 +278,22 @@ Purity and Maximally Entangled States.
 \end_layout
 
 \begin_layout Standard
-The paper defines maximally entangled states as those whose purity is 0. This definition needs to be modified in the discrete case to avoid identifying as maximally entangled states whose purity is a multiple of the field characteristic.
+The paper defines maximally entangled states as those whose purity is 0.
+ This definition needs to be modified in the discrete case to avoid identifying
+ as maximally entangled states whose purity is a multiple of the field character
+istic.
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset VSpace bigskip
 \end_inset
 
 The results in other sections do not depend on equation
 \begin_inset space ~
-
 \end_inset
 
 (27): the corrected version of section
 \begin_inset space ~
-
 \end_inset
 
 5.4 below has no influence on the rest of the article.
@@ -295,17 +304,19 @@ Maximal entanglement
 \end_layout
 
 \begin_layout Standard
-In the case of finite fields, we need to modify this definition because modular arithmetic confuses some of the identifications.
+In the case of finite fields, we need to modify this definition because
+ modular arithmetic confuses some of the identifications.
 \end_layout
 
 \begin_layout Standard
-For instance, although product states and maximal purity can be identified when using complex arithmetic, there exist, in the discrete case, non-product states that also have maximal purity.
+For instance, although product states and maximal purity can be identified
+ when using complex arithmetic, there exist, in the discrete case, non-product
+ states that also have maximal purity.
 \end_layout
 
 \begin_layout Standard
 The first step in adapting equation
 \begin_inset space ~
-
 \end_inset
 
 (27) to the discrete case is to eliminate the 
@@ -313,10 +324,11 @@ The first step in adapting equation
 \end_inset
 
  factor to avoid dividing by zero: 
-\begin_inset Formula \begin{equation}
-\overline{P_{\fh}}=\sum\limits _{j=1}^{n}\overline{P_{\fh}^{j}}, \qquad\mbox{with~}
-\overline{P_{\fh}^j} = \sum\limits _{\mu=x,y,z}\langle\sigma_{\mu}^{j}\rangle^{2}\ ,
+\begin_inset Formula 
+\begin{equation}
+\overline{P_{\fh}}=\sum\limits _{j=1}^{n}\overline{P_{\fh}^{j}},\qquad\mbox{with~}\overline{P_{\fh}^{j}}=\sum\limits _{\mu=x,y,z}\langle\sigma_{\mu}^{j}\rangle^{2}\ ,
 \end{equation}
+
 \end_inset
 
 where 
@@ -340,14 +352,16 @@ For example, consider the normalized product state
 \end_inset
 
 : 
-\begin_inset Formula \begin{eqnarray}
+\begin_inset Formula 
+\begin{eqnarray}
 \ket{\Psi_{0}} & = & \ket{0}\otimes\frac{\ket{0}-\ket{1}}{1-\ComplexI}\otimes\frac{\ket{0}-\ket{1}}{1-\ComplexI}\ ,\\
 \ket{\Psi_{1}} & = & \ket{011}+\ket{100}+\ket{101}+\ket{110}\ .
 \end{eqnarray}
+
 \end_inset
 
 In both cases 
-\begin_inset Formula $\overline{P_{\fh}^j} = 1$
+\begin_inset Formula $\overline{P_{\fh}^{j}}=1$
 \end_inset
 
  for all 
@@ -358,7 +372,6 @@ In both cases
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset Formula $\ket{\Psi_{0}}$
 \end_inset
 
@@ -366,14 +379,17 @@ In both cases
 \begin_inset Formula $\overline{P_{\fh}}=0$
 \end_inset
 
- because of modular arithmetic. In the continuous case, 
+ because of modular arithmetic.
+ In the continuous case, 
 \begin_inset Formula $\overline{P_{\fh}}=0$
 \end_inset
 
  is equivalent to 
-\begin_inset Formula \begin{equation}
-\forall j,\forall\mu,\braket{\sigma_{\mu}^{j}}=0\label{eq:john}\ .
+\begin_inset Formula 
+\begin{equation}
+\forall j,\forall\mu,\braket{\sigma_{\mu}^{j}}=0\ .\label{eq:john}
 \end{equation}
+
 \end_inset
 
 Equation (
@@ -387,15 +403,13 @@ reference "eq:john"
 \begin_inset Formula $\ff{p^{2}}$
 \end_inset
 
- as well. From this definition, the Bell states are maximally entangled, while the normalized state 
-\begin_inset Formula $\ket{\Psi_{2}} = \ket{01}+\ket{10}+\left(-1-\ComplexI\right)$
+ as well.
+ From this definition, the Bell states are maximally entangled, while the
+ normalized state 
+\begin_inset Formula $\ket{\Psi_{2}}=\ket{01}+\ket{10}+\left(-1-\ComplexI\right)$
 \end_inset
 
- over 
-\begin_inset Formula $\ff{3^{2}}$
-\end_inset
-
- is not maximally entangled although 
+ with 
 \begin_inset Formula $\overline{P_{\fh}^{j}}=0$
 \end_inset
 
@@ -403,7 +417,11 @@ reference "eq:john"
 \begin_inset Formula $j$
 \end_inset
 
-.
+ over 
+\begin_inset Formula $\ff{3^{2}}$
+\end_inset
+
+ is not maximally entangled.
 \end_layout
 
 \begin_layout Standard
@@ -424,9 +442,11 @@ Computing some examples for various
 \end_inset
 
  occur with frequency 
-\begin_inset Formula \begin{equation}
+\begin_inset Formula 
+\begin{equation}
 (p+1)p^{2}(p-1)^{2}=\{144,14\,112,145\,200,2339\,280,\ldots\}\ ,
 \end{equation}
+
 \end_inset
 
 and for general 
@@ -446,9 +466,11 @@ The irreducible state counts are reduced by
 \end_inset
 
 , giving 
-\begin_inset Formula \begin{equation}
+\begin_inset Formula 
+\begin{equation}
 p^{2}(p-1)^{2}=\{36,1764,12\,100,116\,964,\ldots\}\ ,
 \end{equation}
+
 \end_inset
 
 and in general for 
@@ -463,10 +485,13 @@ and in general for
 \end_layout
 
 \begin_layout Standard
-Repeating the computation, we find maximally entanglement states with frequencies for two qubits of 
-\begin_inset Formula \begin{equation}
+Repeating the computation, we find maximally entanglement states with frequencie
+s for two qubits of 
+\begin_inset Formula 
+\begin{equation}
 p\left(p^{2}-1\right)\left(p+1\right)=\left\{ 96,2688,15\,840,136\,800,\ldots\right\} \ .
 \end{equation}
+
 \end_inset
 
 The irreducible state counts for maximal entanglement are reduced by 
@@ -478,16 +503,19 @@ The irreducible state counts for maximal entanglement are reduced by
 \end_inset
 
  
-\begin_inset Formula \begin{equation}
+\begin_inset Formula 
+\begin{equation}
 p\left(p^{2}-1\right)=\left\{ 24,336,1320,6840,\ldots\right\} \ .
 \end{equation}
+
 \end_inset
 
 For three-qubits, there are 
 \begin_inset Formula $p^{3}\left(p^{4}-1\right)\left(p+1\right)$
 \end_inset
 
- instances of pure maximally entangled states. For four-qubits and 
+ instances of pure maximally entangled states.
+ For four-qubits and 
 \begin_inset Formula $p=3$
 \end_inset
 
@@ -495,15 +523,16 @@ For three-qubits, there are
 \begin_inset Formula $2195\,538\,048$
 \end_inset
 
- instances of pure maximally entangled states, while the general formula for four-qubit states remains unclear.
+ instances of pure maximally entangled states, while the general formula
+ for four-qubit states remains unclear.
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset ERT
 status collapsed
 
 \begin_layout Plain Layout
+
 
 \backslash
 yutsung{
@@ -512,10 +541,12 @@ yutsung{
 \end_inset
 
  
-\begin_inset Formula \begin{eqnarray*}
+\begin_inset Formula 
+\begin{eqnarray*}
 2195\,538\,048 & = & 4\cdot548\,884\,512\ ,\\
 548\,884\,512 & = & 2^{5}\cdot3^{7}\cdot11\cdot23\cdot31\ .
 \end{eqnarray*}
+
 \end_inset
 
 The irreducible state counts for maximal entanglement for 
@@ -535,6 +566,7 @@ The irreducible state counts for maximal entanglement for
 status collapsed
 
 \begin_layout Plain Layout
+
 }
 \end_layout
 
@@ -544,11 +576,11 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset ERT
 status collapsed
 
 \begin_layout Plain Layout
+
 
 \backslash
 ack
@@ -561,6 +593,7 @@ ack
 status collapsed
 
 \begin_layout Plain Layout
+
 {}
 \end_layout
 
@@ -571,16 +604,24 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
+
 {
 \end_layout
 
 \end_inset
 
-We would like to thank John Gardiner for pointing out the need for this correction. This research was supported in part by Lilly Endowment, Inc., through its support for the Indiana University Pervasive Technology Institute, and in part by the Indiana METACyt Initiative. The Indiana METACyt Initiative at IU is also supported in part by Lilly Endowment, Inc.
+We would like to thank John Gardiner for pointing out the need for this
+ correction.
+ This research was supported in part by Lilly Endowment, Inc., through its
+ support for the Indiana University Pervasive Technology Institute, and
+ in part by the Indiana METACyt Initiative.
+ The Indiana METACyt Initiative at IU is also supported in part by Lilly
+ Endowment, Inc.
 \begin_inset ERT
 status collapsed
 
 \begin_layout Plain Layout
+
 }
 \end_layout
 
@@ -594,11 +635,11 @@ References
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset ERT
 status collapsed
 
 \begin_layout Plain Layout
+
 {}
 \end_layout
 
