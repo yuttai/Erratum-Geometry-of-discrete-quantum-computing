@@ -100,21 +100,88 @@ IN 47405, U.S.A}
 
 \noindent Sec.~5.4 of our paper~\cite{geometry} requires a clarification and a correction. 
 
-\paragraph*{Clarification: Unentangled vs. product states.} In conventional quantum mechanics, using the real and complex numbers, a state is unentangled when it can be expressed as a product state or when equation~(27) reports its purity to be 1. When using finite fields, it is possible for equation~(27) to produce a purity of 1 for some entangled states. For example, consider the 3-qubit state \ldots
+In conventional quantum mechanics, using the real and complex numbers,
+a state is unentangled when it can be expressed as a product state
+or when equation~(27) reports its purity to be 1. When using finite
+fields, it is possible for equation~(27) to produce a purity of 1
+for some entangled states. For example, consider the normalized 3-qubit
+state $\ket{\Psi_{0}}$ over $\ff{7^{2}}$: 
+\[
+\ket{\Psi_{0}}=\left(1+2\rmi\right)\ket{011}+\left(1+2\rmi\right)\ket{100}-\ket{101}-\ket{110}+\left(-3+\rmi\right)\ket{111}
+\]
 
 
+Thus, in finite fields, the simplest way to calculate the number of
+unentangled states is to ignore equation~(27) and to count the number
+of product states. This is exactly how the counting in section~5.4
+was produced, but the paper did not clarify that counting using equation~(27)
+would be incorrect.
 
-Thus, in finite fields, the simplest way to calculate the number of unentangled states is to ignore equation~(27) and to count the number of product states. This is exactly how the counting in Sec.~5.4 was produced but the paper did not clarify that counting using equation~(27) would be incorrect.
 
-\paragraph*{Correction: Maximally entangled states.} In conventional quantum mechanics, a state is maximally entangled when equation~(27) reports its purity to be 0. In the discrete case, states whose purity is a multiple of the field characteristic are incorrectly labeled as maximally entangled. For example, \ldots
+\paragraph*{Correction: Maximally entangled states.}
 
-To correctly account for maximally entangled states, we modify equation~(27) as follows:
+The corrected section 5.4 is as follow.
 
-\ldots
 
-\ack{}{We would like to thank John Gardiner for pointing out the need for this correction.}
+\subsection{Maximal entanglement}
 
-\section*{References}{}
+In conventional quantum mechanics, a state is maximally entangled
+when equation~(27) reports its purity to be 0. In the discrete case,
+states whose purity is a multiple of the field characteristic are
+incorrectly labeled as maximally entangled. For example, the normalized
+3-qubit product state $\ket{\Psi_{1}}$ over $\ff{3^{2}}$: 
+\[
+\ket{\Psi_{1}}=\ket{0}\otimes\frac{\ket{0}-\ket{1}}{1-\rmi}\otimes\frac{\ket{0}-\ket{1}}{1-\rmi}
+\]
+with 
+\[
+\overline{P_{\fh}}=\sum_{j=1}^{n}\sum_{\mu=x,y,z}\left\langle \sigma_{\mu}^{j}\right\rangle ^{2}=0\textrm{ .}
+\]
+
+
+To correctly account for maximally entangled states, we modify the
+definition of maximally entangled states as follows:
+\[
+\forall j,\forall\mu,\braket{\sigma_{\mu}^{j}}=0
+\]
+
+
+Computing some examples for various $n$ and small values of $p$,
+one can verify explicitly that unit-norm product states for $n=2$,
+$p=\{3,7,11,19,\ldots\}$ occur with frequency 
+\[
+(p+1)p^{2}(p-1)^{2}=\{144,14\,112,145\,200,2339\,280,\ldots\}\ ,
+\]
+and for general $n$, $(p+1)p^{n}(p-1)^{n}$.
+
+The irreducible state counts are reduced by $(p+1)$, giving 
+\[
+p^{2}(p-1)^{2}=\{36,1764,12\,100,116\,964,\ldots\}\ ,
+\]
+and in general for $n$-qubits, there are $p^{n}\left(p-1\right)^{n}$
+instances of product pure states.
+
+Repeating the computation, we find maximally entanglement states with
+frequencies for two qubits of 
+\[
+p\left(p-1\right)\left(p+1\right)^{2}=\left\{ 96,2688,15\,840,136\,800,\ldots\right\} \ .
+\]
+The irreducible state counts for maximal entanglement are reduced
+by $\left(p+1\right)$, giving for $n=2$ 
+\[
+p\left(p^{2}-1\right)=\left\{ 24,336,1320,6840,\ldots\right\} \ .
+\]
+For three-qubits, there are $p^{3}\left(p^{4}-1\right)\left(p+1\right)$
+instances of pure maximally entangled states, while the general formula
+for four-qubit states remains unclear.
+
+\ack{}{We would like to thank John Gardiner for pointing out the
+need for this correction.}
+
+
+\section*{References}
+
+{}
 
 \bibliographystyle{plain}
 \bibliography{gardinerbib}
