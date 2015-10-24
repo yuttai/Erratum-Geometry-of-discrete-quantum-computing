@@ -242,7 +242,7 @@ key "geometry"
 
 \end_inset
 
- requires a clarification and a correction.
+ requires a clarification and two corrections.
 \end_layout
 
 \begin_layout Paragraph*
@@ -263,7 +263,7 @@ In conventional quantum mechanics, using the real and complex numbers, a
 \end_inset
 
 (27) to produce a purity of 1 for some entangled states.
- For example, consider the normalized 3-qubit state 
+ For example, consider the normalized entangled state 
 \begin_inset Formula $\ket{\Psi_{0}}$
 \end_inset
 
@@ -301,15 +301,19 @@ Thus, in finite fields, the simplest way to calculate the number of unentangled
 \end_layout
 
 \begin_layout Paragraph*
-Correction: Maximally entangled states.
+Correction: The definition of maximally entangled states.
 \end_layout
 
 \begin_layout Standard
-The corrected section 5.4 is as follow.
+In order to correct to the definition of maximally entangled states, the
+ last paragraph in page 16 should read
 \end_layout
 
-\begin_layout Subsection
-Maximal entanglement
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -320,7 +324,7 @@ In conventional quantum mechanics, a state is maximally entangled when equation
 (27) reports its purity to be 0.
  In the discrete case, states whose purity is a multiple of the field characteri
 stic are incorrectly labeled as maximally entangled.
- For example, the normalized 3-qubit product state 
+ For example, the normalized product state 
 \begin_inset Formula $\ket{\Psi_{1}}$
 \end_inset
 
@@ -358,66 +362,30 @@ To correctly account for maximally entangled states, we modify the definition
 \end_inset
 
 
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Correction: The counting of maximally entangled states.
 \end_layout
 
 \begin_layout Standard
-Computing some examples for various 
-\begin_inset Formula $n$
+Line 8 starting from 
+\begin_inset Quotes eld
 \end_inset
 
- and small values of 
-\begin_inset Formula $p$
+Repeating the computation
+\begin_inset Quotes erd
 \end_inset
 
-, one can verify explicitly that unit-norm product states for 
-\begin_inset Formula $n=2$
+ to the end of section 5.4 in page 17 should read
+\begin_inset VSpace defskip
 \end_inset
 
-, 
-\begin_inset Formula $p=\{3,7,11,19,\ldots\}$
-\end_inset
 
- occur with frequency 
-\begin_inset Formula 
-\[
-(p+1)p^{2}(p-1)^{2}=\{144,14\,112,145\,200,2339\,280,\ldots\}\ ,
-\]
-
-\end_inset
-
-and for general 
-\begin_inset Formula $n$
-\end_inset
-
-, 
-\begin_inset Formula $(p+1)p^{n}(p-1)^{n}$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-The irreducible state counts are reduced by 
-\begin_inset Formula $(p+1)$
-\end_inset
-
-, giving 
-\begin_inset Formula 
-\[
-p^{2}(p-1)^{2}=\{36,1764,12\,100,116\,964,\ldots\}\ ,
-\]
-
-\end_inset
-
-and in general for 
-\begin_inset Formula $n$
-\end_inset
-
--qubits, there are 
-\begin_inset Formula $p^{n}\left(p-1\right)^{n}$
-\end_inset
-
- instances of product pure states.
 \end_layout
 
 \begin_layout Standard
