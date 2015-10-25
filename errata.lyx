@@ -305,8 +305,7 @@ Correction: The definition of maximally entangled states.
 \end_layout
 
 \begin_layout Standard
-In order to correct to the definition of maximally entangled states, the
- last paragraph in page 16 should read
+The last paragraph in page 16 should read
 \end_layout
 
 \begin_layout Standard
@@ -340,7 +339,11 @@ stic are incorrectly labeled as maximally entangled.
 
 \end_inset
 
-with 
+with the purity without divided by 
+\begin_inset Formula $n$
+\end_inset
+
+: 
 \begin_inset Formula 
 \[
 \overline{P_{\fh}}=\sum_{j=1}^{n}\sum_{\mu=x,y,z}\left\langle \sigma_{\mu}^{j}\right\rangle ^{2}=0\textrm{ .}
@@ -369,11 +372,13 @@ To correctly account for maximally entangled states, we modify the definition
 \end_layout
 
 \begin_layout Paragraph*
-Correction: The counting of maximally entangled states.
+Correction: The number of maximally entangled states.
 \end_layout
 
 \begin_layout Standard
-Line 8 starting from 
+The number of maximally entangled states should also be updated according
+ to the updated definition of maximally entangled states.
+ Therefore, line 8 starting from 
 \begin_inset Quotes eld
 \end_inset
 
