@@ -122,7 +122,8 @@ would be incorrect.
 
 \paragraph*{Correction: Maximally entangled states.}
 
-The corrected section 5.4 is as follow.
+We correct the definition and the number of maximally entangled states
+in the following corrected section 5.4.
 
 
 \subsection{Maximal entanglement}
@@ -133,19 +134,22 @@ states whose purity is a multiple of the field characteristic are
 incorrectly labeled as maximally entangled. For example, the normalized
 3-qubit product state $\ket{\Psi_{1}}$ over $\ff{3^{2}}$: 
 \[
-\ket{\Psi_{1}}=\ket{0}\otimes\frac{\ket{0}-\ket{1}}{1-\rmi}\otimes\frac{\ket{0}-\ket{1}}{1-\rmi}
+\ket{\Psi_{1}}=\ket{0}\otimes\left(\ket{0}-\ket{1}\right)\otimes\left(\ket{0}-\ket{1}\right)
 \]
-with 
+with the purity without $1/n$ factor: 
 \[
 \overline{P_{\fh}}=\sum_{j=1}^{n}\sum_{\mu=x,y,z}\left\langle \sigma_{\mu}^{j}\right\rangle ^{2}=0\textrm{ .}
 \]
 
 
-To correctly account for maximally entangled states, we modify the
-definition of maximally entangled states as follows:
-\[
-\forall j,\forall\mu,\braket{\sigma_{\mu}^{j}}=0
-\]
+In continuous case, because the square of real numbers are positive,
+the purity $\overline{P_{\fh}}$ is $0$ actually means every summand
+is $0$, i.e., 
+\begin{equation}
+\forall j,\forall\mu,\braket{\sigma_{\mu}^{j}}=0\ .\label{eq:john}
+\end{equation}
+Therefore, we define a state in discrete case is maximally entangled
+if it satisfies equation (\ref{eq:john}).
 
 
 Computing some examples for various $n$ and small values of $p$,

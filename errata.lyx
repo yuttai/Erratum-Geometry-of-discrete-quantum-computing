@@ -305,7 +305,8 @@ Correction: Maximally entangled states.
 \end_layout
 
 \begin_layout Standard
-The corrected section 5.4 is as follow.
+We correct the definition and the number of maximally entangled states in
+ the following corrected section 5.4.
 \end_layout
 
 \begin_layout Subsection
@@ -331,12 +332,16 @@ stic are incorrectly labeled as maximally entangled.
 : 
 \begin_inset Formula 
 \[
-\ket{\Psi_{1}}=\ket{0}\otimes\frac{\ket{0}-\ket{1}}{1-\rmi}\otimes\frac{\ket{0}-\ket{1}}{1-\rmi}
+\ket{\Psi_{1}}=\ket{0}\otimes\left(\ket{0}-\ket{1}\right)\otimes\left(\ket{0}-\ket{1}\right)
 \]
 
 \end_inset
 
-with 
+with the purity without 
+\begin_inset Formula $1/n$
+\end_inset
+
+ factor: 
 \begin_inset Formula 
 \[
 \overline{P_{\fh}}=\sum_{j=1}^{n}\sum_{\mu=x,y,z}\left\langle \sigma_{\mu}^{j}\right\rangle ^{2}=0\textrm{ .}
@@ -348,16 +353,36 @@ with
 \end_layout
 
 \begin_layout Standard
-To correctly account for maximally entangled states, we modify the definition
- of maximally entangled states as follows: 
+In continuous case, because the square of real numbers are positive, the
+ purity 
+\begin_inset Formula $\overline{P_{\fh}}$
+\end_inset
+
+ is 
+\begin_inset Formula $0$
+\end_inset
+
+ actually means every summand is 
+\begin_inset Formula $0$
+\end_inset
+
+, i.e., 
 \begin_inset Formula 
-\[
-\forall j,\forall\mu,\braket{\sigma_{\mu}^{j}}=0
-\]
+\begin{equation}
+\forall j,\forall\mu,\braket{\sigma_{\mu}^{j}}=0\ .\label{eq:john}
+\end{equation}
 
 \end_inset
 
+Therefore, we define a state in discrete case is maximally entangled if
+ it satisfies equation (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:john"
 
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
@@ -523,7 +548,6 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
- 
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 bibfiles "gardinerbib"
