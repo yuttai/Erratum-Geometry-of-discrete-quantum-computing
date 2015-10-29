@@ -342,14 +342,18 @@ has the purity
 \end_inset
 
 , where 
-\begin_inset Formula $\overline{P_{\fh}}=\sum_{j=1}^{n}\sum_{\mu=x,y,z}\left\langle \sigma_{\mu}^{j}\right\rangle ^{2}$
+\begin_inset Formula 
+\[
+\overline{P_{\fh}}=\sum_{j=1}^{n}\sum_{\mu=x,y,z}\left\langle \sigma_{\mu}^{j}\right\rangle ^{2}
+\]
+
 \end_inset
 
- is equation
+is equation
 \begin_inset space ~
 \end_inset
 
-(27) eliminate the 
+(27) eliminating the 
 \begin_inset Formula $1/n$
 \end_inset
 
@@ -359,10 +363,6 @@ has the purity
 \begin_layout Standard
 In continuous case, because the square of real numbers are positive, the
  purity 
-\begin_inset Formula $\overline{P_{\fh}}$
-\end_inset
-
- is 
 \begin_inset Formula $0$
 \end_inset
 
@@ -373,7 +373,7 @@ In continuous case, because the square of real numbers are positive, the
 , i.e., 
 \begin_inset Formula 
 \begin{equation}
-\forall j,\forall\mu,\braket{\sigma_{\mu}^{j}}=0\ .\label{eq:john}
+\forall j,\forall\mu,\braket{\sigma_{\mu}^{j}}=0\ ,\label{eq:john}
 \end{equation}
 
 \end_inset
