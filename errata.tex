@@ -106,11 +106,12 @@ In conventional quantum mechanics, using the real and complex numbers,
 a state is unentangled when it can be expressed as a product state
 or when equation~(27) reports its purity to be 1. When using finite
 fields, it is possible for equation~(27) to produce a purity of 1
-for some entangled states. For example, consider the normalized 3-qubit
-state $\ket{\Psi_{0}}$ over $\ff{7^{2}}$: 
+for some entangled states. For example, consider a normalized state
+$\ket{\Psi_{0}}$ over $\ff{7^{2}}$: 
 \[
 \ket{\Psi_{0}}=\ket{011}+\left(-2-\rmi\right)\ket{100}+\ket{101}+\ket{110}\textrm{ .}
 \]
+This is an entangled state with $P_{\fh}=1$.
 
 
 Thus, in finite fields, the simplest way to calculate the number of
@@ -132,12 +133,11 @@ In conventional quantum mechanics, a state is maximally entangled
 when equation~(27) reports its purity to be 0. In the discrete case,
 states whose purity is a multiple of the field characteristic are
 incorrectly labeled as maximally entangled. For example, consider
-the normalized 3-qubit product state $\ket{\Psi_{1}}$ over $\ff{3^{2}}$:
+a normalized 3-qubit product state $\ket{\Psi_{1}}$ over $\ff{3^{2}}$:
 \[
 \ket{\Psi_{1}}=\ket{0}\otimes\left(\ket{0}-\ket{1}\right)\otimes\left(\ket{0}-\ket{1}\right)\textrm{ .}
 \]
-$\ket{\Psi_{1}}$ has the re-scaled purity $\overline{P_{\fh}}=0$,
-where 
+In this case the re-scaled purity $\overline{P_{\fh}}=0$, where 
 \[
 \overline{P_{\fh}}=\sum_{j=1}^{n}\sum_{\mu=x,y,z}\left\langle \sigma_{\mu}^{j}\right\rangle ^{2}\textrm{ .}
 \]

@@ -263,7 +263,7 @@ In conventional quantum mechanics, using the real and complex numbers, a
 \end_inset
 
 (27) to produce a purity of 1 for some entangled states.
- For example, consider the normalized 3-qubit state 
+ For example, consider a normalized state 
 \begin_inset Formula $\ket{\Psi_{0}}$
 \end_inset
 
@@ -279,7 +279,11 @@ In conventional quantum mechanics, using the real and complex numbers, a
 
 \end_inset
 
+This is an entangled state with 
+\begin_inset Formula $P_{\fh}=1$
+\end_inset
 
+.
 \end_layout
 
 \begin_layout Standard
@@ -321,7 +325,7 @@ In conventional quantum mechanics, a state is maximally entangled when equation
 (27) reports its purity to be 0.
  In the discrete case, states whose purity is a multiple of the field characteri
 stic are incorrectly labeled as maximally entangled.
- For example, consider the normalized 3-qubit product state 
+ For example, consider a normalized 3-qubit product state 
 \begin_inset Formula $\ket{\Psi_{1}}$
 \end_inset
 
@@ -337,11 +341,7 @@ stic are incorrectly labeled as maximally entangled.
 
 \end_inset
 
-
-\begin_inset Formula $\ket{\Psi_{1}}$
-\end_inset
-
- has the re-scaled purity 
+In this case the re-scaled purity 
 \begin_inset Formula $\overline{P_{\fh}}=0$
 \end_inset
 
