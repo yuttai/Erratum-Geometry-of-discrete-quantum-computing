@@ -341,27 +341,19 @@ stic are incorrectly labeled as maximally entangled.
 \begin_inset Formula $\ket{\Psi_{1}}$
 \end_inset
 
- has the purity 
+ has the re-scaled purity 
 \begin_inset Formula $\overline{P_{\fh}}=0$
 \end_inset
 
 , where 
 \begin_inset Formula 
 \[
-\overline{P_{\fh}}=\sum_{j=1}^{n}\sum_{\mu=x,y,z}\left\langle \sigma_{\mu}^{j}\right\rangle ^{2}
+\overline{P_{\fh}}=\sum_{j=1}^{n}\sum_{\mu=x,y,z}\left\langle \sigma_{\mu}^{j}\right\rangle ^{2}\textrm{ .}
 \]
 
 \end_inset
 
-is equation
-\begin_inset space ~
-\end_inset
 
-(27) eliminating the 
-\begin_inset Formula $1/n$
-\end_inset
-
- factor.
 \end_layout
 
 \begin_layout Standard
