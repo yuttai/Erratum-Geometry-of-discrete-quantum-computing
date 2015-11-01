@@ -264,7 +264,7 @@ In conventional quantum mechanics, using the real and complex numbers, a
 
 (27) to produce a purity of 1 for some entangled states.
  For example, a normalized entangled state 
-\begin_inset Formula $\ket{011}+\left(-2-\rmi\right)\ket{100}+\ket{101}+\ket{110}$
+\begin_inset Formula $\ket{011}+\left(2+\rmi\right)\ket{100}+\ket{101}+\ket{110}$
 \end_inset
 
  has 
