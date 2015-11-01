@@ -98,7 +98,8 @@ IN 47405, U.S.A}
 
 \maketitle
 
-\noindent Sec.~5.4 of our paper~\cite{geometry} requires a clarification and a correction. 
+\noindent Section~5.4 of our paper~\cite{geometry} requires a clarification
+and a correction.
 
 \paragraph*{Clarification: Unentangled vs. product states.}
 
@@ -106,12 +107,9 @@ In conventional quantum mechanics, using the real and complex numbers,
 a state is unentangled when it can be expressed as a product state
 or when equation~(27) reports its purity to be 1. When using finite
 fields, it is possible for equation~(27) to produce a purity of 1
-for some entangled states. For example, consider a normalized state
-$\ket{\Psi_{0}}$ over $\ff{7^{2}}$: 
-\[
-\ket{\Psi_{0}}=\ket{011}+\left(-2-\rmi\right)\ket{100}+\ket{101}+\ket{110}\textrm{ .}
-\]
-This is an entangled state with $P_{\fh}=1$.
+for some entangled states. For example, a normalized entangled state
+$\ket{011}+\left(-2-\rmi\right)\ket{100}+\ket{101}+\ket{110}$ has
+$P_{\fh}=1$ over $\ff{7^{2}}$.
 
 
 Thus, in finite fields, the simplest way to calculate the number of
@@ -124,7 +122,8 @@ would be incorrect.
 \paragraph*{Correction: Maximally entangled states.}
 
 We correct the definition and the counting of maximally entangled
-states in the following corrected section 5.4.
+states, and add equation~(\ref{eq:john}). The corrected version
+of section~5.4 below has no influence on the rest of the article. 
 
 
 \subsection{Maximal entanglement}
@@ -148,9 +147,9 @@ $0$, i.e.,
 \begin{equation}
 \forall j,\forall\mu,\braket{\sigma_{\mu}^{j}}=0\textrm{ .}\label{eq:john}
 \end{equation}
-Because equation (\ref{eq:john}) avoids any wrapping around when
-adding expectation values, it defines maximally entangled states over
-finite fields.
+Because equation (\ref{eq:john}) avoids wrapping around when adding
+expectation values, it defines maximally entangled states over finite
+fields.
 
 
 Computing some examples for various $n$ and small values of $p$,
