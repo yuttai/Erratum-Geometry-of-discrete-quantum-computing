@@ -61,78 +61,62 @@
 
 \title{Erratum: Geometry of discrete quantum computing}
 
-
 \author{Andrew J. Hanson}
-
-
-\address{School of Informatics and Computing, Indiana University, Bloomington,
-IN 47405, U.S.A}
-
+\address{School of Informatics and Computing, Indiana University, Bloomington, IN 47405, U.S.A}
 
 \author{Gerardo Ortiz}
-
-
-\address{Department of Physics, Indiana University, Bloomington, IN 47405,
-U.S.A}
-
+\address{Department of Physics, Indiana University, Bloomington, IN 47405, U.S.A}
 
 \author{Amr Sabry}
-
-
-\address{School of Informatics and Computing, Indiana University, Bloomington,
-IN 47405, U.S.A}
-
+\address{School of Informatics and Computing, Indiana University, Bloomington, IN 47405, U.S.A}
 
 \author{Yu-Tsung Tai}
+\address{Department of Mathematics, Indiana University, Bloomington, IN 47405, U.S.A}
+\address{School of Informatics and Computing, Indiana University, Bloomington, IN 47405, U.S.A}
 
-
-\address{Department of Mathematics, Indiana University, Bloomington, IN 47405,
-U.S.A}
-
-
-\address{School of Informatics and Computing, Indiana University, Bloomington,
-IN 47405, U.S.A}
-
-
-\noindent{\it Keywords\/}: {\today}
+%% \noindent{\it Keywords\/}: {\today}
 
 \maketitle
 
 \noindent Section~5.4 of our paper~\cite{geometry} requires a clarification and a correction.
 
 \paragraph*{Clarification: Unentangled vs.\ product states.}
-
-In conventional quantum mechanics, using the field of complex numbers, a state is unentangled when it can be expressed as a product state or, equivalently, when equation~(27) reports its purity to be 1~\cite{}. When using finite Galois fields $\ff{p^2}$, for particular choices of $p$, it is possible for equation~(27) to produce a purity of 1 for some entangled states. For example, the normalized entangled state $\ket{011}+\left(2+\rmi\right)\ket{100}+\ket{101}+\ket{110}$ has $P_{\fh}=1$ for $p=7$.
+In conventional quantum mechanics, using the field of complex numbers, a state is unentangled when it can be expressed as a product state or, equivalently, when equation~(27) reports its purity to be 1~\cite{PhysRevLett.92.107902, PhysRevA.68.032308}. When using finite Galois fields $\ff{p^2}$, for particular choices of $p$, it is possible for equation~(27) to produce a purity of 1 for some entangled states. For example, the normalized entangled state $\ket{\Psi} = \ket{011}+\left(2+\rmi\right)\ket{100}+\ket{101}+\ket{110}$ has $P_{\fh}=1$ for $p=7$. In addition, the process of determining whether a \emph{given} state $\ket{\Phi}$ is a product state may depend on $p$. 
 
 Thus, in finite fields, the simplest way to calculate the number of
 unentangled states is to disregard equation~(27) and count the number
 of product states. This is exactly how the counting in section~5.4
-was done, but the paper did not clarify that counting using equation~(27) would be incorrect.
+was done, but the paper did not point out that counting relying only on equation~(27) might not lead to the same result.
 
 \paragraph*{Correction: Maximally entangled states.}
-
-We correct the definition and the counting of maximally entangled
-states, and add equation~(\ref{eq:john}). The corrected version
-of section~5.4 below has no influence on the rest of the article. 
-
+We present below a new version of section~5.4 that correctly counts maximally entangled states. The rest of the article is independent of this revision.
 
 \subsection{Maximal entanglement}
 
-In conventional quantum mechanics, a state is maximally entangled
-when equation~(27) reports its purity to be 0. In the discrete case,
-states whose purity is a multiple of the field characteristic are
-incorrectly labeled as maximally entangled. For example, consider
-a normalized 3-qubit product state $\ket{\Psi_{1}}$ over $\ff{3^{2}}$:
-\[
-\ket{\Psi_{1}}=\ket{0}\otimes\left(\ket{0}-\ket{1}\right)\otimes\left(\ket{0}-\ket{1}\right)\textrm{ .}
-\]
-In this case the re-scaled purity $\overline{P_{\fh}}=0$, where 
-\[
-\overline{P_{\fh}}=\sum_{j=1}^{n}\sum_{\mu=x,y,z}\left\langle \sigma_{\mu}^{j}\right\rangle ^{2}\textrm{ .}
-\]
+In conventional quantum mechanics, a state $\ket{\Psi}$ is maximally entangled
+when equation~(27) reports its purity to be 0. Therefore, in the discrete case,
+states whose computed purity is a multiple of the field characteristic $p$ will be
+incorrectly labeled as maximally entangled by equation~(27). This occurs trivially when $n ~|~ p$. 
 
 
-In continuous case, the zero purity actually means every summand is
+
+
+
+
+For example, consider
+the normalized $n=3$-qubit product state $\ket{\Psi}$ over $\ff{3^{2}}$:
+\[
+\ket{\Psi}=\ket{0}\otimes\left(\ket{0}-\ket{1}\right)\otimes\left(\ket{0}-\ket{1}\right)\textrm{ .}
+\]
+In this case the quantity $n P_{\fh} = 3 P_{\fh} = 0$
+
+%% , where 
+%% \[
+%% \overline{P_{\fh}}=\sum_{j=1}^{n}\sum_{\mu=x,y,z}\left\langle 
+%% \sigma_{\mu}^{j}\right\rangle ^{2}\textrm{ .}
+%% \]
+
+In the continuous case, the zero purity actually means every summand is
 $0$, i.e., 
 \begin{equation}
 \forall j,\forall\mu,\braket{\sigma_{\mu}^{j}}=0\textrm{ .}\label{eq:john}
