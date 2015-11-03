@@ -1,0 +1,1683 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     56237,       1674]
+NotebookOptionsPosition[     52636,       1560]
+NotebookOutlinePosition[     52979,       1575]
+CellTagsIndexPosition[     52936,       1572]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+Summary of my algorithms for testing whether a state is a product state or not.
+   Yu-Tsung Tai (Based on Andrew Hanson\[CloseCurlyQuote]s \
+n-Qubit-Entangle-Summary.nb)\
+\>", "Section",
+ CellChangeTimes->{{3.6555019809891143`*^9, 3.65550202706775*^9}, {
+  3.655502338938588*^9, 3.65550237900988*^9}, {3.6555024743863354`*^9, 
+  3.6555024753263893`*^9}}],
+
+Cell["\<\
+Note: these do their own complex arithmetic.
+  On other systems, it may be better to use internal
+  complex arithmetic support.\
+\>", "Subsection"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Minimal Utility support code:", "Section",
+ CellChangeTimes->{3.655502264256316*^9}],
+
+Cell[TextData[{
+ "Compute the modulus ",
+ Cell[BoxData[
+  FormBox["p", TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ". Notice that this function is Listable so that it can not only modulus \
+numbers, but also vectors and matrices."
+}], "Text",
+ CellChangeTimes->{{3.65550881523347*^9, 3.6555088610470905`*^9}, {
+  3.655508993355658*^9, 3.655509050423922*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"cModp$", " ", "=", " ", 
+   RowBox[{"Compile", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"z", ",", "_Integer"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"p", ",", "_Integer"}], "}"}]}], "}"}], ",", 
+     RowBox[{"Mod", "[", 
+      RowBox[{"z", ",", "p", ",", 
+       RowBox[{"Quotient", "[", 
+        RowBox[{
+         RowBox[{"1", "-", "p"}], ",", "2"}], "]"}]}], "]"}], ",", 
+     RowBox[{"RuntimeAttributes", "->", "Listable"}], ",", 
+     RowBox[{"Parallelization", "->", "True"}], ",", 
+     RowBox[{"CompilationOptions", "->", 
+      RowBox[{"{", 
+       RowBox[{"\"\<InlineExternalDefinitions\>\"", "->", "True"}], "}"}]}], 
+     ",", 
+     RowBox[{"RuntimeOptions", "->", "\"\<Speed\>\""}]}], "]"}]}], 
+  ";"}]], "Input"],
+
+Cell["\<\
+Compute the product. Notice that this function is Listable so that it can not \
+only compute the number between numbers, but also vector scalar product.\
+\>", "Text",
+ CellChangeTimes->{{3.65550881523347*^9, 3.6555088610470905`*^9}, {
+  3.655508993355658*^9, 3.655509050423922*^9}, {3.6555091472854624`*^9, 
+  3.655509181779435*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"cTimes$", "=", 
+   RowBox[{"Compile", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"q", ",", "_Integer", ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"r", ",", "_Integer", ",", "1"}], "}"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"q", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
+         RowBox[{
+         "r", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}]}], "-", 
+        RowBox[{
+         RowBox[{"q", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], 
+         RowBox[{
+         "r", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}]}]}], ",", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"q", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
+         RowBox[{
+         "r", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}]}], "+", 
+        RowBox[{
+         RowBox[{"q", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], 
+         RowBox[{
+         "r", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}]}]}]}], 
+      "}"}], ",", 
+     RowBox[{"RuntimeAttributes", "->", "Listable"}], ",", 
+     RowBox[{"Parallelization", "->", "True"}], ",", 
+     RowBox[{"CompilationOptions", "->", 
+      RowBox[{"{", 
+       RowBox[{"\"\<InlineExternalDefinitions\>\"", "->", "True"}], "}"}]}], 
+     ",", 
+     RowBox[{"RuntimeOptions", "->", "\"\<Speed\>\""}]}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.655502294025019*^9, 3.6555023284379873`*^9}}],
+
+Cell[TextData[{
+ "Compute the inverse of a number in ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[DoubleStruckCapitalF]", "p"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ". Notice if ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"p", "|", "q"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ", it will rise an divide-by-zero exception."
+}], "Text",
+ CellChangeTimes->{{3.65550881523347*^9, 3.6555088610470905`*^9}, {
+  3.655508993355658*^9, 3.655509050423922*^9}, {3.6555091472854624`*^9, 
+  3.655509181779435*^9}, {3.6555092242358637`*^9, 3.6555092342124343`*^9}, {
+  3.6555093488969936`*^9, 3.6555093997989054`*^9}, {3.6555100278138256`*^9, 
+  3.6555101030471287`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"cRealInverse$", "=", 
+   RowBox[{"Compile", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"q", ",", "_Integer"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"p", ",", "_Integer"}], "}"}]}], "}"}], ",", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"cModp$", "[", 
+         RowBox[{"q", ",", "p"}], "]"}], "\[Equal]", "0"}], ",", 
+       FractionBox["1", "0"], ",", 
+       RowBox[{"cModp$", "[", 
+        RowBox[{
+         SuperscriptBox[
+          RowBox[{"cModp$", "[", 
+           RowBox[{"q", ",", "p"}], "]"}], 
+          RowBox[{"p", "-", "2"}]], ",", "p"}], "]"}]}], "]"}], ",", 
+     RowBox[{"CompilationOptions", "->", 
+      RowBox[{"{", 
+       RowBox[{"\"\<InlineExternalDefinitions\>\"", "->", "True"}], "}"}]}], 
+     ",", 
+     RowBox[{"RuntimeOptions", "->", "\"\<Speed\>\""}]}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.655509957847824*^9, 3.655509984462346*^9}}],
+
+Cell[TextData[{
+ "Compute the field norm of a vector. Notice for effencient reason, Mod ",
+ Cell[BoxData[
+  FormBox["p", TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " should be compute seperately."
+}], "Text",
+ CellChangeTimes->{{3.65550881523347*^9, 3.6555088610470905`*^9}, {
+  3.655508993355658*^9, 3.655509050423922*^9}, {3.6555091472854624`*^9, 
+  3.655509181779435*^9}, {3.6555092242358637`*^9, 3.6555092342124343`*^9}, {
+  3.6555093488969936`*^9, 3.6555093997989054`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"cAbs2V$", "=", 
+   RowBox[{"Compile", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"zList", ",", "_Integer", ",", "2"}], "}"}], "}"}], ",", 
+     RowBox[{
+      SubsuperscriptBox["\[Sum]", 
+       RowBox[{"i", "=", "1"}], 
+       RowBox[{"Length", "[", "zList", "]"}]], 
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox[
+         RowBox[{"zList", "\[LeftDoubleBracket]", 
+          RowBox[{"i", ",", "1"}], "\[RightDoubleBracket]"}], "2"], "+", 
+        SuperscriptBox[
+         RowBox[{"zList", "\[LeftDoubleBracket]", 
+          RowBox[{"i", ",", "2"}], "\[RightDoubleBracket]"}], "2"]}], ")"}]}],
+      ",", 
+     RowBox[{"CompilationOptions", "->", 
+      RowBox[{"{", 
+       RowBox[{"\"\<InlineExternalDefinitions\>\"", "->", "True"}], "}"}]}], 
+     ",", 
+     RowBox[{"RuntimeOptions", "->", "\"\<Speed\>\""}]}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.65550973801525*^9, 3.655509748038823*^9}}],
+
+Cell[TextData[{
+ "Compute the extectation value of an observable on a state. Notice that we \
+assume ",
+ Cell[BoxData[
+  FormBox["mat", TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " is Hermitian, so the extectation value is real. Therefore, we only need to \
+compute the real part of the extectation value..."
+}], "Text",
+ CellChangeTimes->{{3.655509426761447*^9, 3.6555094954383755`*^9}, {
+  3.6555095314264336`*^9, 3.655509575199938*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"expMat$", " ", "=", " ", 
+   RowBox[{"Compile", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"vec", ",", "_Integer", ",", "2"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"mat", ",", "_Integer", ",", "3"}], "}"}]}], "}"}], ",", 
+     RowBox[{
+      SubsuperscriptBox["\[Sum]", 
+       RowBox[{"i", "=", "1"}], 
+       RowBox[{"Length", "[", "vec", "]"}]], 
+      RowBox[{
+       SubsuperscriptBox["\[Sum]", 
+        RowBox[{"j", "=", "1"}], 
+        RowBox[{"Length", "[", "vec", "]"}]], 
+       RowBox[{
+        RowBox[{"vec", "\[LeftDoubleBracket]", "j", "\[RightDoubleBracket]"}],
+         ".", 
+        RowBox[{"cTimes$", "[", 
+         RowBox[{
+          RowBox[{
+          "vec", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}], ",", 
+          RowBox[{"mat", "\[LeftDoubleBracket]", 
+           RowBox[{"i", ",", "j"}], "\[RightDoubleBracket]"}]}], "]"}]}]}]}], 
+     ",", 
+     RowBox[{"RuntimeAttributes", "->", "Listable"}], ",", 
+     RowBox[{"Parallelization", "->", "True"}], ",", 
+     RowBox[{"CompilationOptions", "->", 
+      RowBox[{"{", 
+       RowBox[{"\"\<InlineExternalDefinitions\>\"", "->", "True"}], "}"}]}], 
+     ",", 
+     RowBox[{"RuntimeOptions", "->", "\"\<Speed\>\""}]}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{
+  3.655509417869939*^9, {3.6555097536481442`*^9, 3.655509767959963*^9}}],
+
+Cell[TextData[{
+ "Compute the extectation value of an observable on a state. Notice that we \
+assume ",
+ Cell[BoxData[
+  FormBox["mat", TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " is Hermitian, so the extectation value is real. Therefore, we only need to \
+compute the real part of the extectation value..."
+}], "Text",
+ CellChangeTimes->{{3.655509426761447*^9, 3.6555094954383755`*^9}, {
+  3.6555095314264336`*^9, 3.655509575199938*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"complex2List", "=", 
+   RowBox[{"Compile", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"z", ",", "_Complex"}], "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Round", "[", 
+        RowBox[{"Re", "[", "z", "]"}], "]"}], ",", 
+       RowBox[{"Round", "[", 
+        RowBox[{"Im", "[", "z", "]"}], "]"}]}], "}"}], ",", 
+     RowBox[{"RuntimeAttributes", "->", "Listable"}], ",", 
+     RowBox[{"Parallelization", "->", "True"}], ",", 
+     RowBox[{"CompilationOptions", "->", 
+      RowBox[{"{", 
+       RowBox[{"\"\<InlineExternalDefinitions\>\"", "->", "True"}], "}"}]}], 
+     ",", 
+     RowBox[{"RuntimeOptions", "->", "\"\<Speed\>\""}]}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"list2Complex", "=", 
+   RowBox[{"Compile", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"z", ",", "_Integer", ",", "1"}], "}"}], "}"}], ",", 
+     RowBox[{
+      RowBox[{"z", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
+      "+", 
+      RowBox[{"\[ImaginaryI]", " ", 
+       RowBox[{
+       "z", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}]}]}], ",", 
+     RowBox[{"RuntimeAttributes", "->", "Listable"}], ",", 
+     RowBox[{"Parallelization", "->", "True"}], ",", 
+     RowBox[{"CompilationOptions", "->", 
+      RowBox[{"{", 
+       RowBox[{"\"\<InlineExternalDefinitions\>\"", "->", "True"}], "}"}]}], 
+     ",", 
+     RowBox[{"RuntimeOptions", "->", "\"\<Speed\>\""}]}], "]"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.6555097907162647`*^9, 3.6555098020099106`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"cBasis", "=", 
+   RowBox[{"Compile", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"p", ",", "_Integer"}], "}"}], "}"}], ",", 
+     RowBox[{"Flatten", "[", 
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Range", "[", "p", "]"}], "-", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"Quotient", "[", 
+            RowBox[{
+             RowBox[{"p", "-", "1"}], ",", "2"}], "]"}], "+", "1"}], ")"}], 
+         "+", 
+         RowBox[{"s", " ", "I"}]}], ",", 
+        RowBox[{"{", 
+         RowBox[{"s", ",", 
+          RowBox[{"Quotient", "[", 
+           RowBox[{
+            RowBox[{"1", "-", "p"}], ",", "2"}], "]"}], ",", 
+          RowBox[{"Quotient", "[", 
+           RowBox[{
+            RowBox[{"p", "-", "1"}], ",", "2"}], "]"}]}], "}"}]}], "]"}], 
+      "]"}], ",", 
+     RowBox[{"RuntimeAttributes", "->", "Listable"}], ",", 
+     RowBox[{"Parallelization", "->", "True"}], ",", 
+     RowBox[{"CompilationOptions", "->", 
+      RowBox[{"{", 
+       RowBox[{"\"\<InlineExternalDefinitions\>\"", "->", "True"}], "}"}]}], 
+     ",", 
+     RowBox[{"RuntimeOptions", "->", "\"\<Speed\>\""}]}], "]"}]}], 
+  ";"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"qBasis", "=", 
+   RowBox[{"Compile", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"p", ",", "_Integer"}], "}"}], "}"}], ",", 
+     RowBox[{"Map", "[", 
+      RowBox[{"complex2List", ",", 
+       RowBox[{"Join", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"0", ",", "1"}], "}"}], ",", 
+         RowBox[{"Complement", "[", 
+          RowBox[{
+           RowBox[{"cBasis", "[", "p", "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", "1"}], "}"}]}], "]"}]}], "]"}]}], "]"}], ",", 
+     RowBox[{"RuntimeAttributes", "->", "Listable"}], ",", 
+     RowBox[{"Parallelization", "->", "True"}], ",", 
+     RowBox[{"CompilationOptions", "->", 
+      RowBox[{"{", 
+       RowBox[{"\"\<InlineExternalDefinitions\>\"", "->", "True"}], "}"}]}], 
+     ",", 
+     RowBox[{"RuntimeOptions", "->", "\"\<Speed\>\""}]}], "]"}]}], 
+  ";"}]], "Input"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"cFNormInv$", "=", 
+   RowBox[{"Compile", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"zRe", ",", "_Integer"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"p", ",", "_Integer"}], "}"}]}], "}"}], ",", 
+     RowBox[{"Module", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"numberOrder", "=", 
+         RowBox[{"Join", "[", 
+          RowBox[{
+           RowBox[{"Range", "[", 
+            RowBox[{"0", ",", 
+             RowBox[{"Quotient", "[", 
+              RowBox[{
+               RowBox[{"p", "-", "1"}], ",", "2"}], "]"}]}], "]"}], ",", 
+           RowBox[{"Range", "[", 
+            RowBox[{
+             RowBox[{"-", "1"}], ",", 
+             RowBox[{"Quotient", "[", 
+              RowBox[{
+               RowBox[{"1", "-", "p"}], ",", "2"}], "]"}], ",", 
+             RowBox[{"-", "1"}]}], "]"}]}], "]"}]}], "}"}], ",", 
+       RowBox[{"Do", "[", 
+        RowBox[{
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Mod", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"numberOrder", "[", 
+                   RowBox[{"[", "qRe", "]"}], "]"}], "^", "2"}], "+", 
+                 RowBox[{
+                  RowBox[{"numberOrder", "[", 
+                   RowBox[{"[", "qIm", "]"}], "]"}], "^", "2"}]}], ")"}], 
+               "zRe"}], ",", "p"}], "]"}], "==", "1"}], ",", 
+           RowBox[{"Return", "[", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"numberOrder", "[", 
+               RowBox[{"[", "qRe", "]"}], "]"}], ",", 
+              RowBox[{"numberOrder", "[", 
+               RowBox[{"[", "qIm", "]"}], "]"}]}], "}"}], "]"}]}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"qIm", ",", "p"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"qRe", ",", "p"}], "}"}]}], "]"}]}], "]"}], ",", 
+     RowBox[{"RuntimeAttributes", "->", "Listable"}], ",", 
+     RowBox[{"Parallelization", "->", "True"}], ",", 
+     RowBox[{"CompilationOptions", "->", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"\"\<ExpressionOptimization\>\"", "->", "True"}], ",", 
+        RowBox[{"\"\<InlineCompiledFunctions\>\"", "->", "True"}], ",", 
+        RowBox[{"\"\<InlineExternalDefinitions\>\"", "->", "True"}]}], 
+       "}"}]}], ",", 
+     RowBox[{"RuntimeOptions", "->", "\"\<Speed\>\""}]}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"cNormalize", "[", 
+   RowBox[{"v_List", ",", "p_Integer", ",", "FNITable_List"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"abs", "=", 
+      RowBox[{"Mod", "[", 
+       RowBox[{
+        RowBox[{"cAbs2V$", "[", "v", "]"}], ",", "p", ",", "1"}], "]"}]}], 
+     "}"}], ",", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{"abs", "==", "p"}], ",", "v", ",", 
+      RowBox[{"cModp$", "[", 
+       RowBox[{
+        RowBox[{"cTimes$", "[", 
+         RowBox[{
+          RowBox[{"FNITable", "[", 
+           RowBox[{"[", "abs", "]"}], "]"}], ",", "v"}], "]"}], ",", "p"}], 
+       "]"}]}], "]"}]}], "]"}]}], "\n", 
+ RowBox[{"cNormalize", "[", 
+  RowBox[{
+   RowBox[{"complex2List", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "1"}], "+", "I"}], ",", "1"}], "}"}], "]"}], ",", "3", 
+   ",", 
+   RowBox[{"cFNormInv$", "[", 
+    RowBox[{
+     RowBox[{"Range", "[", "3", "]"}], ",", "3"}], "]"}]}], "]"}], "\n", 
+ RowBox[{"cNormalize", "[", 
+  RowBox[{
+   RowBox[{"complex2List", "[", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0", ",", "0", ",", "1", ",", "1", ",", 
+      RowBox[{
+       RowBox[{"-", "3"}], "-", "I"}], ",", 
+      RowBox[{
+       RowBox[{"-", "3"}], "-", "I"}], ",", 
+      RowBox[{"-", "3"}]}], "}"}], "]"}], ",", "7", ",", 
+   RowBox[{"cFNormInv$", "[", 
+    RowBox[{
+     RowBox[{"Range", "[", "7", "]"}], ",", "7"}], "]"}]}], "]"}], "\n", 
+ RowBox[{"cModp$", "[", 
+  RowBox[{
+   RowBox[{"cAbs2V$", "[", 
+    RowBox[{"cNormalize", "[", 
+     RowBox[{
+      RowBox[{"complex2List", "[", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0", ",", "0", ",", "1", ",", "1", ",", 
+         RowBox[{
+          RowBox[{"-", "3"}], "-", "I"}], ",", 
+         RowBox[{
+          RowBox[{"-", "3"}], "-", "I"}], ",", 
+         RowBox[{"-", "3"}]}], "}"}], "]"}], ",", "7", ",", 
+      RowBox[{"cFNormInv$", "[", 
+       RowBox[{
+        RowBox[{"Range", "[", "7", "]"}], ",", "7"}], "]"}]}], "]"}], "]"}], 
+   ",", "7"}], "]"}]}], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"cQuotient", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"m1_Integer", ",", "m2_Integer"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n1_Integer", ",", "n2_Integer"}], "}"}], ",", "p_Integer"}], 
+   "]"}], ":=", 
+  RowBox[{
+   RowBox[{"cQuotient", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"m1", ",", "m2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"n1", ",", "n2"}], "}"}], ",", "p"}], "]"}], "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"cModp$", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"n1", ",", "n2"}], "}"}], ",", "p"}], "]"}], "==", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "0"}], "}"}]}], ",", 
+       RowBox[{"Append", "[", 
+        RowBox[{"#", ",", "ComplexInfinity"}], "]"}], ",", "#"}], "]"}], 
+     "&"}], "[", 
+    RowBox[{"Select", "[", 
+     RowBox[{
+      RowBox[{"qBasis", "[", "p", "]"}], ",", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"cModp$", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"m1", ",", "m2"}], "}"}], "-", 
+           RowBox[{"cTimes$", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"n1", ",", "n2"}], "}"}], ",", "#"}], "]"}]}], ",", 
+          "p"}], "]"}], "==", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "0"}], "}"}]}], "&"}]}], "]"}], "]"}]}]}]], "Input"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"cQuotient", "[", 
+   RowBox[{
+    RowBox[{"vec1_", "?", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"ArrayDepth", "[", "#", "]"}], ">", "1"}], "&"}], ")"}]}], 
+    ",", 
+    RowBox[{"vec2_", "?", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"ArrayDepth", "[", "#", "]"}], ">", "1"}], "&"}], ")"}]}], 
+    ",", "p_Integer"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"cQuotient", "[", 
+    RowBox[{"vec1", ",", "vec2", ",", "p"}], "]"}], "=", 
+   RowBox[{"Intersection", "@@", 
+    RowBox[{"MapThread", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"cQuotient", "[", 
+        RowBox[{"#1", ",", "#2", ",", "p"}], "]"}], "&"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"vec1", ",", "vec2"}], "}"}]}], "]"}]}]}]}], "\n", 
+ RowBox[{"cQuotient", "[", 
+  RowBox[{
+   RowBox[{"cNormalize", "[", 
+    RowBox[{
+     RowBox[{"complex2List", "[", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0", ",", "0", ",", "1", ",", "1", ",", 
+        RowBox[{
+         RowBox[{"-", "3"}], "-", "I"}], ",", 
+        RowBox[{
+         RowBox[{"-", "3"}], "-", "I"}], ",", 
+        RowBox[{"-", "3"}]}], "}"}], "]"}], ",", "7", ",", 
+     RowBox[{"cFNormInv$", "[", 
+      RowBox[{
+       RowBox[{"Range", "[", "7", "]"}], ",", "7"}], "]"}]}], "]"}], ",", 
+   RowBox[{"complex2List", "[", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0", ",", "0", ",", "1", ",", "1", ",", 
+      RowBox[{
+       RowBox[{"-", "3"}], "-", "I"}], ",", 
+      RowBox[{
+       RowBox[{"-", "3"}], "-", "I"}], ",", 
+      RowBox[{"-", "3"}]}], "}"}], "]"}], ",", "7"}], "]"}]}], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"tensorQ", "[", 
+   RowBox[{"tensorType_List", ",", "vecTensor_List", ",", "p_Integer"}], 
+   "]"}], ":=", 
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Length", "[", "tensorType", "]"}], "==", "1"}], ",", "True", 
+    ",", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"section", "=", 
+         RowBox[{"Quotient", "[", 
+          RowBox[{
+           RowBox[{"Length", "[", "vecTensor", "]"}], ",", 
+           RowBox[{"2", "^", 
+            RowBox[{"First", "[", "tensorType", "]"}]}]}], "]"}]}], ",", 
+        "vecTensorSection"}], "}"}], ",", 
+      RowBox[{
+       RowBox[{"vecTensorSection", "=", 
+        RowBox[{"vecTensor", "[", 
+         RowBox[{"[", 
+          RowBox[{";;", "section"}], "]"}], "]"}]}], ";", 
+       RowBox[{
+        RowBox[{"And", "@@", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{"{", "}"}], "!=", 
+             RowBox[{"cQuotient", "[", 
+              RowBox[{"#", ",", "vecTensorSection", ",", "p"}], "]"}]}], 
+            "&"}], "/@", 
+           RowBox[{"Partition", "[", 
+            RowBox[{"vecTensor", ",", "section"}], "]"}]}], ")"}]}], "\[And]", 
+        RowBox[{"tensorQ", "[", 
+         RowBox[{
+          RowBox[{"Rest", "[", "tensorType", "]"}], ",", "vecTensorSection", 
+          ",", "p"}], "]"}]}]}]}], "]"}]}], "]"}]}]], "Input"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"purity", "=", 
+   RowBox[{"Compile", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"LieAlgebra", ",", "_Integer", ",", "4"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"vec", ",", "_Integer", ",", "2"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"p", ",", "_Integer"}], "}"}]}], "}"}], ",", 
+     RowBox[{"cModp$", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"cRealInverse$", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"cAbs2V$", "[", "vec", "]"}], "^", "2"}], ",", "p"}], 
+         "]"}], 
+        RowBox[{
+         SubsuperscriptBox["\[Sum]", 
+          RowBox[{"j", "=", "1"}], 
+          RowBox[{"Length", "[", "LieAlgebra", "]"}]], 
+         SuperscriptBox[
+          RowBox[{"expMat$", "[", 
+           RowBox[{"vec", ",", 
+            RowBox[{"LieAlgebra", "[", 
+             RowBox[{"[", "j", "]"}], "]"}]}], "]"}], "2"]}]}], ",", "p"}], 
+      "]"}], ",", 
+     RowBox[{"RuntimeAttributes", "->", "Listable"}], ",", 
+     RowBox[{"Parallelization", "->", "True"}], ",", 
+     RowBox[{"CompilationOptions", "->", 
+      RowBox[{"{", 
+       RowBox[{"\"\<InlineExternalDefinitions\>\"", "->", "True"}], "}"}]}], 
+     ",", 
+     RowBox[{"RuntimeOptions", "->", "\"\<Speed\>\""}]}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"purityInC", "[", 
+    RowBox[{"LieAlgebra_List", ",", "vec_List"}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"1", "/", 
+     RowBox[{
+      RowBox[{"cAbs2V$", "[", "vec", "]"}], "^", "2"}]}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      SubsuperscriptBox["\[Sum]", 
+       RowBox[{"j", "=", "1"}], 
+       RowBox[{"Length", "[", "LieAlgebra", "]"}]], 
+      SuperscriptBox[
+       RowBox[{"expMat$", "[", 
+        RowBox[{"vec", ",", 
+         RowBox[{"LieAlgebra", "[", 
+          RowBox[{"[", "j", "]"}], "]"}]}], "]"}], "2"]}], ")"}]}]}], 
+  ";"}]}], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Select", "[", 
+  RowBox[{
+   RowBox[{"getQubitsInSubsystemList", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "1", ",", "1"}], "}"}], ",", "3"}], "]"}], ",", 
+   RowBox[{
+    RowBox[{"\[Not]", 
+     RowBox[{"tensorQ", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"1", ",", "1", ",", "1"}], "}"}], ",", "#", ",", "7"}], 
+      "]"}]}], "&"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6544194499929557`*^9, 3.654419451367977*^9}, {
+   3.6544194926586113`*^9, 3.654419509193865*^9}, 3.6544195993777504`*^9, {
+   3.654419655443611*^9, 3.654419706069389*^9}, {3.6544197520000944`*^9, 
+   3.6544197654119244`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", "}"}]], "Output",
+ CellChangeTimes->{
+  3.6544196722688694`*^9, {3.6544197592927065`*^9, 3.6544197672350287`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Select", "[", 
+  RowBox[{
+   RowBox[{"getQubitsInSubsystemList", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "1", ",", "1"}], "}"}], ",", "3"}], "]"}], ",", 
+   RowBox[{
+    RowBox[{"\[Not]", 
+     RowBox[{"tensorQ", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"1", ",", "1", ",", "1"}], "}"}], ",", "#", ",", "11"}], 
+      "]"}]}], "&"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6544198612904086`*^9, 3.654419861741434*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", "}"}]], "Output",
+ CellChangeTimes->{3.654419863205518*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Select", "[", 
+  RowBox[{
+   RowBox[{"getQubitsInSubsystemList", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "1", ",", "1"}], "}"}], ",", "3"}], "]"}], ",", 
+   RowBox[{
+    RowBox[{"\[Not]", 
+     RowBox[{"tensorQ", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"1", ",", "1", ",", "1"}], "}"}], ",", "#", ",", "13"}], 
+      "]"}]}], "&"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6544198705929403`*^9, 3.654419870829954*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", "}"}]], "Output",
+ CellChangeTimes->{3.6544198726250567`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Catch", "[", "\[IndentingNewLine]", 
+  RowBox[{"getQubitsInSubsystem", "[", 
+   RowBox[{
+    RowBox[{"{", "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0"}], "}"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "1", ",", "1"}], "}"}], ",", "7", ",", 
+    RowBox[{"Function", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"vecs", ",", "vecTensor"}], "}"}], ",", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"\[Not]", 
+          RowBox[{"tensorQ", "[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"1", ",", "1", ",", "1"}], "}"}], ",", "vecTensor", ",", 
+            "3"}], "]"}]}], "\[And]", 
+         RowBox[{"\[Not]", 
+          RowBox[{"tensorQ", "[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"1", ",", "1", ",", "1"}], "}"}], ",", "vecTensor", ",", 
+            "11"}], "]"}]}], "\[And]", 
+         RowBox[{"\[Not]", 
+          RowBox[{"tensorQ", "[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"1", ",", "1", ",", "1"}], "}"}], ",", "vecTensor", ",", 
+            "19"}], "]"}]}]}], ",", 
+        RowBox[{"Throw", "[", "vecTensor", "]"}]}], "]"}]}], "]"}]}], "]"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.654445405004425*^9, 3.6544454431369762`*^9}, {
+  3.65444551241054*^9, 3.654445512553042*^9}, {3.6544455925267706`*^9, 
+  3.6544455973693447`*^9}, {3.6544456788055954`*^9, 3.654445693048314*^9}, {
+  3.654445769446988*^9, 3.6544457753270783`*^9}, {3.6544458069275637`*^9, 
+  3.654445812137644*^9}, {3.65444589782896*^9, 3.654445940362113*^9}, {
+  3.6544469351427402`*^9, 3.65444700217377*^9}, {3.6544471486035185`*^9, 
+  3.6544473302013083`*^9}, {3.654447421775215*^9, 3.654447422442725*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "3"}], ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "3"}], ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.654447302638385*^9, 3.6544473184261274`*^9}, 
+   3.6544474241827517`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"cQuotient", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"2", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "3"}], ",", "0"}], "}"}], ",", "#"}], "]"}], "&"}], "/@", 
+  RowBox[{"{", 
+   RowBox[{"3", ",", "11", ",", "19", ",", "23"}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.654489454096317*^9, 3.654489485456361*^9}, {
+  3.654707455769417*^9, 3.6547074576394196`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", "ComplexInfinity", "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"3", ",", "0"}], "}"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "7"}], ",", "0"}], "}"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"7", ",", "0"}], "}"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.654489486806362*^9, {3.6544895340864286`*^9, 3.654489554446457*^9}, 
+   3.6547075075294895`*^9, 3.6547078279709377`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  SubsuperscriptBox["\[Sum]", 
+   RowBox[{"j", "=", "1"}], 
+   RowBox[{"Length", "[", 
+    RowBox[{
+     RowBox[{"su2", "[", "]"}], "\[CirclePlus]", "2"}], "]"}]], 
+  SuperscriptBox[
+   RowBox[{"expMat$", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"1", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "3"}], ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "3"}], ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"2", ",", "0"}], "}"}]}], "}"}], ",", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"su2", "[", "]"}], "\[CirclePlus]", "2"}], ")"}], "[", 
+      RowBox[{"[", "j", "]"}], "]"}]}], "]"}], "2"]}]], "Input",
+ CellChangeTimes->{{3.654708740726146*^9, 3.65470876106831*^9}}],
+
+Cell[BoxData["333"], "Output",
+ CellChangeTimes->{3.6547087641204844`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  SubsuperscriptBox["\[Sum]", 
+   RowBox[{"j", "=", "1"}], 
+   RowBox[{"Length", "[", 
+    RowBox[{"2", "\[CirclePlus]", 
+     RowBox[{"su2", "[", "]"}]}], "]"}]], 
+  SuperscriptBox[
+   RowBox[{"expMat$", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"1", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "3"}], ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "3"}], ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"2", ",", "0"}], "}"}]}], "}"}], ",", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"2", "\[CirclePlus]", 
+        RowBox[{"su2", "[", "]"}]}], ")"}], "[", 
+      RowBox[{"[", "j", "]"}], "]"}]}], "]"}], "2"]}]], "Input",
+ CellChangeTimes->{{3.6547088048179464`*^9, 3.654708811417956*^9}}],
+
+Cell[BoxData["333"], "Output",
+ CellChangeTimes->{3.6547088125979576`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"purity", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"su2", "[", "]"}], "\[CirclePlus]", "2"}], ",", 
+       RowBox[{"2", "\[CirclePlus]", 
+        RowBox[{"su2", "[", "]"}]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"1", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "3"}], ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "3"}], ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"2", ",", "0"}], "}"}]}], "}"}], ",", "#"}], "]"}], "&"}], "/@", 
+  RowBox[{"{", 
+   RowBox[{"3", ",", "7", ",", "11", ",", "19", ",", "23"}], "}"}]}]], "Input",
+ CellChangeTimes->{
+  3.654613123874838*^9, {3.6546131610448895`*^9, 3.6546131878749275`*^9}, {
+   3.6546135568974557`*^9, 3.6546136136475353`*^9}, {3.6547074670494328`*^9, 
+   3.6547074676194334`*^9}, {3.6547084597218227`*^9, 3.654708466201831*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"CompiledFunction", "::", "cfne"}], "MessageName"], ":", 
+  " ", "\<\"Numerical error encountered; proceeding with uncompiled \
+evaluation. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/CompiledFunction\\\", ButtonNote -> \
+\\\"CompiledFunction::cfne\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.6547084673518333`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Power", "::", "infy"}], "MessageName"], ":", 
+  " ", "\<\"Infinite expression \[NoBreak]\\!\\(\\*FractionBox[\\\"1\\\", \
+\\\"0\\\"]\\)\[NoBreak] encountered. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/infy\\\", \
+ButtonNote -> \\\"Power::infy\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.654708467401833*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Infinity", "::", "indet"}], "MessageName"], ":", 
+  " ", "\<\"Indeterminate expression \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"ComplexInfinity\\\", \\\"-\\\", \
+\\\"ComplexInfinity\\\"}]\\)\[NoBreak] encountered. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/indet\\\", ButtonNote -> \
+\\\"Infinity::indet\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.6547084674418335`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"CompiledFunction", "::", "cfsa"}], "MessageName"], ":", 
+  " ", "\<\"Argument \[NoBreak]\\!\\(\\*RowBox[{\\\"ComplexInfinity\\\"}]\\)\
+\[NoBreak] at position \[NoBreak]\\!\\(\\*RowBox[{\\\"1\\\"}]\\)\[NoBreak] \
+should be a \[NoBreak]\\!\\(\\*RowBox[{\\\"\\\\\\\"machine-size integer\\\\\\\
+\"\\\"}]\\)\[NoBreak]. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/CompiledFunction/cfsa\\\", ButtonNote -> \
+\\\"CompiledFunction::cfsa\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.654708467461833*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"CompiledFunction", "::", "cfse"}], "MessageName"], ":", 
+  " ", "\<\"Compiled expression \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"Indeterminate\\\"}]\\)\[NoBreak] should be a \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"\\\\\\\"machine-size real number\\\\\\\"\\\"}]\
+\\)\[NoBreak]. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/CompiledFunction/cfse\\\", ButtonNote -> \
+\\\"CompiledFunction::cfse\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.6547084674818335`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"CompiledFunction", "::", "cfexe"}], "MessageName"], ":", 
+  " ", "\<\"Could not complete external evaluation; proceeding with \
+uncompiled evaluation. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/CompiledFunction\\\", ButtonNote -> \
+\\\"CompiledFunction::cfexe\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.654708467531833*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"CompiledFunction", "::", "cfne"}], "MessageName"], ":", 
+  " ", "\<\"Numerical error encountered; proceeding with uncompiled \
+evaluation. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/CompiledFunction\\\", ButtonNote -> \
+\\\"CompiledFunction::cfne\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.654708467581833*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Power", "::", "infy"}], "MessageName"], ":", 
+  " ", "\<\"Infinite expression \[NoBreak]\\!\\(\\*FractionBox[\\\"1\\\", \
+\\\"0\\\"]\\)\[NoBreak] encountered. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/infy\\\", \
+ButtonNote -> \\\"Power::infy\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.654708467621833*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Infinity", "::", "indet"}], "MessageName"], ":", 
+  " ", "\<\"Indeterminate expression \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"ComplexInfinity\\\", \\\"-\\\", \
+\\\"ComplexInfinity\\\"}]\\)\[NoBreak] encountered. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/indet\\\", ButtonNote -> \
+\\\"Infinity::indet\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.6547084676518335`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"CompiledFunction", "::", "cfsa"}], "MessageName"], ":", 
+  " ", "\<\"Argument \[NoBreak]\\!\\(\\*RowBox[{\\\"ComplexInfinity\\\"}]\\)\
+\[NoBreak] at position \[NoBreak]\\!\\(\\*RowBox[{\\\"1\\\"}]\\)\[NoBreak] \
+should be a \[NoBreak]\\!\\(\\*RowBox[{\\\"\\\\\\\"machine-size integer\\\\\\\
+\"\\\"}]\\)\[NoBreak]. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/CompiledFunction/cfsa\\\", ButtonNote -> \
+\\\"CompiledFunction::cfsa\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.6547084676718335`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"CompiledFunction", "::", "cfse"}], "MessageName"], ":", 
+  " ", "\<\"Compiled expression \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"Indeterminate\\\"}]\\)\[NoBreak] should be a \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"\\\\\\\"machine-size real number\\\\\\\"\\\"}]\
+\\)\[NoBreak]. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/CompiledFunction/cfse\\\", ButtonNote -> \
+\\\"CompiledFunction::cfse\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.6547084676918335`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"CompiledFunction", "::", "cfne"}], "MessageName"], ":", 
+  " ", "\<\"Numerical error encountered; proceeding with uncompiled \
+evaluation. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/CompiledFunction\\\", ButtonNote -> \
+\\\"CompiledFunction::cfne\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.6547084677418337`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"General", "::", "stop"}], "MessageName"], ":", 
+  " ", "\<\"Further output of \
+\[NoBreak]\\!\\(\\*StyleBox[RowBox[{\\\"CompiledFunction\\\", \\\"::\\\", \
+\\\"cfne\\\"}], \\\"MessageName\\\"]\\)\[NoBreak] will be suppressed during \
+this calculation. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/stop\\\", ButtonNote -> \
+\\\"General::stop\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.6547084677718334`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Power", "::", "infy"}], "MessageName"], ":", 
+  " ", "\<\"Infinite expression \[NoBreak]\\!\\(\\*FractionBox[\\\"1\\\", \
+\\\"0\\\"]\\)\[NoBreak] encountered. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/infy\\\", \
+ButtonNote -> \\\"Power::infy\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.6547084678118334`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"General", "::", "stop"}], "MessageName"], ":", 
+  " ", "\<\"Further output of \[NoBreak]\\!\\(\\*StyleBox[RowBox[{\\\"Power\\\
+\", \\\"::\\\", \\\"infy\\\"}], \\\"MessageName\\\"]\\)\[NoBreak] will be \
+suppressed during this calculation. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\
+\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/stop\\\", ButtonNote -> \
+\\\"General::stop\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.654708467831834*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Infinity", "::", "indet"}], "MessageName"], ":", 
+  " ", "\<\"Indeterminate expression \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"ComplexInfinity\\\", \\\"-\\\", \
+\\\"ComplexInfinity\\\"}]\\)\[NoBreak] encountered. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/indet\\\", ButtonNote -> \
+\\\"Infinity::indet\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.654708467871834*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"General", "::", "stop"}], "MessageName"], ":", 
+  " ", "\<\"Further output of \
+\[NoBreak]\\!\\(\\*StyleBox[RowBox[{\\\"Infinity\\\", \\\"::\\\", \\\"indet\\\
+\"}], \\\"MessageName\\\"]\\)\[NoBreak] will be suppressed during this \
+calculation. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/stop\\\", ButtonNote -> \
+\\\"General::stop\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.6547084678918333`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"CompiledFunction", "::", "cfsa"}], "MessageName"], ":", 
+  " ", "\<\"Argument \[NoBreak]\\!\\(\\*RowBox[{\\\"ComplexInfinity\\\"}]\\)\
+\[NoBreak] at position \[NoBreak]\\!\\(\\*RowBox[{\\\"1\\\"}]\\)\[NoBreak] \
+should be a \[NoBreak]\\!\\(\\*RowBox[{\\\"\\\\\\\"machine-size integer\\\\\\\
+\"\\\"}]\\)\[NoBreak]. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/CompiledFunction/cfsa\\\", ButtonNote -> \
+\\\"CompiledFunction::cfsa\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.6547084679218335`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"General", "::", "stop"}], "MessageName"], ":", 
+  " ", "\<\"Further output of \
+\[NoBreak]\\!\\(\\*StyleBox[RowBox[{\\\"CompiledFunction\\\", \\\"::\\\", \
+\\\"cfsa\\\"}], \\\"MessageName\\\"]\\)\[NoBreak] will be suppressed during \
+this calculation. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/stop\\\", ButtonNote -> \
+\\\"General::stop\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.6547084679418335`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0.`", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1.`", ",", "1.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"3.`", ",", "3.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"3.`", ",", "3.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"Indeterminate", ",", "Indeterminate"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.6546136031975203`*^9, 3.6546136153175373`*^9}, 
+   3.654707513019497*^9, 3.6547078309609423`*^9, 3.6547078920910273`*^9, {
+   3.6547084613118243`*^9, 3.6547084679418335`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Catch", "[", "\[IndentingNewLine]", 
+  RowBox[{"getQubitsInSubsystem", "[", 
+   RowBox[{
+    RowBox[{"{", "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0"}], "}"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "1", ",", "1"}], "}"}], ",", "11", ",", 
+    RowBox[{"Function", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"vecs", ",", "vecTensor"}], "}"}], ",", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"\[Not]", 
+          RowBox[{"tensorQ", "[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"1", ",", "1", ",", "1"}], "}"}], ",", "vecTensor", ",", 
+            "3"}], "]"}]}], "\[And]", 
+         RowBox[{"\[Not]", 
+          RowBox[{"tensorQ", "[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"1", ",", "1", ",", "1"}], "}"}], ",", "vecTensor", ",", 
+            "7"}], "]"}]}], "\[And]", 
+         RowBox[{"\[Not]", 
+          RowBox[{"tensorQ", "[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"1", ",", "1", ",", "1"}], "}"}], ",", "vecTensor", ",", 
+            "19"}], "]"}]}]}], ",", 
+        RowBox[{"Throw", "[", "vecTensor", "]"}]}], "]"}]}], "]"}]}], "]"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.654447449233136*^9, 3.654447454620719*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "5"}], ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "5"}], ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.6544474602083054`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"cQuotient", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"3", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "5"}], ",", "0"}], "}"}], ",", "#"}], "]"}], "&"}], "/@", 
+  RowBox[{"{", 
+   RowBox[{"3", ",", "7", ",", "11", ",", "19"}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.6544896626066084`*^9, 3.654489668486617*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0"}], "}"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "2"}], ",", "0"}], "}"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "5"}], ",", "0"}], "}"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"7", ",", "0"}], "}"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.6544896695266185`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"purity", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"su2", "[", "]"}], "\[CirclePlus]", "2"}], ",", 
+       RowBox[{"2", "\[CirclePlus]", 
+        RowBox[{"su2", "[", "]"}]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"1", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "5"}], ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "5"}], ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"3", ",", "0"}], "}"}]}], "}"}], ",", "#"}], "]"}], "&"}], "/@", 
+  RowBox[{"{", 
+   RowBox[{"3", ",", "7", ",", "11", ",", "19"}], "}"}]}]], "Input",
+ CellChangeTimes->{
+  3.654613123874838*^9, {3.6546131610448895`*^9, 3.6546131878749275`*^9}, {
+   3.6546135568974557`*^9, 3.6546136136475353`*^9}, 3.6546136625476036`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "3"}], ",", 
+     RowBox[{"-", "3"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.6546136639676056`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Catch", "[", "\[IndentingNewLine]", 
+  RowBox[{"getQubitsInSubsystem", "[", 
+   RowBox[{
+    RowBox[{"{", "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0"}], "}"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "1", ",", "1"}], "}"}], ",", "19", ",", 
+    RowBox[{"Function", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"vecs", ",", "vecTensor"}], "}"}], ",", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"\[Not]", 
+          RowBox[{"tensorQ", "[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"1", ",", "1", ",", "1"}], "}"}], ",", "vecTensor", ",", 
+            "3"}], "]"}]}], "\[And]", 
+         RowBox[{"\[Not]", 
+          RowBox[{"tensorQ", "[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"1", ",", "1", ",", "1"}], "}"}], ",", "vecTensor", ",", 
+            "7"}], "]"}]}], "\[And]", 
+         RowBox[{"\[Not]", 
+          RowBox[{"tensorQ", "[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"1", ",", "1", ",", "1"}], "}"}], ",", "vecTensor", ",", 
+            "11"}], "]"}]}]}], ",", 
+        RowBox[{"Throw", "[", "vecTensor", "]"}]}], "]"}]}], "]"}]}], "]"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.654447494341329*^9, 3.654447499486408*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "9"}], ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "9"}], ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"5", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.6544475349194527`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"cQuotient", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"5", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "9"}], ",", "0"}], "}"}], ",", "#"}], "]"}], "&"}], "/@", 
+  RowBox[{"{", 
+   RowBox[{"3", ",", "7", ",", "11", ",", "19"}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.6544897882267847`*^9, 3.6544897905667877`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", "ComplexInfinity", "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "0"}], "}"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "3"}], ",", "0"}], "}"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "9"}], ",", "0"}], "}"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.6544897917767897`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"purity", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"su2", "[", "]"}], "\[CirclePlus]", "2"}], ",", 
+       RowBox[{"2", "\[CirclePlus]", 
+        RowBox[{"su2", "[", "]"}]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"1", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "9"}], ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "9"}], ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"5", ",", "0"}], "}"}]}], "}"}], ",", "#"}], "]"}], "&"}], "/@", 
+  RowBox[{"{", 
+   RowBox[{"3", ",", "7", ",", "11", ",", "19"}], "}"}]}]], "Input",
+ CellChangeTimes->{
+  3.654613123874838*^9, {3.6546131610448895`*^9, 3.6546131878749275`*^9}, {
+   3.6546135568974557`*^9, 3.6546136136475353`*^9}, {3.6546136625476036`*^9, 
+   3.654613683287633*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "3"}], ",", 
+     RowBox[{"-", "3"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "3"}], ",", 
+     RowBox[{"-", "3"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.6546136639676056`*^9, 3.6546136846476345`*^9}}]
+}, Open  ]],
+
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{3.654614037169128*^9, 3.6546143963996315`*^9}]
+}, Open  ]]
+},
+WindowSize->{792, 810},
+WindowMargins->{{Automatic, -1}, {Automatic, 0}},
+FrontEndVersion->"10.3 for Microsoft Windows (64-bit) (October 9, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 364, 7, 193, "Section"],
+Cell[947, 31, 157, 4, 109, "Subsection"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1141, 40, 90, 1, 70, "Section"],
+Cell[1234, 43, 368, 9, 49, "Text"],
+Cell[1605, 54, 822, 23, 92, "Input"],
+Cell[2430, 79, 343, 6, 49, "Text"],
+Cell[2776, 87, 1576, 40, 112, "Input"],
+Cell[4355, 129, 689, 17, 33, "Text"],
+Cell[5047, 148, 1003, 29, 156, "Input"],
+Cell[6053, 179, 489, 10, 30, "Text"],
+Cell[6545, 191, 987, 27, 88, "Input"],
+Cell[7535, 220, 450, 10, 49, "Text"],
+Cell[7988, 232, 1420, 38, 139, "Input"],
+Cell[9411, 272, 450, 10, 49, "Text"],
+Cell[9864, 284, 1598, 43, 172, "Input"],
+Cell[11465, 329, 1233, 36, 132, "Input"],
+Cell[12701, 367, 929, 26, 112, "Input"],
+Cell[13633, 395, 4546, 129, 352, "Input"],
+Cell[18182, 526, 1435, 46, 92, "Input"],
+Cell[19620, 574, 1620, 49, 132, "Input"],
+Cell[21243, 625, 1438, 41, 132, "Input"],
+Cell[22684, 668, 1930, 57, 219, "Input"],
+Cell[CellGroupData[{
+Cell[24639, 729, 662, 17, 31, "Input"],
+Cell[25304, 748, 142, 3, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25483, 756, 483, 14, 31, "Input"],
+Cell[25969, 772, 87, 2, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26093, 779, 483, 14, 31, "Input"],
+Cell[26579, 795, 89, 2, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26705, 802, 1780, 43, 112, "Input"],
+Cell[28488, 847, 663, 22, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29188, 874, 456, 13, 31, "Input"],
+Cell[29647, 889, 523, 16, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[30207, 910, 860, 27, 42, "Input"],
+Cell[31070, 939, 74, 1, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[31181, 945, 863, 27, 42, "Input"],
+Cell[32047, 974, 74, 1, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32158, 980, 1014, 28, 52, "Input"],
+Cell[33175, 1010, 452, 9, 21, "Message"],
+Cell[33630, 1021, 463, 9, 40, "Message"],
+Cell[34096, 1032, 517, 10, 21, "Message"],
+Cell[34616, 1044, 638, 11, 21, "Message"],
+Cell[35257, 1057, 589, 11, 21, "Message"],
+Cell[35849, 1070, 463, 9, 21, "Message"],
+Cell[36315, 1081, 450, 9, 21, "Message"],
+Cell[36768, 1092, 463, 9, 40, "Message"],
+Cell[37234, 1103, 517, 10, 21, "Message"],
+Cell[37754, 1115, 640, 11, 21, "Message"],
+Cell[38397, 1128, 589, 11, 21, "Message"],
+Cell[38989, 1141, 452, 9, 21, "Message"],
+Cell[39444, 1152, 560, 11, 21, "Message"],
+Cell[40007, 1165, 465, 9, 40, "Message"],
+Cell[40475, 1176, 545, 10, 21, "Message"],
+Cell[41023, 1188, 515, 10, 21, "Message"],
+Cell[41541, 1200, 553, 11, 21, "Message"],
+Cell[42097, 1213, 640, 11, 21, "Message"],
+Cell[42740, 1226, 560, 11, 21, "Message"],
+Cell[43303, 1239, 586, 15, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[43926, 1259, 1333, 37, 112, "Input"],
+Cell[45262, 1298, 611, 21, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[45910, 1324, 406, 12, 31, "Input"],
+Cell[46319, 1338, 481, 17, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[46837, 1360, 925, 27, 52, "Input"],
+Cell[47765, 1389, 417, 15, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[48219, 1409, 1333, 37, 112, "Input"],
+Cell[49555, 1448, 611, 21, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[50203, 1474, 408, 12, 31, "Input"],
+Cell[50614, 1488, 444, 15, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[51095, 1508, 953, 28, 52, "Input"],
+Cell[52051, 1538, 443, 15, 31, "Output"]
+}, Open  ]],
+Cell[52509, 1556, 111, 1, 52, "Input"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
