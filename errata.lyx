@@ -318,6 +318,81 @@ Maximal entanglement
 \end_layout
 
 \begin_layout Standard
+Equation
+\begin_inset space ~
+
+\end_inset
+
+(27) for 
+\begin_inset Formula $P_{\fh}$
+\end_inset
+
+ includes a normalization factor 
+\begin_inset Formula $\frac{1}{n}$
+\end_inset
+
+. In the discrete case, this normalization factor is undefined when 
+\begin_inset Formula $p ~|~ n$
+\end_inset
+
+. Equation
+\begin_inset space ~
+
+\end_inset
+
+(27) also includes a summation of 
+\begin_inset Formula $n$
+\end_inset
+
+ terms. In the discrete case, certainly when 
+\begin_inset Formula $p ~|~ n$
+\end_inset
+
+ but also in other cases, this summation may vanish in the field even if the individual summands are non-zero. These anomalies are irrelevant for the classification of states with purity 1 as this is performed by directly checking the possibility of direct decomposition into product states, disregarding equation
+\begin_inset space ~
+
+\end_inset
+
+(27).
+\end_layout
+
+\begin_layout Standard
+For maximally entangled states, the purity calculation in conventional quantum mechanics using equation
+\begin_inset space ~
+
+\end_inset
+
+(27) produces 0. Given the above observations, in a discrete field, equation
+\begin_inset space ~
+
+\end_inset
+
+(27) may be undefined or may report a purity of 0 even for product states. In the discrete case, we therefore check for maximally entangled states using the following equation, 
+\begin_inset Formula \begin{equation}
+\forall j,\forall\mu,\braket{\sigma_{\mu}^{j}}^2 =0\textrm{ .}\label{eq:john}
+\end{equation}
+\end_inset
+
+which avoids the normalization factor and simply checks that each summand is 0.
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\begin_inset VSpace bigskip
+\end_inset
+
+*****************
+\end_layout
+
+\begin_layout Standard
 In conventional quantum mechanics, a state 
 \begin_inset Formula $\ket{\Psi}$
 \end_inset
@@ -327,7 +402,60 @@ In conventional quantum mechanics, a state
 
 \end_inset
 
-(27) reports its purity to be 0. Therefore, in the discrete case, states whose computed purity is a multiple of the field characteristic 
+(27) for 
+\begin_inset Formula $P_{\fh}$
+\end_inset
+
+ reports its purity to be 0. In this case, the 
+\begin_inset Formula $\frac{1}{n}$
+\end_inset
+
+ normalization factor in 
+\begin_inset Formula $P_{\fh}$
+\end_inset
+
+ does not affect the result and each term in the summation vanishes individually. In the discrete case, to avoid the singular cases when 
+\begin_inset Formula $p ~|~ n$
+\end_inset
+
+, we must use 
+\begin_inset Formula $P_{\fh}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \begin{equation}
+\forall j,\forall\mu,\braket{\sigma_{\mu}^{j}}^2 =0\textrm{ .}\label{eq:john}
+\end{equation}
+\end_inset
+
+Because equation (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:john"
+
+\end_inset
+
+) avoids wrapping around when adding expectation values, it defines maximally entangled states over finite fields.
+\end_layout
+
+\begin_layout Standard
+scaling does not affect the purity and the properties of the real and complex numbers imply that the individual terms of the summation are each 0.
+\end_layout
+
+\begin_layout Standard
+==> scale purity; has no effect; new purity = n iff old = 1 for product ==> scaling fails when p | n ==> sum of terms = 0 because of wrapping around
+\end_layout
+
+\begin_layout Standard
+In the discrete case,
+\end_layout
+
+\begin_layout Standard
+states whose computed purity is a multiple of the field characteristic 
 \begin_inset Formula $p$
 \end_inset
 
@@ -336,15 +464,15 @@ In conventional quantum mechanics, a state
 
 \end_inset
 
-(27). This occurs trivially when 
-\begin_inset Formula $n ~|~ p$
-\end_inset
-
-.
+(27).
 \end_layout
 
 \begin_layout Standard
-For example, consider the normalized 
+This occurs trivially when 
+\begin_inset Formula $p ~|~ n$
+\end_inset
+
+. For example, the normalized 
 \begin_inset Formula $n=3$
 \end_inset
 
@@ -366,7 +494,11 @@ In this case the quantity
 \begin_inset Formula $n P_{\fh} = 3 P_{\fh} = 0$
 \end_inset
 
+ despite the fact that 
+\begin_inset Formula $\ket{\Psi}$
+\end_inset
 
+ is a product state.
 \end_layout
 
 \begin_layout Standard
@@ -449,27 +581,6 @@ status collapsed
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-In the continuous case, the zero purity actually means every summand is 
-\begin_inset Formula $0$
-\end_inset
-
-, i.e., 
-\begin_inset Formula \begin{equation}
-\forall j,\forall\mu,\braket{\sigma_{\mu}^{j}}=0\textrm{ .}\label{eq:john}
-\end{equation}
-\end_inset
-
-Because equation (
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:john"
-
-\end_inset
-
-) avoids wrapping around when adding expectation values, it defines maximally entangled states over finite fields.
 \end_layout
 
 \begin_layout Standard
