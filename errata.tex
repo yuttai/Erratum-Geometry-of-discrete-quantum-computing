@@ -93,102 +93,45 @@ We present below a new version of section~5.4 that correctly counts maximally en
 
 \subsection{Maximal entanglement}
 
-Equation~(27) for $P_{\fh}$ includes a normalization factor $\frac{1}{n}$. In the discrete case, this normalization factor is undefined when $p ~|~ n$. Equation~(27) also includes a summation of $n$ terms. In the discrete case, certainly when $p ~|~ n$ but also in other cases, this summation may vanish in the field even if the individual summands are non-zero. These anomalies are irrelevant for the classification of states with purity 1 as this is performed by directly checking the possibility of direct decomposition into product states, disregarding equation~(27). 
+Equation~(27) for $P_{\fh}$ includes a normalization factor $\frac{1}{n}$. In the discrete case, this normalization factor is undefined when $p ~|~ n$. Equation~(27) also includes a summation of $n$ terms. In the discrete case, certainly when $p ~|~ n$ but also in other cases, this summation may vanish in the field even if the individual summands are non-zero. These anomalies are irrelevant for the classification of states with purity 1 as this computation is performed by directly checking the possibility of direct decomposition into product states, disregarding equation~(27). 
 
-For maximally entangled states, the purity calculation in conventional quantum mechanics using equation~(27) produces 0. Given the above observations, in a discrete field, equation~(27) may be undefined or may report a purity of 0 even for product states. In the discrete case, we therefore check for maximally entangled states using the following equation,
+For maximally entangled states, the purity calculation in conventional quantum mechanics using equation~(27) produces 0. Given the above observations, in a discrete field, equation~(27) may be undefined or may report a purity of 0 even for partially entangled states. For example, the normalized 5-qubit state $\ket{\Psi}=\left(1-\rmi\right)\left(\ket{00}+\ket{11}\right)\otimes\ket{000}$ has $P_{\fh}=0$ for $p=3$, and is not maximally entangled because only the first two qubits are entangled. In the discrete case, we therefore check for maximally entangled states using the following equations,
 \begin{equation}
-\forall j,\forall\mu,\braket{\sigma_{\mu}^{j}}^2 =0\textrm{ .}\label{eq:john}
+\forall j,\forall\mu,\braket{\sigma_{\mu}^{j}}^2 =0\textrm{ ,}\label{eq:john}
 \end{equation}
 which avoids the normalization factor and simply checks that each summand is 0. 
 
-
-
-
-
-\bigskip
-\bigskip
-\bigskip
-*****************
-
-
-In conventional quantum mechanics, a state $\ket{\Psi}$ is maximally entangled
-when equation~(27) for $P_{\fh}$ reports its purity to be 0. In this case, the $\frac{1}{n}$ normalization factor in $P_{\fh}$ does not affect the result and each term in the summation vanishes individually. In the discrete case, to avoid the singular cases when $p ~|~ n$, we must use $P_{\fh}$ 
-
-\begin{equation}
-\forall j,\forall\mu,\braket{\sigma_{\mu}^{j}}^2 =0\textrm{ .}\label{eq:john}
-\end{equation}
-Because equation (\ref{eq:john}) avoids wrapping around when adding
-expectation values, it defines maximally entangled states over finite
-fields.
-
-
-
-
-
-scaling does not affect the purity and the
-properties of the real and complex numbers imply that the individual terms of the summation are each 0. 
-
-==> scale purity; has no effect; new purity = n iff old = 1 for product
-==> scaling fails when p | n
-==> sum of terms = 0 because of wrapping around
-
-
-
-
-In the discrete case,
-
-
-
-
-states whose computed purity is a multiple of the field characteristic $p$ will be
-incorrectly labeled as maximally entangled by equation~(27). 
-
-
-
-This occurs trivially when $p ~|~ n$. For example,
-the normalized $n=3$-qubit product state $\ket{\Psi}$ over $\ff{3^{2}}$:
-\[
-\ket{\Psi}=\ket{0}\otimes\left(\ket{0}-\ket{1}\right)\otimes\left(\ket{0}-\ket{1}\right)\textrm{ .}
-\]
-In this case the quantity $n P_{\fh} = 3 P_{\fh} = 0$ despite the fact that $\ket{\Psi}$ is a product state. 
-
-%% , where 
-%% \[
-%% \overline{P_{\fh}}=\sum_{j=1}^{n}\sum_{\mu=x,y,z}\left\langle 
-%% \sigma_{\mu}^{j}\right\rangle ^{2}\textrm{ .}
-%% \]
-
-
-
-
-Computing some examples for various $n$ and small values of $p$,
-one can verify explicitly that unit-norm product states for $n=2$,
+We now implement these procedures to enumerate the maximally entangled states for the specific cases for $n = 2 ,3 $ and compare these to the counts for product states. We can verify explicitly that unit-norm product states for $n=2$,
 $p=\{3,7,11,19,\ldots\}$ occur with frequency 
 \[
 (p+1)p^{2}(p-1)^{2}=\{144,14\,112,145\,200,2339\,280,\ldots\}\ ,
 \]
-and for general $n$, $(p+1)p^{n}(p-1)^{n}$.
+and for general $n$, \[(p+1)p^{n}(p-1)^{n}\ .\]
 
 The irreducible state counts are reduced by $(p+1)$, giving 
 \[
 p^{2}(p-1)^{2}=\{36,1764,12\,100,116\,964,\ldots\}\ ,
 \]
 and in general for $n$-qubits, there are $p^{n}\left(p-1\right)^{n}$
-instances of product pure states.
+instances of pure product states.
 
-Repeating the computation, we find maximally entanglement states with
+Performing the computation using equation (\ref{eq:john}), we find maximally entangled states with
 frequencies for two qubits of 
 \[
-p\left(p-1\right)\left(p+1\right)^{2}=\left\{ 96,2688,15\,840,136\,800,\ldots\right\} \ .
+p\left(p^2-1\right)\left(p+1\right)=\left\{ 96,2688,15\,840,136\,800,\ldots\right\} \ .
 \]
 The irreducible state counts for maximal entanglement are reduced
-by $\left(p+1\right)$, giving for $n=2$ 
+by $\left(p+1\right)$, giving, for $n=2$, 
 \[
 p\left(p^{2}-1\right)=\left\{ 24,336,1320,6840,\ldots\right\} \ .
 \]
-For three-qubits, there are $p^{3}\left(p^{4}-1\right)\left(p+1\right)$
-instances of pure maximally entangled states, while the general formula
-for four-qubit states remains unclear.
+For three qubits, there are $p^{3}\left(p^{4}-1\right)\left(p+1\right)$ (total) and $p^{3}\left(p^{4}-1\right)$ (irreducible) instances of pure maximally entangled states, while the general formula for 4-qubit states remains unclear.
+
+Therefore, the ratio of maximally entangled to product states is
+\[
+\frac{\textbf{Max entangled}}{\textbf{Product}}=\frac{p+1}{p\left(p-1\right)} ,\, \frac{\left(p^2+1\right)\left(p+1\right)}{\left(p-1\right)^2} \ ,
+\]
+for $n=2$ and $3$, respectively.
 
 \ack{}{We would like to thank John Gardiner for pointing out the
 need for this correction.}
