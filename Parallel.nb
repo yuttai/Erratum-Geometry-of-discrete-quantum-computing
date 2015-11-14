@@ -10,42 +10,63 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     13249,        355]
-NotebookOptionsPosition[     12002,        311]
-NotebookOutlinePosition[     12344,        326]
-CellTagsIndexPosition[     12301,        323]
+NotebookDataLength[     15066,        384]
+NotebookOptionsPosition[     13810,        340]
+NotebookOutlinePosition[     14152,        355]
+CellTagsIndexPosition[     14109,        352]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
-Cell["\<\
-There are complete tutorial in 
-The Wolfram System Compiler \
-(https://reference.wolfram.com/language/Compile/tutorial/Overview.html)
-
-There is also another tutorial for parallelize a non-compiled function.
+Cell[TextData[{
+ "There is a complete tutorial in \nThe Wolfram System Compiler \
+(https://reference.wolfram.com/language/Compile/tutorial/Overview.html)\n\n\
+There is also another tutorial for parallelize a non-compiled function.\n\
 Parallel Computing Tools User Guide \
-(https://reference.wolfram.com/language/ParallelTools/tutorial/Overview.html).
-However, I seldom use parallelization for a non-compiled function. Because we \
-usually use parallelization if we care about the speed, and if we really care \
-about the speed, we will compile the function.
-
-This notebook demonstrates how I use parallel computing in our research. \
-\>", "Text",
+(https://reference.wolfram.com/language/ParallelTools/tutorial/Overview.html).\
+\nHowever, I seldom use parallelization for a non-compiled function. Because \
+we usually use parallelization if we care about the speed, and if we really \
+care about the speed, we will compile the function.\n\nBasically, the way ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " does parallel computing is:\n1. ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " set up each kernel to each kernel in CPU.\n2. When we call a compiled \
+function with a List of the required type, we send a list of similiar job to ",
+ StyleBox["Mathematica.",
+  FontSlant->"Italic"],
+ " All jobs are calling one pure function with different argument. The \
+function is pure so that ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " knows it can evaluate them in whatever order they want. Therefore, ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " will evenly send these jobs to each kernel, and wait until every job is \
+finished.\n3. ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " will return a list of result after every job is done.\n\nThis notebook \
+demonstrates how I use parallel computing in our research. "
+}], "Text",
  CellChangeTimes->{{3.6563400747371593`*^9, 3.656340167001436*^9}, {
   3.656340200341343*^9, 3.6563402030474977`*^9}, {3.6563402393605747`*^9, 
   3.6563402678262033`*^9}, {3.6563434014754376`*^9, 3.6563434926516523`*^9}, {
-  3.656343531539877*^9, 3.6563436466274595`*^9}}],
+  3.656343531539877*^9, 3.6563436466274595`*^9}, {3.656518052688796*^9, 
+  3.6565180551379366`*^9}, {3.6565181287231455`*^9, 3.6565181289741597`*^9}, {
+  3.6565181713035808`*^9, 3.656518450798567*^9}, {3.6565187119175024`*^9, 
+  3.6565188649232535`*^9}, {3.656518914434086*^9, 3.656518922352538*^9}}],
 
 Cell[TextData[{
  "Check parallel evaluation works by the easiest parallel computing function ",
  Cell[BoxData[
-  FormBox["ParallelEvaluate", TraditionalForm]],
-  FormatType->"TraditionalForm"],
+  FormBox["ParallelEvaluate", TraditionalForm]]],
  ". This function is not that useful because it will send the exactly same \
-jobs to each core."
+jobs to each kernel."
 }], "Text",
- CellChangeTimes->{{3.6563407083564*^9, 3.656340812997385*^9}}],
+ CellChangeTimes->{{3.6563407083564*^9, 3.656340812997385*^9}, {
+  3.65651810240164*^9, 3.6565181034767013`*^9}}],
 
 Cell[CellGroupData[{
 
@@ -60,31 +81,35 @@ Cell[BoxData[{
 
 Cell[BoxData["2"], "Print",
  CellChangeTimes->{3.656340603385396*^9, 3.656340697061754*^9, 
-  3.656341562728267*^9, 3.656341602862563*^9, 3.6563419741668005`*^9}],
+  3.656341562728267*^9, 3.656341602862563*^9, 3.6563419741668005`*^9, 
+  3.656518544844946*^9}],
 
 Cell[BoxData[
  RowBox[{"{", 
   RowBox[{"\<\"Parallel`Developer`\"\>", 
-   ",", "\<\"CompiledFunctionTools`\"\>", 
    ",", "\<\"Parallel`Debug`Perfmon`\"\>", ",", "\<\"Parallel`Debug`\"\>", 
-   ",", "\<\"CloudObjectLoader`\"\>", ",", "\<\"StreamingLoader`\"\>", 
-   ",", "\<\"IconizeLoader`\"\>", ",", "\<\"PacletManager`\"\>", 
-   ",", "\<\"System`\"\>", ",", "\<\"Global`\"\>"}], "}"}]], "Output",
+   ",", "\<\"CompiledFunctionTools`\"\>", ",", "\<\"CloudObjectLoader`\"\>", 
+   ",", "\<\"StreamingLoader`\"\>", ",", "\<\"IconizeLoader`\"\>", 
+   ",", "\<\"PacletManager`\"\>", ",", "\<\"System`\"\>", 
+   ",", "\<\"Global`\"\>"}], "}"}]], "Output",
  CellChangeTimes->{3.656340603385396*^9, 3.6563406970697546`*^9, 
-  3.6563415627342677`*^9, 3.656341602869563*^9, 3.6563419741738005`*^9}],
+  3.6563415627342677`*^9, 3.656341602869563*^9, 3.6563419741738005`*^9, 
+  3.656518544854947*^9}],
 
 Cell[BoxData[
  RowBox[{"{", 
-  RowBox[{"2664", ",", "5068"}], "}"}]], "Output",
+  RowBox[{"4812", ",", "2732"}], "}"}]], "Output",
  CellChangeTimes->{3.656340603385396*^9, 3.6563406970697546`*^9, 
-  3.6563415627342677`*^9, 3.656341602869563*^9, 3.6563419762319183`*^9}],
+  3.6563415627342677`*^9, 3.656341602869563*^9, 3.6563419741738005`*^9, 
+  3.65651854683706*^9}],
 
 Cell[BoxData[
  RowBox[{"{", 
   RowBox[{"\<\"vaio-svs13a290x\"\>", ",", "\<\"vaio-svs13a290x\"\>"}], 
   "}"}]], "Print",
  CellChangeTimes->{3.656340603385396*^9, 3.656340697061754*^9, 
-  3.656341562728267*^9, 3.656341602862563*^9, 3.656341976243919*^9}]
+  3.656341562728267*^9, 3.656341602862563*^9, 3.6563419741668005`*^9, 
+  3.6565185468380604`*^9}]
 }, Open  ]],
 
 Cell["\<\
@@ -100,14 +125,13 @@ Cell[TextData[{
   FormBox[
    RowBox[{
     RowBox[{"RuntimeAttributes", "\[Rule]", "Listable"}], ",", 
-    RowBox[{"Parallelization", "\[Rule]", "True"}]}], TraditionalForm]],
-  FormatType->"TraditionalForm"],
- ". This means that if the type check fails, it will run parallel computing \
-on each elements in the List."
+    RowBox[{"Parallelization", "\[Rule]", "True"}]}], TraditionalForm]]],
+ ". This means that if the argument is a List of the specified type, it will \
+run parallel computing on each elements in the List."
 }], "Text",
  CellChangeTimes->{{3.6563407083564*^9, 3.656340812997385*^9}, {
   3.6563410616336064`*^9, 3.6563410639957414`*^9}, {3.6563412379206896`*^9, 
-  3.656341359454641*^9}}],
+  3.656341359454641*^9}, {3.6565189974868355`*^9, 3.656519020950178*^9}}],
 
 Cell[BoxData[{
  RowBox[{
@@ -162,11 +186,12 @@ Cell[BoxData[{
   3.6563419610370493`*^9}}],
 
 Cell["\<\
-The parameter specified in the function definition. No parallel compution \
-occurs.\
+The type of parameter is the type declared in the function definition. No \
+parallel compution occurs.\
 \>", "Text",
  CellChangeTimes->{{3.6563413950346756`*^9, 3.6563414204671307`*^9}, {
-  3.6563414679868484`*^9, 3.6563415016487737`*^9}}],
+  3.6563414679868484`*^9, 3.6563415016487737`*^9}, {3.656519041810371*^9, 
+  3.656519074867262*^9}}],
 
 Cell[CellGroupData[{
 
@@ -182,13 +207,13 @@ Cell[BoxData[
  RowBox[{"-", "1"}]], "Output",
  CellChangeTimes->{{3.656341372077363*^9, 3.65634137674963*^9}, 
    3.656341571620776*^9, 3.6563416408827376`*^9, {3.6563419894046717`*^9, 
-   3.656342002575425*^9}}],
+   3.656342002575425*^9}, 3.656518547172079*^9}],
 
 Cell[BoxData[
  RowBox[{"-", "1"}]], "Output",
  CellChangeTimes->{{3.656341372077363*^9, 3.65634137674963*^9}, 
    3.656341571620776*^9, 3.6563416408827376`*^9, {3.6563419894046717`*^9, 
-   3.656342002577425*^9}}]
+   3.656342002575425*^9}, 3.6565185471730795`*^9}]
 }, Open  ]],
 
 Cell["\<\
@@ -204,38 +229,38 @@ Cell[CellGroupData[{
 
 Cell[BoxData[{
  RowBox[{"AbsoluteTiming", "[", 
-  RowBox[{
+  RowBox[{"Length", "[", 
    RowBox[{"cModp$P", "[", 
     RowBox[{
-     RowBox[{"Range", "[", "10000000", "]"}], ",", "3"}], "]"}], ";"}], 
+     RowBox[{"Range", "[", "10000000", "]"}], ",", "3"}], "]"}], "]"}], 
   "]"}], "\[IndentingNewLine]", 
  RowBox[{"AbsoluteTiming", "[", 
-  RowBox[{
+  RowBox[{"Length", "[", 
    RowBox[{"cModp$NP", "[", 
     RowBox[{
-     RowBox[{"Range", "[", "10000000", "]"}], ",", "3"}], "]"}], ";"}], 
+     RowBox[{"Range", "[", "10000000", "]"}], ",", "3"}], "]"}], "]"}], 
   "]"}]}], "Input",
  CellChangeTimes->{{3.6563415082691526`*^9, 3.6563415230059953`*^9}, 
    3.6563415590950594`*^9, 3.656341590817874*^9, {3.656341649701242*^9, 
    3.6563417202412767`*^9}, {3.656341794868545*^9, 3.6563417951035585`*^9}, {
    3.656342007183689*^9, 3.6563420128400126`*^9}, {3.656342046800955*^9, 
-   3.656342048063027*^9}}],
+   3.656342048063027*^9}, {3.6565188704235682`*^9, 3.656518882715271*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", 
-  RowBox[{"1.0005856930925727`", ",", "Null"}], "}"}]], "Output",
+  RowBox[{"1.0886250969667115`", ",", "10000000"}], "}"}]], "Output",
  CellChangeTimes->{
   3.656341587911708*^9, 3.6563416447719603`*^9, {3.656341722280393*^9, 
    3.656341736234191*^9}, 3.656341796057613*^9, 3.6563420144381037`*^9, 
-   3.6563420504851656`*^9}],
+   3.6563420504851656`*^9, 3.6565185482601414`*^9, 3.656519094887407*^9}],
 
 Cell[BoxData[
  RowBox[{"{", 
-  RowBox[{"1.5311082658105284`", ",", "Null"}], "}"}]], "Output",
+  RowBox[{"1.6069769318316942`", ",", "10000000"}], "}"}]], "Output",
  CellChangeTimes->{
   3.656341587911708*^9, 3.6563416447719603`*^9, {3.656341722280393*^9, 
    3.656341736234191*^9}, 3.656341796057613*^9, 3.6563420144381037`*^9, 
-   3.656342052022253*^9}]
+   3.6563420504851656`*^9, 3.6565185482601414`*^9, 3.656519096493499*^9}]
 }, Open  ]],
 
 Cell["Parallel function works for higher dimension.", "Text",
@@ -247,45 +272,48 @@ Cell[CellGroupData[{
 
 Cell[BoxData[{
  RowBox[{"AbsoluteTiming", "[", 
-  RowBox[{
+  RowBox[{"Length", "[", 
    RowBox[{"cModp$P", "[", 
     RowBox[{
      RowBox[{"ConstantArray", "[", 
       RowBox[{"0", ",", 
        RowBox[{"{", 
         RowBox[{"10000", ",", "1000"}], "}"}]}], "]"}], ",", "3"}], "]"}], 
-   ";"}], "]"}], "\[IndentingNewLine]", 
+   "]"}], "]"}], "\[IndentingNewLine]", 
  RowBox[{"AbsoluteTiming", "[", 
-  RowBox[{
+  RowBox[{"Length", "[", 
    RowBox[{"cModp$NP", "[", 
     RowBox[{
      RowBox[{"ConstantArray", "[", 
       RowBox[{"0", ",", 
        RowBox[{"{", 
         RowBox[{"10000", ",", "1000"}], "}"}]}], "]"}], ",", "3"}], "]"}], 
-   ";"}], "]"}]}], "Input",
+   "]"}], "]"}]}], "Input",
  CellChangeTimes->{{3.6563415082691526`*^9, 3.6563415230059953`*^9}, 
    3.6563415590950594`*^9, 3.656341590817874*^9, {3.656341649701242*^9, 
    3.6563417202412767`*^9}, {3.656341794868545*^9, 3.6563417951035585`*^9}, {
    3.656342007183689*^9, 3.6563420128400126`*^9}, {3.656342046800955*^9, 
    3.656342048063027*^9}, {3.656342167929883*^9, 3.656342169895995*^9}, {
-   3.656342200517747*^9, 3.656342219768848*^9}}],
+   3.656342200517747*^9, 3.656342219768848*^9}, {3.656518886070463*^9, 
+   3.656518899634239*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", 
-  RowBox[{"1.0362605955596325`", ",", "Null"}], "}"}]], "Output",
+  RowBox[{"1.1133020633383728`", ",", "10000"}], "}"}]], "Output",
  CellChangeTimes->{
   3.656341587911708*^9, 3.6563416447719603`*^9, {3.656341722280393*^9, 
    3.656341736234191*^9}, 3.656341796057613*^9, 3.6563420144381037`*^9, 
-   3.6563420504851656`*^9, 3.6563422221999865`*^9}],
+   3.6563420504851656`*^9, 3.6563422221999865`*^9, 3.6565185509872975`*^9, 
+   3.656519102130821*^9}],
 
 Cell[BoxData[
  RowBox[{"{", 
-  RowBox[{"1.6550550799232193`", ",", "Null"}], "}"}]], "Output",
+  RowBox[{"1.6990393925495593`", ",", "10000"}], "}"}]], "Output",
  CellChangeTimes->{
   3.656341587911708*^9, 3.6563416447719603`*^9, {3.656341722280393*^9, 
    3.656341736234191*^9}, 3.656341796057613*^9, 3.6563420144381037`*^9, 
-   3.6563420504851656`*^9, 3.656342223862082*^9}]
+   3.6563420504851656`*^9, 3.6563422221999865`*^9, 3.6565185509872975`*^9, 
+   3.6565191038309183`*^9}]
 }, Open  ]],
 
 Cell["\<\
@@ -301,13 +329,14 @@ call as I shown in recursiveCompileParallel.nb.\
 
 Cell["\<\
 Actually, Listable is really compatiable with parallelization. Prof. Ryan \
-Newton has tought a course B629 - Parallel Functional Languages and DSLs may \
-relate to this topic although I haven\[CloseCurlyQuote]t took it : )
+Newton has tought a course, B629 - Parallel Functional Languages and DSLs, \
+may relate to this topic although I haven\[CloseCurlyQuote]t took it : )
 http://www.cs.indiana.edu/~rrnewton/courses/B629_parfunc/
 http://homes.soic.indiana.edu/classes/fall2014/csci/b629-rrnewton/\
 advertisement.html\
 \>", "Text",
- CellChangeTimes->{{3.656344188729466*^9, 3.6563443402121305`*^9}}]
+ CellChangeTimes->{{3.656344188729466*^9, 3.6563443402121305`*^9}, {
+  3.6565191571909704`*^9, 3.6565191607921762`*^9}}]
 },
 WindowSize->{778, 772},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
@@ -325,38 +354,38 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 902, 17, 201, "Text"],
-Cell[1463, 39, 366, 8, 49, "Text"],
+Cell[558, 20, 2014, 38, 353, "Text"],
+Cell[2575, 60, 385, 8, 49, "Text"],
 Cell[CellGroupData[{
-Cell[1854, 51, 454, 7, 132, "Input"],
-Cell[2311, 60, 162, 2, 23, "Print"],
-Cell[2476, 64, 537, 9, 72, "Output"],
-Cell[3016, 75, 218, 4, 31, "Output"],
-Cell[3237, 81, 252, 5, 23, "Print"]
+Cell[2985, 72, 454, 7, 132, "Input"],
+Cell[3442, 81, 187, 3, 23, "Print"],
+Cell[3632, 86, 562, 10, 72, "Output"],
+Cell[4197, 98, 242, 5, 31, "Output"],
+Cell[4442, 105, 281, 6, 23, "Print"]
 }, Open  ]],
-Cell[3504, 89, 307, 5, 49, "Text"],
-Cell[3814, 96, 579, 13, 68, "Text"],
-Cell[4396, 111, 1904, 50, 172, "Input"],
-Cell[6303, 163, 230, 5, 30, "Text"],
+Cell[4738, 114, 307, 5, 49, "Text"],
+Cell[5048, 121, 618, 12, 68, "Text"],
+Cell[5669, 135, 1904, 50, 172, "Input"],
+Cell[7576, 187, 298, 6, 30, "Text"],
 Cell[CellGroupData[{
-Cell[6558, 172, 289, 6, 52, "Input"],
-Cell[6850, 180, 212, 4, 31, "Output"],
-Cell[7065, 186, 212, 4, 31, "Output"]
+Cell[7899, 197, 289, 6, 52, "Input"],
+Cell[8191, 205, 234, 4, 31, "Output"],
+Cell[8428, 211, 236, 4, 31, "Output"]
 }, Open  ]],
-Cell[7292, 193, 376, 7, 49, "Text"],
+Cell[8679, 218, 376, 7, 49, "Text"],
 Cell[CellGroupData[{
-Cell[7693, 204, 706, 17, 52, "Input"],
-Cell[8402, 223, 287, 6, 31, "Output"],
-Cell[8692, 231, 285, 6, 31, "Output"]
+Cell[9080, 229, 784, 17, 52, "Input"],
+Cell[9867, 248, 337, 6, 31, "Output"],
+Cell[10207, 256, 337, 6, 31, "Output"]
 }, Open  ]],
-Cell[8992, 240, 284, 3, 30, "Text"],
+Cell[10559, 265, 284, 3, 30, "Text"],
 Cell[CellGroupData[{
-Cell[9301, 247, 988, 24, 52, "Input"],
-Cell[10292, 273, 311, 6, 31, "Output"],
-Cell[10606, 281, 309, 6, 31, "Output"]
+Cell[10868, 272, 1068, 25, 52, "Input"],
+Cell[11939, 299, 362, 7, 31, "Output"],
+Cell[12304, 308, 364, 7, 31, "Output"]
 }, Open  ]],
-Cell[10930, 290, 605, 9, 87, "Text"],
-Cell[11538, 301, 460, 8, 87, "Text"]
+Cell[12683, 318, 605, 9, 87, "Text"],
+Cell[13291, 329, 515, 9, 87, "Text"]
 }
 ]
 *)

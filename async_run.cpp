@@ -1,9 +1,7 @@
 #ifndef _GLIBCXX_USE_NANOSLEEP
 #define _GLIBCXX_USE_NANOSLEEP
 #endif
-#include <thread>
 #include <future>
-#include <functional>
 #include <chrono>
 #include <iostream>
 #include <stdlib.h>
