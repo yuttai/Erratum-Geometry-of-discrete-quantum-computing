@@ -1,4 +1,5 @@
 .project
+.cproject
 /*.aux
 /*.bbl
 /*.blg
@@ -6,3 +7,5 @@
 /*.synctex.gz
 /*~
 /*.bak
+/*.exe
+/*.o
