@@ -1,3 +1,5 @@
+/* This file is tested in GCC 4.9.3 in Cygwin64, and Visual Studio 2013.
+ * */
 #ifndef _GLIBCXX_USE_NANOSLEEP
 #define _GLIBCXX_USE_NANOSLEEP
 #endif
@@ -5,6 +7,7 @@
 #include <chrono>
 #include <iostream>
 #include <stdlib.h>
+#include <vector> 
 
 using namespace std;
 
@@ -17,8 +20,8 @@ int loop(const int loopNum, const int time){
 
 int parallel(const int numberJobs, const int time, const bool echo, const bool test){
 	cout << "parallel run with " << numberJobs << " of jobs. \n";
-  future<int> jobs[numberJobs];
-  for(int i = 0; i < numberJobs; i++){
+	vector<future<int>> jobs(numberJobs);
+	for(int i = 0; i < numberJobs; i++){
 		try{
 			jobs[i] = async(launch::async , loop, (echo ? i : -1), time);
 		}
