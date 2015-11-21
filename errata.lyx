@@ -371,9 +371,9 @@ Equation
 
  but also in other cases, this summation may vanish in the field even if
  the individual summands are non-zero.
- These anomalies are irrelevant for the classification of states with purity
- 1 as this is performed by directly checking the possibility of direct decomposi
-tion into product states, disregarding equation
+ These anomalies are irrelevant for the classification of unentangled states
+ as this is performed by directly checking the possibility of direct decompositi
+on into product states, disregarding equation
 \begin_inset space ~
 \end_inset
 
