@@ -1,0 +1,178 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6054,        169]
+NotebookOptionsPosition[      5486,        144]
+NotebookOutlinePosition[      5828,        159]
+CellTagsIndexPosition[      5785,        156]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Compile to C++", "Section",
+ CellChangeTimes->{{3.656117967852721*^9, 3.656117988851922*^9}, 
+   3.656118036313637*^9, {3.657234857375698*^9, 3.657234861190917*^9}}],
+
+Cell[TextData[{
+ "The following code intends to compile a ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " compiled fucntion into C++. \nWolfram has a product to do this \
+(http://www.wolfram.com/products/applications/mathcode/).\nHowever, it is too \
+expensive (for me), and I am not intending to implement the complete C++ type \
+system... \nMy compiler will try our best to compile, but allow missing \
+something and require the programer to fill in the blank by hand.\n\nSeems \
+like even \n\
+http://www.mathematica-journal.com/2008/11/mathcode-a-system-for-c-or-fortran-\
+code-generation-from-mathematica/"
+}], "Text",
+ CellChangeTimes->{{3.657234878928931*^9, 3.6572349179871655`*^9}, {
+  3.657234956476367*^9, 3.657235008654351*^9}, {3.6572350931641846`*^9, 
+  3.6572352173992906`*^9}, {3.6572368466344776`*^9, 3.657236850229683*^9}, {
+  3.6572378543291144`*^9, 3.6572378613505163`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"If", "[", 
+  RowBox[{
+   RowBox[{"\[Not]", 
+    RowBox[{"ValueQ", "[", "cModp$", "]"}]}], ",", 
+   RowBox[{"NotebookEvaluate", "[", 
+    RowBox[{"NotebookOpen", "[", 
+     RowBox[{"FileNameJoin", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"NotebookDirectory", "[", "]"}], ",", "\"\<tensorQ.nb\>\""}], 
+       "}"}], "]"}], "]"}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6572379977983203`*^9, 3.65723805531161*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"SetAttributes", "[", 
+  RowBox[{"CppCompiler", ",", "HoldAll"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"CppCompiler", "[", "f_Symbol", "]"}], ":=", "\[IndentingNewLine]", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"argtypes", "=", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{"#", "\[Equal]", "_Integer"}], ",", "\"\<const int\>\""}], 
+          "]"}], "&"}], "/@", 
+        RowBox[{
+        "f", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}]}]}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"argnames", "=", 
+       RowBox[{"f", "\[LeftDoubleBracket]", 
+        RowBox[{
+         RowBox[{"-", "2"}], ",", "1"}], "\[RightDoubleBracket]"}]}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"body", "=", 
+       RowBox[{"f", "\[LeftDoubleBracket]", 
+        RowBox[{
+         RowBox[{"-", "2"}], ",", "2"}], "\[RightDoubleBracket]"}]}]}], "}"}],
+     ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"SymbolName", "[", 
+      RowBox[{"Unevaluated", "[", "f", "]"}], "]"}], "<>", "\"\<(\>\"", "<>", 
+     RowBox[{"StringTake", "[", 
+      RowBox[{
+       RowBox[{"ToString", "[", 
+        RowBox[{"MapThread", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"#1", "<>", "\"\< \>\"", "<>", 
+            RowBox[{"ToString", "[", "#2", "]"}]}], "&"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"argtypes", ",", "argnames"}], "}"}]}], "]"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"2", ",", 
+         RowBox[{"-", "2"}]}], "}"}]}], "]"}], "<>", "\"\<){return \>\"", "<>", 
+     RowBox[{"ToString", "[", "body", "]"}], "<>", "\"\<;}\>\""}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"CppCompiler", "[", "cModp$", "]"}]}], "Input",
+ CellChangeTimes->{{3.657235227994897*^9, 3.657235371735118*^9}, {
+  3.6572354360977993`*^9, 3.65723551757146*^9}, {3.6572355553986235`*^9, 
+  3.657235564773159*^9}, {3.657235757243168*^9, 3.6572357584312363`*^9}, {
+  3.6572358198487487`*^9, 3.6572359466410007`*^9}, {3.6572381496190042`*^9, 
+  3.657238171174237*^9}, {3.6572382221531525`*^9, 3.6572382892869925`*^9}, {
+  3.6572383443211403`*^9, 3.65723837299378*^9}, {3.657238418982411*^9, 
+  3.657238488237372*^9}, {3.6572385258705244`*^9, 3.657238557774349*^9}, {
+  3.6572387100220575`*^9, 3.6572387128582196`*^9}, {3.6572387461161213`*^9, 
+  3.657238850432088*^9}, {3.657239267215927*^9, 3.6572393370849233`*^9}, {
+  3.65723939070599*^9, 3.6572394384637213`*^9}}],
+
+Cell[BoxData["\<\"cModp$(const int z, const int p){return Mod[z, p, \
+Quotient[1 - p, 2]];}\"\>"], "Output",
+ CellChangeTimes->{
+  3.657238281642555*^9, 3.6572384896764545`*^9, 3.6572385314548435`*^9, {
+   3.6572388300769243`*^9, 3.6572388512001324`*^9}, {3.6572393031779838`*^9, 
+   3.657239311521461*^9}, 3.6572394416079016`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Head", "[", 
+  RowBox[{"Mod", "[", 
+   RowBox[{"z", ",", " ", "p", ",", " ", 
+    RowBox[{"Quotient", "[", 
+     RowBox[{
+      RowBox[{"1", " ", "-", " ", "p"}], ",", " ", "2"}], "]"}]}], "]"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.6572395862641754`*^9, 3.65723958826829*^9}}],
+
+Cell[BoxData["Mod"], "Output",
+ CellChangeTimes->{3.6572395893483515`*^9}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{792, 810},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"10.3 for Microsoft Windows (64-bit) (October 9, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 171, 2, 70, "Section"],
+Cell[754, 26, 900, 16, 182, "Text"],
+Cell[1657, 44, 461, 12, 52, "Input"],
+Cell[CellGroupData[{
+Cell[2143, 60, 2561, 57, 212, "Input"],
+Cell[4707, 119, 331, 5, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5075, 129, 306, 8, 31, "Input"],
+Cell[5384, 139, 74, 1, 31, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
