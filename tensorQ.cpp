@@ -8,13 +8,13 @@
 #include <iostream>
 #include <stdlib.h>
 #include <vector> 
-
-inline int cModp$(const int z, const int p){
-	const int m = z % p;
-  return (m > (p - 1) / 2)? (m - p) : m ;
-}
+#include <functional>
 
 using namespace std;
+
+int cModp$(const int z, const int p){return [](const int m, const
+int n, const int d){return d + (m - d) % n;}(z, p, ((1 + (-1 * p)) /
+2));}
 
 int loop(const int loopNum, const int time){
 	if(loopNum >= 0) cout << loopNum << " loop run!\n";
@@ -58,7 +58,8 @@ int parallel(const int numberJobs, const int time, const bool echo, const bool t
 }
 
 int main (int argc, char * argv[]){
-	parallel(4, 2000000000, true, false);
-	parallel(20000, 100000, false, false);
+/*	parallel(4, 2000000000, true, false);
+	parallel(20000, 100000, false, false);*/
+	cout << cModp$(0, 3) << " " << cModp$(1, 3) << " " << cModp$(2, 3);
 	return 0;
 }
