@@ -12,9 +12,11 @@
 
 using namespace std;
 
-int cModp$(const int z, const int p){return [](const int m, const
-int n, const int d){return d + (m - d) % n;}(z, p, ((1 + (-1 * p)) /
-2));}
+int cModp$(const int z, const int p){
+return [&](const int d0){
+return d0 + (z - d0) % p;
+}(((1 + (-1 * p)) / 2));
+}
 
 int loop(const int loopNum, const int time){
 	if(loopNum >= 0) cout << loopNum << " loop run!\n";
