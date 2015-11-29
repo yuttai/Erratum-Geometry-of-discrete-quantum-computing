@@ -43,7 +43,6 @@
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Q}{\mathbb{Q}}
-\newcommand{\ComplexI}{\text{i}}
 %
 %
 \newcommand{\JGF}{\mathbb{F}}    %Added
@@ -58,6 +57,7 @@
 \addtocounter{section}{5}
 \addtocounter{subsection}{3}
 \end_preamble
+\options 12pt
 \use_default_options false
 \maintain_unincluded_children false
 \language english
@@ -131,41 +131,64 @@ Erratum: Geometry of discrete quantum computing
 \begin_layout Author
 Andrew J.
  Hanson
+\begin_inset Formula $^{1}$
+\end_inset
+
+, Gerardo Ortiz
+\begin_inset Formula $^{2}$
+\end_inset
+
+, Amr Sabry
+\begin_inset Formula $^{1}$
+\end_inset
+
+, Yu-Tsung Tai
+\begin_inset Formula $^{3,1}$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Address
-School of Informatics and Computing, Indiana University, Bloomington, IN
+\begin_inset Formula $^{1}$
+\end_inset
+
+ School of Informatics and Computing, Indiana University, Bloomington, IN
  47405, U.S.A
 \end_layout
 
-\begin_layout Author
-Gerardo Ortiz
+\begin_layout Address
+\begin_inset Formula $^{2}$
+\end_inset
+
+ Department of Physics, Indiana University, Bloomington, IN 47405, U.S.A
 \end_layout
 
 \begin_layout Address
-Department of Physics, Indiana University, Bloomington, IN 47405, U.S.A
+\begin_inset Formula $^{3}$
+\end_inset
+
+ Department of Mathematics, Indiana University, Bloomington, IN 47405, U.S.A
 \end_layout
 
-\begin_layout Author
-Amr Sabry
+\begin_layout Email
+ortizg@indiana.edu
 \end_layout
 
-\begin_layout Address
-School of Informatics and Computing, Indiana University, Bloomington, IN
- 47405, U.S.A
+\begin_layout submitto
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+jpa
 \end_layout
 
-\begin_layout Author
-Yu-Tsung Tai
-\end_layout
+\end_inset
 
-\begin_layout Address
-Department of Mathematics, Indiana University, Bloomington, IN 47405, U.S.A
-\end_layout
 
-\begin_layout Address
-School of Informatics and Computing, Indiana University, Bloomington, IN
- 47405, U.S.A
 \end_layout
 
 \begin_layout Standard
@@ -348,9 +371,9 @@ Equation
 
  but also in other cases, this summation may vanish in the field even if
  the individual summands are non-zero.
- These anomalies are irrelevant for the classification of states with purity
- 1 as this is performed by directly checking the possibility of direct decomposi
-tion into product states, disregarding equation
+ These anomalies are irrelevant for the classification of unentangled states
+ as this is performed by directly checking the possibility of direct decompositi
+on into product states, disregarding equation
 \begin_inset space ~
 \end_inset
 
@@ -779,7 +802,7 @@ status collapsed
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 bibfiles "gardinerbib"
-options "plain"
+options "iopart-num"
 
 \end_inset
 

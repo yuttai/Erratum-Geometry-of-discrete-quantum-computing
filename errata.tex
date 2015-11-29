@@ -1,4 +1,4 @@
-\documentclass{iopart}
+\documentclass[12pt]{iopart}
 \usepackage[T1]{fontenc}
 \usepackage[latin9]{inputenc}
 \usepackage{amstext}
@@ -40,7 +40,6 @@
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Q}{\mathbb{Q}}
-\newcommand{\ComplexI}{\text{i}}
 %
 %
 \newcommand{\JGF}{\mathbb{F}}    %Added
@@ -61,20 +60,25 @@
 
 \title{Erratum: Geometry of discrete quantum computing}
 
-\author{Andrew J. Hanson}
-\address{School of Informatics and Computing, Indiana University, Bloomington, IN 47405, U.S.A}
+\author{Andrew J. Hanson$^{1}$, Gerardo Ortiz$^{2}$, Amr Sabry$^{1}$,
+Yu-Tsung Tai$^{3,1}$}
 
-\author{Gerardo Ortiz}
-\address{Department of Physics, Indiana University, Bloomington, IN 47405, U.S.A}
 
-\author{Amr Sabry}
-\address{School of Informatics and Computing, Indiana University, Bloomington, IN 47405, U.S.A}
+\address{$^{1}$ School of Informatics and Computing, Indiana University,
+Bloomington, IN 47405, U.S.A}
 
-\author{Yu-Tsung Tai}
-\address{Department of Mathematics, Indiana University, Bloomington, IN 47405, U.S.A}
-\address{School of Informatics and Computing, Indiana University, Bloomington, IN 47405, U.S.A}
 
-%% \noindent{\it Keywords\/}: {\today}
+\address{$^{2}$ Department of Physics, Indiana University, Bloomington, IN
+47405, U.S.A}
+
+
+\address{$^{3}$ Department of Mathematics, Indiana University, Bloomington,
+IN 47405, U.S.A}
+
+
+\ead{ortizg@indiana.edu}
+
+\submitto{\jpa}
 
 \maketitle
 
@@ -93,7 +97,7 @@ We present below a new version of section~5.4 that correctly counts maximally en
 
 \subsection{Maximal entanglement}
 
-Equation~(27) for $P_{\fh}$ includes a normalization factor $\frac{1}{n}$. In the discrete case, this normalization factor is undefined when $p ~|~ n$. Equation~(27) also includes a summation of $n$ terms. In the discrete case, certainly when $p ~|~ n$ but also in other cases, this summation may vanish in the field even if the individual summands are non-zero. These anomalies are irrelevant for the classification of states with purity 1 as this computation is performed by directly checking the possibility of direct decomposition into product states, disregarding equation~(27). 
+Equation~(27) for $P_{\fh}$ includes a normalization factor $\frac{1}{n}$. In the discrete case, this normalization factor is undefined when $p ~|~ n$. Equation~(27) also includes a summation of $n$ terms. In the discrete case, certainly when $p ~|~ n$ but also in other cases, this summation may vanish in the field even if the individual summands are non-zero. These anomalies are irrelevant for the classification of unentangled states as this computation is performed by directly checking the possibility of direct decomposition into product states, disregarding equation~(27). 
 
 For maximally entangled states, the purity calculation in conventional quantum mechanics using equation~(27) produces 0. Given the above observations, in a discrete field, equation~(27) may be undefined or may report a purity of 0 even for partially entangled states. For example, the normalized 5-qubit state $\ket{\Psi}=\left(1-\rmi\right)\left(\ket{00}+\ket{11}\right)\otimes\ket{000}$ has $P_{\fh}=0$ for $p=3$, and is not maximally entangled because only the first two qubits are entangled. In the discrete case, we therefore check for maximally entangled states using the following equations,
 \begin{equation}
@@ -141,7 +145,7 @@ need for this correction.}
 
 {}
 
-\bibliographystyle{plain}
+\bibliographystyle{iopart-num}
 \bibliography{gardinerbib}
 
 \end{document}
