@@ -1,0 +1,89 @@
+\documentclass[12pt]{iopart}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{amstext}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\usepackage{iopams}
+\usepackage{setstack}
+\usepackage{enumitem}		% customizable list environments
+\newlength{\lyxlabelwidth}      % auxiliary length 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{braket}%Added
+\usepackage{dsfont}%Added
+
+%%%  Definitions for theorem-like environments. Don't change them, and don't make new ones.
+\newtheorem{theorem}{}[section]
+\newtheorem{corollary}[theorem]{}\newtheorem{lemma}[theorem]{}\newtheorem{proposition}[theorem]{}\newtheorem{definition}[theorem]{}\let\olddefinition\definition
+\renewcommand{\definition}{\olddefinition\normalfont}
+%
+\newenvironment{remark}{\addtocounter{theorem}{1}\par\noindent\textit{Remark \thetheorem}\normalfont}{\par}
+% \newenvironment{example}{\addtocounter{theorem}{1}\par\noindent\textit{Example \thetheorem}\normalfont}{\par}
+\newenvironment{notation}{\par\noindent\textit{Notation }\normalfont}{\\[1ex]}
+%
+% \newenvironment{proof}{\par\noindent\textit{Proof }}{\hfill\ensuremath{\Box}\par}
+%
+%%%  A few standard macros that we can all use
+%
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+%
+%
+\newcommand{\JGF}{\mathbb{F}}    %Added
+%
+%
+%
+\newcommand{\ff}[1]{\mathbb{F}_{#1}}
+\newcommand{\ip}[2]{\langle #1 ~|~ #2 \rangle}
+\def\fh{\mathfrak{h}}
+\newcommand{\yutsung}[1]{\fbox{\begin{minipage}{0.9\textwidth}\color{purple}{Yu-Tsung says: #1}\end{minipage}}}
+\addtocounter{equation}{39}
+\addtocounter{section}{5}
+\addtocounter{subsection}{3}
+
+\makeatother
+
+\begin{document}
+
+\begin{itemize}
+\item 3 lines after equation (40) replace this: 
+
+\begin{quote}
+We can verify explicitly that unit-norm product states for $n=2$,
+$p=\{3,7,11,19,\ldots\}$ occur with frequency 
+\end{quote}
+
+\noindent by this:
+
+\begin{quote}
+We can verify explicitly that the numbers of unit-norm product states for $n=2$,
+$p=\{3,7,11,19,\ldots\}$ are 
+\end{quote}
+
+\item 11 lines after equation (40) replace this: 
+
+\begin{quote}
+Performing the computation using equation (40), we find maximally entangled states with
+frequencies for two qubits of
+\end{quote}
+
+\noindent by this:
+
+\begin{quote}
+Performing the computation using equation (40), we find the numbers of maximally entangled states  for two qubits to be 
+\end{quote}
+\end{itemize}
+\end{document}
