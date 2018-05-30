@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX file created by tex2lyx 2.3
+\lyxformat 544
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin C:/Users/Yu-Tsung/eclipse-workspace/Erratum-Geometry-of-discrete-quantum-computing/
 \textclass iopart
 \begin_preamble
 \usepackage{amstext}
@@ -56,30 +58,35 @@
 \addtocounter{equation}{39}
 \addtocounter{section}{5}
 \addtocounter{subsection}{3}
+
+
+
+
 \end_preamble
-\options 12pt
 \use_default_options false
 \maintain_unincluded_children false
 \language english
 \language_package none
 \inputencoding iso8859-15
 \fontencoding T1
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
 \bibtex_command default
 \index_command default
-\paperfontsize default
+\paperfontsize 12
 \spacing single
 \use_hyperref false
 \papersize default
@@ -103,6 +110,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_minted 0
 \index Index
 \shortcut idx
 \color #008000
@@ -111,7 +119,10 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -129,8 +140,7 @@ Erratum: Geometry of discrete quantum computing
 \end_layout
 
 \begin_layout Author
-Andrew J.
- Hanson
+Andrew J. Hanson
 \begin_inset Formula $^{1}$
 \end_inset
 
@@ -150,14 +160,15 @@ Andrew J.
 \end_layout
 
 \begin_layout Address
+
 \begin_inset Formula $^{1}$
 \end_inset
 
- School of Informatics and Computing, Indiana University, Bloomington, IN
- 47405, U.S.A
+ School of Informatics and Computing, Indiana University, Bloomington, IN 47405, U.S.A
 \end_layout
 
 \begin_layout Address
+
 \begin_inset Formula $^{2}$
 \end_inset
 
@@ -165,6 +176,7 @@ Andrew J.
 \end_layout
 
 \begin_layout Address
+
 \begin_inset Formula $^{3}$
 \end_inset
 
@@ -176,11 +188,11 @@ ortizg@indiana.edu
 \end_layout
 
 \begin_layout submitto
+
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 jpa
@@ -192,41 +204,23 @@ jpa
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-%% 
-\backslash
-noindent{
-\backslash
-it Keywords
-\backslash
-/}: {
-\backslash
-today}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \noindent
 Section
 \begin_inset space ~
+
 \end_inset
 
 5.4 of our paper
 \begin_inset space ~
+
 \end_inset
 
 
 \begin_inset CommandInset citation
 LatexCommand cite
+after ""
 key "geometry"
+literal "true"
 
 \end_inset
 
@@ -236,32 +230,34 @@ key "geometry"
 \begin_layout Paragraph*
 Clarification: Unentangled vs.
 \begin_inset space \space{}
+
 \end_inset
 
 product states.
 \end_layout
 
 \begin_layout Standard
-In conventional quantum mechanics, using the field of complex numbers, a
- state is unentangled when it can be expressed as a product state or, equivalent
-ly, when equation
+In conventional quantum mechanics, using the field of complex numbers, a state is unentangled when it can be expressed as a product state or, equivalently, when equation
 \begin_inset space ~
+
 \end_inset
 
 (27) reports its purity to be 1
 \begin_inset space ~
+
 \end_inset
 
 
 \begin_inset CommandInset citation
 LatexCommand cite
+after ""
 key "PhysRevLett.92.107902, PhysRevA.68.032308"
+literal "true"
 
 \end_inset
 
-.
- When using finite Galois fields 
-\begin_inset Formula $\ff{p^{2}}$
+. When using finite Galois fields 
+\begin_inset Formula $\ff{p^2}$
 \end_inset
 
 , for particular choices of 
@@ -270,11 +266,11 @@ key "PhysRevLett.92.107902, PhysRevA.68.032308"
 
 , it is possible for equation
 \begin_inset space ~
+
 \end_inset
 
-(27) to produce a purity of 1 for some entangled states.
- For example, the normalized entangled state 
-\begin_inset Formula $\ket{\Psi}=\ket{011}+\left(2+\rmi\right)\ket{100}+\ket{101}+\ket{110}$
+(27) to produce a purity of 1 for some entangled states. For example, the normalized entangled state 
+\begin_inset Formula $\ket{\Psi} = \ket{011}+\left(2+\rmi\right)\ket{100}+\ket{101}+\ket{110}$
 \end_inset
 
  has 
@@ -285,8 +281,7 @@ key "PhysRevLett.92.107902, PhysRevA.68.032308"
 \begin_inset Formula $p=7$
 \end_inset
 
-.
- In addition, the process of determining whether a 
+. In addition, the process of determining whether a 
 \emph on
 given
 \emph default
@@ -302,19 +297,19 @@ given
 \end_layout
 
 \begin_layout Standard
-Thus, in finite fields, the simplest way to calculate the number of unentangled
- states is to disregard equation
+Thus, in finite fields, the simplest way to calculate the number of unentangled states is to disregard equation
 \begin_inset space ~
+
 \end_inset
 
-(27) and count the number of product states.
- This is exactly how the counting in section
+(27) and count the number of product states. This is exactly how the counting in section
 \begin_inset space ~
+
 \end_inset
 
-5.4 was done, but the paper did not point out that counting relying only
- on equation
+5.4 was done, but the paper did not point out that counting relying only on equation
 \begin_inset space ~
+
 \end_inset
 
 (27) might not lead to the same result.
@@ -327,10 +322,10 @@ Correction: Maximally entangled states.
 \begin_layout Standard
 We present below a new version of section
 \begin_inset space ~
+
 \end_inset
 
-5.4 that correctly counts maximally entangled states.
- The rest of the article is independent of this revision.
+5.4 that correctly counts maximally entangled states. The rest of the article is independent of this revision.
 \end_layout
 
 \begin_layout Subsection
@@ -340,6 +335,7 @@ Maximal entanglement
 \begin_layout Standard
 Equation
 \begin_inset space ~
+
 \end_inset
 
 (27) for 
@@ -350,50 +346,43 @@ Equation
 \begin_inset Formula $\frac{1}{n}$
 \end_inset
 
-.
- In the discrete case, this normalization factor is undefined when 
-\begin_inset Formula $p~|~n$
+. In the discrete case, this normalization factor is undefined when 
+\begin_inset Formula $p ~|~ n$
 \end_inset
 
-.
- Equation
+. Equation
 \begin_inset space ~
+
 \end_inset
 
 (27) also includes a summation of 
 \begin_inset Formula $n$
 \end_inset
 
- terms.
- In the discrete case, certainly when 
-\begin_inset Formula $p~|~n$
+ terms. In the discrete case, certainly when 
+\begin_inset Formula $p ~|~ n$
 \end_inset
 
- but also in other cases, this summation may vanish in the field even if
- the individual summands are non-zero.
- These anomalies are irrelevant for the classification of unentangled states
- as this is performed by directly checking the possibility of direct decompositi
-on into product states, disregarding equation
+ but also in other cases, this summation may vanish in the field even if the individual summands are non-zero. These anomalies are irrelevant for the classification of unentangled states as this computation is performed by directly checking the possibility of direct decomposition into product states, disregarding equation
 \begin_inset space ~
+
 \end_inset
 
 (27).
 \end_layout
 
 \begin_layout Standard
-For maximally entangled states, the purity calculation in conventional quantum
- mechanics using equation
+For maximally entangled states, the purity calculation in conventional quantum mechanics using equation
 \begin_inset space ~
+
 \end_inset
 
-(27) produces 0.
- Given the above observations, in a discrete field, equation
+(27) produces 0. Given the above observations, in a discrete field, equation
 \begin_inset space ~
+
 \end_inset
 
-(27) may be undefined or may report a purity of 0 even for partially entangled
- states.
- For example, the normalized state 
+(27) may be undefined or may report a purity of 0 even for partially entangled states. For example, the normalized 5-qubit state 
 \begin_inset Formula $\ket{\Psi}=\left(1-\rmi\right)\left(\ket{00}+\ket{11}\right)\otimes\ket{000}$
 \end_inset
 
@@ -405,247 +394,21 @@ For maximally entangled states, the purity calculation in conventional quantum
 \begin_inset Formula $p=3$
 \end_inset
 
-, and is not maximally entangled because only the first two qubits are entangled.
- In the discrete case, we therefore check for maximally entangled states
- using the following equation, 
-\begin_inset Formula 
-\begin{equation}
-\forall j,\forall\mu,\braket{\sigma_{\mu}^{j}}^{2}=0\textrm{ ,}\label{eq:john}
+, and is not maximally entangled because only the first two qubits are entangled. In the discrete case, we therefore check for maximally entangled states using the following equations, 
+\begin_inset Formula \begin{equation}
+\forall j,\forall\mu,\braket{\sigma_{\mu}^{j}}^2 =0\textrm{ ,}\label{eq:john}
 \end{equation}
-
 \end_inset
 
-which avoids the normalization factor and simply checks that each summand
- is 0.
+which avoids the normalization factor and simply checks that each summand is 0.
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace bigskip
+We now implement these procedures to enumerate the maximally entangled states for the specific cases for 
+\begin_inset Formula $n = 2 ,3 $
 \end_inset
 
-
-\begin_inset VSpace bigskip
-\end_inset
-
-
-\begin_inset VSpace bigskip
-\end_inset
-
-*****************
-\end_layout
-
-\begin_layout Standard
-In conventional quantum mechanics, a state 
-\begin_inset Formula $\ket{\Psi}$
-\end_inset
-
- is maximally entangled when equation
-\begin_inset space ~
-\end_inset
-
-(27) for 
-\begin_inset Formula $P_{\fh}$
-\end_inset
-
- reports its purity to be 0.
- In this case, the 
-\begin_inset Formula $\frac{1}{n}$
-\end_inset
-
- normalization factor in 
-\begin_inset Formula $P_{\fh}$
-\end_inset
-
- does not affect the result and each term in the summation vanishes individually.
- In the discrete case, to avoid the singular cases when 
-\begin_inset Formula $p~|~n$
-\end_inset
-
-, we must use 
-\begin_inset Formula $P_{\fh}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{equation}
-\forall j,\forall\mu,\braket{\sigma_{\mu}^{j}}^{2}=0\textrm{ .}\label{eq:john}
-\end{equation}
-
-\end_inset
-
-Because equation (
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:john"
-
-\end_inset
-
-) avoids wrapping around when adding expectation values, it defines maximally
- entangled states over finite fields.
-\end_layout
-
-\begin_layout Standard
-scaling does not affect the purity and the properties of the real and complex
- numbers imply that the individual terms of the summation are each 0.
-\end_layout
-
-\begin_layout Standard
-==> scale purity; has no effect; new purity = n iff old = 1 for product
- ==> scaling fails when p | n ==> sum of terms = 0 because of wrapping around
-\end_layout
-
-\begin_layout Standard
-In the discrete case,
-\end_layout
-
-\begin_layout Standard
-states whose computed purity is a multiple of the field characteristic 
-\begin_inset Formula $p$
-\end_inset
-
- will be incorrectly labeled as maximally entangled by equation
-\begin_inset space ~
-\end_inset
-
-(27).
-\end_layout
-
-\begin_layout Standard
-This occurs trivially when 
-\begin_inset Formula $p~|~n$
-\end_inset
-
-.
- For example, the normalized 
-\begin_inset Formula $n=3$
-\end_inset
-
--qubit product state 
-\begin_inset Formula $\ket{\Psi}$
-\end_inset
-
- over 
-\begin_inset Formula $\ff{3^{2}}$
-\end_inset
-
-: 
-\begin_inset Formula 
-\[
-\ket{\Psi}=\ket{0}\otimes\left(\ket{0}-\ket{1}\right)\otimes\left(\ket{0}-\ket{1}\right)\textrm{ .}
-\]
-
-\end_inset
-
-In this case the quantity 
-\begin_inset Formula $nP_{\fh}=3P_{\fh}=0$
-\end_inset
-
- despite the fact that 
-\begin_inset Formula $\ket{\Psi}$
-\end_inset
-
- is a product state.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-%% , where 
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-%% 
-\backslash
-[
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-%% 
-\backslash
-overline{P_{
-\backslash
-fh}}=
-\backslash
-sum_{j=1}^{n}
-\backslash
-sum_{
-\backslash
-mu=x,y,z}
-\backslash
-left
-\backslash
-langle 
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-%% 
-\backslash
-sigma_{
-\backslash
-mu}^{j}
-\backslash
-right
-\backslash
-rangle ^{2}
-\backslash
-textrm{ .}
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-%% 
-\backslash
-]
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Computing some examples for various 
-\begin_inset Formula $n$
-\end_inset
-
- and small values of 
-\begin_inset Formula $p$
-\end_inset
-
-, one can verify explicitly that unit-norm product states for 
+ and compare these to the counts for product states. We can verify explicitly that the numbers of unit-norm product states for 
 \begin_inset Formula $n=2$
 \end_inset
 
@@ -653,12 +416,10 @@ Computing some examples for various
 \begin_inset Formula $p=\{3,7,11,19,\ldots\}$
 \end_inset
 
- occur with frequency 
-\begin_inset Formula 
-\[
+ are 
+\begin_inset Formula \[
 (p+1)p^{2}(p-1)^{2}=\{144,14\,112,145\,200,2339\,280,\ldots\}\ ,
 \]
-
 \end_inset
 
 and for general 
@@ -666,10 +427,10 @@ and for general
 \end_inset
 
 , 
-\begin_inset Formula $(p+1)p^{n}(p-1)^{n}$
+\begin_inset Formula \[(p+1)p^{n}(p-1)^{n}\ .\]
 \end_inset
 
-.
+
 \end_layout
 
 \begin_layout Standard
@@ -678,11 +439,9 @@ The irreducible state counts are reduced by
 \end_inset
 
 , giving 
-\begin_inset Formula 
-\[
+\begin_inset Formula \[
 p^{2}(p-1)^{2}=\{36,1764,12\,100,116\,964,\ldots\}\ ,
 \]
-
 \end_inset
 
 and in general for 
@@ -693,49 +452,75 @@ and in general for
 \begin_inset Formula $p^{n}\left(p-1\right)^{n}$
 \end_inset
 
- instances of product pure states.
+ instances of pure product states.
 \end_layout
 
 \begin_layout Standard
-Repeating the computation, we find maximally entanglement states with frequencie
-s for two qubits of 
-\begin_inset Formula 
-\[
-p\left(p-1\right)\left(p+1\right)^{2}=\left\{ 96,2688,15\,840,136\,800,\ldots\right\} \ .
-\]
+Performing the computation using equation (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:john"
+plural "false"
+caps "false"
+noprefix "false"
 
+\end_inset
+
+), we find the numbers of maximally entangled states for two qubits to be 
+\begin_inset Formula \[
+p\left(p^2-1\right)\left(p+1\right)=\left\{ 96,2688,15\,840,136\,800,\ldots\right\} \ .
+\]
 \end_inset
 
 The irreducible state counts for maximal entanglement are reduced by 
 \begin_inset Formula $\left(p+1\right)$
 \end_inset
 
-, giving for 
+, giving, for 
 \begin_inset Formula $n=2$
 \end_inset
 
- 
-\begin_inset Formula 
-\[
+, 
+\begin_inset Formula \[
 p\left(p^{2}-1\right)=\left\{ 24,336,1320,6840,\ldots\right\} \ .
 \]
-
 \end_inset
 
-For three-qubits, there are 
+For three qubits, there are 
 \begin_inset Formula $p^{3}\left(p^{4}-1\right)\left(p+1\right)$
 \end_inset
 
- instances of pure maximally entangled states, while the general formula
- for four-qubit states remains unclear.
+ (total) and 
+\begin_inset Formula $p^{3}\left(p^{4}-1\right)$
+\end_inset
+
+ (irreducible) instances of pure maximally entangled states, while the general formula for 4-qubit states remains unclear.
 \end_layout
 
 \begin_layout Standard
+Therefore, the ratio of maximally entangled to product states is 
+\begin_inset Formula \[
+\frac{\textbf{Max entangled}}{\textbf{Product}}=\frac{p+1}{p\left(p-1\right)} ,\, \frac{\left(p^2+1\right)\left(p+1\right)}{\left(p-1\right)^2} \ ,
+\]
+\end_inset
+
+for 
+\begin_inset Formula $n=2$
+\end_inset
+
+ and 
+\begin_inset Formula $3$
+\end_inset
+
+, respectively.
+\end_layout
+
+\begin_layout Standard
+
 \begin_inset ERT
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 ack
@@ -748,7 +533,6 @@ ack
 status collapsed
 
 \begin_layout Plain Layout
-
 {}
 \end_layout
 
@@ -759,19 +543,16 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
 \end_inset
 
-We would like to thank John Gardiner for pointing out the need for this
- correction.
+We would like to thank John Gardiner for pointing out the need for this correction.
 \begin_inset ERT
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -785,11 +566,11 @@ References
 \end_layout
 
 \begin_layout Standard
+
 \begin_inset ERT
 status collapsed
 
 \begin_layout Plain Layout
-
 {}
 \end_layout
 
@@ -799,6 +580,7 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
+ 
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 bibfiles "gardinerbib"
